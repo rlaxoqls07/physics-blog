@@ -1,0 +1,28 @@
+site_name: My Math & Physics Blog
+
+theme:
+  name: material
+  features:
+    - navigation.sections # Creates the dropdown arrows for your courses
+    - search.suggest
+    - search.highlight
+
+# The Sidebar Navigation
+nav:
+  - Home: index.md
+  - Linear Algebra:
+    - Introduction: linear-algebra/intro.md
+  - Quantum Mechanics:
+    - The Wave Function: quantum-mechanics/wave-function.md
+
+# Enables Markdown extensions for Math
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+
+# Loads MathJax (The engine that draws the math)
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
