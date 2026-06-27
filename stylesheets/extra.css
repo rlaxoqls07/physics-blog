@@ -1,0 +1,31 @@
+/* 1. 정의 (Definition) */
+.def {
+    border-left: 3px solid #888;
+    background-color: transparent;
+    padding: 10px 15px;
+    margin: 1.2em 0;
+    color: var(--md-typeset-color); /* 현재 테마의 기본 글자색을 자동으로 따라감 */
+}
+
+/* 2. 정리 (Theorem) */
+.thm {
+    border-left: 3px solid #bbb;
+    background-color: transparent;
+    padding: 10px 15px;
+    margin: 1.2em 0;
+    font-style: italic;
+    color: var(--md-typeset-color);
+}
+
+/* 3. 증명 (Proof) */
+.proof {
+    padding: 2px 15px;
+    margin: 0.2em 0 1.5em 0;
+    border: none;
+    color: var(--md-typeset-color);
+    opacity: 0.8; /* 글자색을 따라가되, 본문보다 살짝 투명하게(흐리게) 처리 */
+}
+
+/* 내부 문단 여백 정리 */
+.def p:last-child, .thm p:last-child, .proof p:last-child { margin-bottom: 0; }
+.def p:first-child, .thm p:first-child, .proof p:first-child { margin-top: 0; }

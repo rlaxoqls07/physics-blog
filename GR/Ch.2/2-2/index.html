@@ -29,6 +29,9 @@
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
       
 
 
@@ -46,6 +49,12 @@
       
     
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -55,7 +64,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -105,6 +121,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -849,7 +891,7 @@
 <h2 id="2-basis-transformation-and-vector-transformation">2. Basis Transformation and Vector Transformation</h2>
 <p>By choosing a different chart <span class="arithmatex">\(\psi'\)</span>, we obtain a different coordinate basis <span class="arithmatex">\(\{X_\mu '\}\)</span>. Since <span class="arithmatex">\(\{X_\mu '\}\)</span> also spans <span class="arithmatex">\(V_p\)</span>, we can express <span class="arithmatex">\(X_\mu\)</span> in terms of the new basis <span class="arithmatex">\(\{X_\mu '\}\)</span>. Using chain rule, we get
 $$
-    X_{\mu} = \sum_{\mu = 1}^n \left . \frac{\partial x' ^\nu}{\partial x^\mu} \right \vert <em>{\psi (p)} X</em>{\mu} ' 
+    X_{\mu} = \sum_{\mu = 1}^n \left . \frac{\partial x' ^\nu}{\partial x^\mu} \right \vert <em _mu="\mu">{\psi (p)} X</em> ' 
 $$
 where <span class="arithmatex">\(x' ^\nu\)</span> denotes the <span class="arithmatex">\(\nu\)</span>th component of the map <span class="arithmatex">\(\psi ' \circ \psi^{-1}\)</span>. Hence, we find that components of <span class="arithmatex">\(v' ^\nu\)</span> of a vector <span class="arithmatex">\(v\)</span> in the new coordinate basis are related to the components <span class="arithmatex">\(v^\mu\)</span> in the old basis by
 $$
@@ -861,7 +903,7 @@ This is called as the <strong>vector transformation law</strong>.</p>
 $$
     T(f) = \frac{d}{dt} (f \circ C) = \sum_{\mu} \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1}) \frac{dx^\mu}{dt} = \sum_{\mu} \frac{dx^\mu}{dt} X_{\mu} (f)
 $$
-because the curve <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(M\)</span> will get mapped into a curve <span class="arithmatex">\(x^\mu (t)\)</span> in <span class="arithmatex">\(\R\)</span> when we choose a coordinate system <span class="arithmatex">\(\psi\)</span>.</p>
+because the curve <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(M\)</span> will get mapped into a curve <span class="arithmatex">\(x^\mu (t)\)</span> in <span class="arithmatex">\(\mathbb{R}\)</span> when we choose a coordinate system <span class="arithmatex">\(\psi\)</span>.</p>
 
 
 
@@ -921,6 +963,8 @@ because the curve <span class="arithmatex">\(C\)</span> on <span class="arithmat
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
       
     
   </body>
