@@ -500,26 +500,25 @@
         <span class="arithmatex">
          \(v^{1*}, \dots, v^{n*} \in V^*\)
         </span>
-        by their selective action on the basis vectors:
+        by their selective action on the basis vectors.
 $$
-    v^{\mu
-        <em>
-         } (v_{\nu}) = \delta^\mu_\nu
+    v^{\mu*} (v_{\nu}) = \delta^\mu_\nu
 $$
-Then, it naturally follows that
-         <span class="arithmatex">
-          \(\{v^{\mu*}\}\)
-         </span>
-         forms a basis for
-         <span class="arithmatex">
-          \(V^*\)
-         </span>
-         , called the
-        </em>
-        <em>
+       </p>
+       <p>
+        Then, it naturally follows that
+        <span class="arithmatex">
+         \(\{v^{\mu*}\}\)
+        </span>
+        forms a basis for
+        <span class="arithmatex">
+         \(V^*\)
+        </span>
+        , called the
+        <strong>
          dual basis
-        </em>
-        * to the basis
+        </strong>
+        to the basis
         <span class="arithmatex">
          \(\{v_\mu\}\)
         </span>
@@ -644,7 +643,7 @@ Then, it naturally follows that
         2. Tensors
        </h2>
        <blockquote>
-        <p class="def">
+        <p>
          <strong>
           Definition 2.3.2 (Tensor).
          </strong>
@@ -671,59 +670,66 @@ Then, it naturally follows that
          <span class="arithmatex">
           \(V\)
          </span>
-         is a multilinear map:
-$
-         <span class="arithmatex">
-          \(T : \underbrace{V^* \times \dots \times V^*}_{k \text{ times}} \times \underbrace{V \times \dots \times V}_{l \text{ times}} \to \mathbb{R}\)
-         </span>
-         $
+         is a multilinear map.
+        </p>
+        <div class="arithmatex">
+         \[T : \underbrace{V^* \times \dots \times V^*}_{k \text{ times}} \times \underbrace{V \times \dots \times V}_{l \text{ times}} \to \mathbb{R}\]
+        </div>
+        <p>
+         {: .def}
         </p>
        </blockquote>
        <p>
-        For example:
-* A tensor of type
-        <span class="arithmatex">
-         \((0,1)\)
-        </span>
-        takes one vector and maps it to
-        <span class="arithmatex">
-         \(\mathbb{R}\)
-        </span>
-        —this is a
-        <strong>
-         dual vector
-        </strong>
-        .
-* A tensor of type
-        <span class="arithmatex">
-         \((1,0)\)
-        </span>
-        takes one dual vector and maps it to
-        <span class="arithmatex">
-         \(\mathbb{R}\)
-        </span>
-        —this is an element of
-        <span class="arithmatex">
-         \(V^{**}\)
-        </span>
-        . However, since we identify
-        <span class="arithmatex">
-         \(V^{**}\)
-        </span>
-        with
-        <span class="arithmatex">
-         \(V\)
-        </span>
-        , a tensor of type
-        <span class="arithmatex">
-         \((1,0)\)
-        </span>
-        is nothing more than an ordinary
-        <strong>
-         vector
-        </strong>
-        .
+        For example,
        </p>
+       <ul>
+        <li>
+         A tensor of type
+         <span class="arithmatex">
+          \((0,1)\)
+         </span>
+         takes one vector and maps it to
+         <span class="arithmatex">
+          \(\mathbb{R}\)
+         </span>
+         —this is a
+         <strong>
+          dual vector
+         </strong>
+         .
+        </li>
+        <li>
+         A tensor of type
+         <span class="arithmatex">
+          \((1,0)\)
+         </span>
+         takes one dual vector and maps it to
+         <span class="arithmatex">
+          \(\mathbb{R}\)
+         </span>
+         —this is an element of
+         <span class="arithmatex">
+          \(V^{**}\)
+         </span>
+         . However, since we identify
+         <span class="arithmatex">
+          \(V^{**}\)
+         </span>
+         with
+         <span class="arithmatex">
+          \(V\)
+         </span>
+         , a tensor of type
+         <span class="arithmatex">
+          \((1,0)\)
+         </span>
+         is nothing more than an ordinary
+         <strong>
+          vector
+         </strong>
+         .
+        </li>
+       </ul>
        <p>
         We define the collection
         <span class="arithmatex">
@@ -766,7 +772,7 @@ $
         -th vector slot.
        </p>
        <blockquote>
-        <p class="def">
+        <p>
          <strong>
           Definition 2.3.3 (Contraction).
          </strong>
@@ -778,13 +784,13 @@ $
          <span class="arithmatex">
           \(C : \mathcal{T}(k,l) \to \mathcal{T}(k-1, l-1)\)
          </span>
-         defined as:
-$
-         <span class="arithmatex">
-          \(CT = \sum_{\sigma = 1}^n T(\dots, v^{\sigma*}, \dots ; \dots, v_{\sigma}, \dots)\)
-         </span>
-         $
-where
+         defined as
+        </p>
+        <div class="arithmatex">
+         \[CT = \sum_{\sigma = 1}^n T(\dots, v^{\sigma*}, \dots ; \dots, v_{\sigma}, \dots)\]
+        </div>
+        <p class="def">
+         where
          <span class="arithmatex">
           \(\{v_\sigma\}\)
          </span>
@@ -857,7 +863,7 @@ where
          </span>
          .
         </p>
-        <p class="def">
+        <p>
          Given
          <span class="arithmatex">
           \((k+k')\)
@@ -878,12 +884,13 @@ where
          <span class="arithmatex">
           \(T \otimes T'\)
          </span>
-         on these inputs to be the scalar product:
-$
-         <span class="arithmatex">
-          \((T \otimes T') = T(v^{1*}, \dots, v^{k*} ; w_1, \dots, w_l) \cdot T'(v^{(k+1)*}, \dots, v^{(k+k')*} ; w_{l+1}, \dots, w_{l+l'})\)
-         </span>
-         $
+         on these inputs to be the scalar product
+        </p>
+        <div class="arithmatex">
+         \[(T \otimes T') = T(v^{1*}, \dots, v^{k*} ; w_1, \dots, w_l) \cdot T'(v^{(k+1)*}, \dots, v^{(k+k')*} ; w_{l+1}, \dots, w_{l+l'})\]
+        </div>
+        <p>
+         {: .def}
         </p>
        </blockquote>
        <p>
@@ -930,19 +937,15 @@ $
         <span class="arithmatex">
          \((k,l)\)
         </span>
-        can be expanded in components as a sum of simple tensors in this collection:
-$$
-    T = \sum_{\mu, \nu = 1}^n T^{\mu_1 \dots \mu_k}{}
-        <em _mu_1="\mu_1">
-         {\nu_1 \dots \nu_l} \, v
-        </em>
-        \otimes v^{\nu_1} \otimes \dots \otimes v_{\mu_k
-        <em>
-         } \otimes \dots \otimes v^{\nu_l
-        </em>
-        }
-$$
-If
+        can be expanded in components as a sum of simple tensors in this collection.
+       </p>
+       <div class="arithmatex">
+        \[
+    T = \sum_{\mu, \nu = 1}^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots \nu_l} \, v_{\mu_1} \otimes \dots \otimes v_{\mu_k} \otimes v^{\nu_1*} \otimes \dots \otimes v^{\nu_l*}
+\]
+       </div>
+       <p>
+        If
         <span class="arithmatex">
          \(T'\)
         </span>
@@ -954,22 +957,13 @@ If
         <span class="arithmatex">
          \(S = T \otimes T'\)
         </span>
-        simply has components given by the product:
-$$
-    S^{\mu_1 \dots \mu_{k+k'}}{}
-        <em l_l_="l+l'">
-         {\nu_1 \dots \nu
-        </em>
-        }} = T^{\mu_1 \dots \mu_k}{
-        <em k_="k'">
-         {\nu_1 \dots \nu_l} \; {T'}^{\mu_1' \dots \mu
-        </em>
-        }'}{
-        <em l_="l'">
-         {\nu_1' \dots \nu
-        </em>
-        $$}'
+        simply has components given by the product.
        </p>
+       <div class="arithmatex">
+        \[
+    S^{\mu_1 \dots \mu_{k+k'}}{}_{\nu_1 \dots \nu_{l+l'}} = T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots \nu_l} \; {T'}^{\mu_1' \dots \mu_{k'}'}{}_{\nu_1' \dots \nu_{l'}'}
+\]
+       </div>
        <h2 id="4-tensors-on-tangent-spaces-and-transformation-laws">
         4. Tensors on Tangent Spaces and Transformation Laws
        </h2>
@@ -1059,11 +1053,13 @@ $$
         <span class="arithmatex">
          \(x \to x'\)
         </span>
-        , vector components transform as:
+        , vector components transform as
 $$
-    v'^{\mu'} = \sum_{\mu=1}^n v^\mu \frac{\partial x'^{\mu'}}{\partial x^\mu}
+    v'^{\mu'} = \sum_{\mu=1}^n v^\mu \frac{\partial x'^{\mu'}}{\partial x^\mu}.
 $$
-If
+       </p>
+       <p>
+        If
         <span class="arithmatex">
          \(\omega_\mu\)
         </span>
@@ -1079,11 +1075,15 @@ If
         <span class="arithmatex">
          \(\omega(v)\)
         </span>
-        requires them to transform inversely:
-$$
+        requires them to transform inversely.
+       </p>
+       <div class="arithmatex">
+        \[
     \omega_{\mu'}' = \sum_{\mu=1}^n \omega_\mu \frac{\partial x^\mu}{\partial x'^{\mu'}}
-$$
-More generally, the components of a tensor in
+\]
+       </div>
+       <p>
+        More generally, the components of a tensor in
         <span class="arithmatex">
          \(\mathcal{T}(k,l)\)
         </span>
@@ -1091,15 +1091,16 @@ More generally, the components of a tensor in
         <abbr title="The matrix composed of all first-order partial derivatives of a coordinate transformation.">
          Jacobian
         </abbr>
-        matrix factor for each index:
+        matrix factor for each index.
 $$
-    T^{\prime \mu_1^\prime \dots \mu_k^\prime}{}
-        <em _mu_="\mu," _nu="\nu">
-         {\nu_1^\prime \dots \nu_l^\prime} = \sum
-        </em>
-        \right)
-$$
-This is universally referred to as the }^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots \nu_l} \left( \frac{\partial x^{\prime \mu_1^\prime}}{\partial x^{\mu_1}} \dots \right) \left( \dots \frac{\partial x^{\nu_l}}{\partial x^{\prime \nu_l^\prime}
+       </p>
+       <pre><code>T^{\prime \mu_1^\prime \dots \mu_k^\prime}{}_{\nu_1^\prime \dots \nu_l^\prime} = \sum_{\mu, \nu = 1}^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots \nu_l} \left( \frac{\partial x^{\prime \mu_1^\prime}}{\partial x^{\mu_1}} \dots \right) \left( \dots \frac{\partial x^{\nu_l}}{\partial x^{\prime \nu_l^\prime}} \right)
+</code></pre>
+       <p>
+        $$
+       </p>
+       <p>
+        This is universally referred to as the
         <strong>
          tensor transformation law
         </strong>
@@ -1185,7 +1186,7 @@ This is universally referred to as the }^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots 
         6. The Metric Tensor
        </h2>
        <blockquote>
-        <p class="def">
+        <p>
          <strong>
           Definition 2.3.5 (Metric Tensor).
          </strong>
@@ -1205,36 +1206,40 @@ This is universally referred to as the }^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots 
           \((0,2)\)
          </span>
          . In addition, the metric is required to be symmetric and non-degenerate.
-*
-         <strong>
-          Symmetric:
-         </strong>
-         For all
-         <span class="arithmatex">
-          \(v_1, v_2 \in V_p\)
-         </span>
-         , we have
-         <span class="arithmatex">
-          \(g(v_1, v_2) = g(v_2, v_1)\)
-         </span>
-         .
-*
-         <strong>
-          Non-degenerate:
-         </strong>
-         <span class="arithmatex">
-          \(g(v_1, v_2) = 0\)
-         </span>
-         for all
-         <span class="arithmatex">
-          \(v_2\)
-         </span>
-         if and only if
-         <span class="arithmatex">
-          \(v_1 = 0\)
-         </span>
-         .
         </p>
+        <ul>
+         <li>
+          <strong>
+           Symmetric:
+          </strong>
+          For all
+          <span class="arithmatex">
+           \(v_1, v_2 \in V_p\)
+          </span>
+          , we have
+          <span class="arithmatex">
+           \(g(v_1, v_2) = g(v_2, v_1)\)
+          </span>
+          .
+         </li>
+         <li class="def">
+          <strong>
+           Non-degenerate:
+          </strong>
+          <span class="arithmatex">
+           \(g(v_1, v_2) = 0\)
+          </span>
+          for all
+          <span class="arithmatex">
+           \(v_2\)
+          </span>
+          if and only if
+          <span class="arithmatex">
+           \(v_1 = 0\)
+          </span>
+          .
+         </li>
+        </ul>
        </blockquote>
        <p>
         Thus, a metric
@@ -1260,19 +1265,27 @@ This is universally referred to as the }^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots 
         <span class="arithmatex">
          \(g_{\mu \nu}\)
         </span>
-        :
-$$
+        .
+       </p>
+       <div class="arithmatex">
+        \[
     g = \sum_{\mu, \nu} g_{\mu \nu} dx^\mu \otimes dx^\nu
-$$
-In physical literature, we frequently use the line element notation
+\]
+       </div>
+       <p>
+        In physical literature, we frequently use the line element notation
         <span class="arithmatex">
          \(ds^2\)
         </span>
-        to represent the metric tensor:
-$$
+        to represent the metric tensor
+       </p>
+       <div class="arithmatex">
+        \[
     ds^2 = \sum_{\mu, \nu} g_{\mu \nu} dx^\mu dx^\nu
-$$
-where the outer product sign (
+\]
+       </div>
+       <p>
+        where the outer product sign (
         <span class="arithmatex">
          \(\otimes\)
         </span>
