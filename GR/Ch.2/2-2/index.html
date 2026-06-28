@@ -1,971 +1,1369 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-        <link rel="prev" href="../2-1/">
-      
-      
-        <link rel="next" href="../2-3/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>Vectors - My Math & Physics Blog</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi">
-    
-      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
-    
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#1-vectors-in-curved-geometry" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="My Math &amp; Physics Blog" class="md-header__button md-logo" aria-label="My Math & Physics Blog" data-md-component="logo">
-      
-  <img src="../../../assets/logo.svg" alt="logo">
-
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../2-1/" rel="prev"/>
+  <link href="../2-3/" rel="next"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Vectors - My Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#22-vectors">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="My Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="My Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            My Math & Physics Blog
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Vectors
-            
-          </span>
-        </div>
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        My Math &amp; Physics Blog
+       </span>
       </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Vectors
+       </span>
+      </div>
+     </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
     </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
         <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
         </div>
+       </div>
       </div>
+     </div>
     </div>
-  </div>
-</div>
-      
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="My Math &amp; Physics Blog" class="md-nav__button md-logo" aria-label="My Math & Physics Blog" data-md-component="logo">
-      
-  <img src="../../../assets/logo.svg" alt="logo">
-
-    </a>
-    My Math & Physics Blog
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    General Relativity
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    General Relativity
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1. Introduction
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    1. Introduction
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Ch.1/1-1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction to GR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="My Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="My Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          My Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#1-vectors-in-curved-geometry">
+                     <span class="md-ellipsis">
+                      1. Vectors in Curved Geometry
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#2-basis-transformation-and-vector-transformation">
+                     <span class="md-ellipsis">
+                      2. Basis Transformation and Vector Transformation
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#3-tangent-of-a-curve">
+                     <span class="md-ellipsis">
+                      3. Tangent of a Curve
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#4-vector-fields-orbits-and-commutators">
+                     <span class="md-ellipsis">
+                      4. Vector Fields, Orbits, and Commutators
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Quantum Mechanics
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Quantum Mechanics
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. The Wave Function
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. The Wave Function
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../QM/Ch.1/wave-function/">
+                  <span class="md-ellipsis">
+                   Schrodinger Equation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
         </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2. Manifolds and Tensor Fields
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    2. Manifolds and Tensor Fields
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2-1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Manifolds
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vectors
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vectors
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-vectors-in-curved-geometry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#1-vectors-in-curved-geometry">
+            <span class="md-ellipsis">
+             1. Vectors in Curved Geometry
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#2-basis-transformation-and-vector-transformation">
+            <span class="md-ellipsis">
+             2. Basis Transformation and Vector Transformation
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#3-tangent-of-a-curve">
+            <span class="md-ellipsis">
+             3. Tangent of a Curve
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#4-vector-fields-orbits-and-commutators">
+            <span class="md-ellipsis">
+             4. Vector Fields, Orbits, and Commutators
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:differential-geometry">
+         Differential Geometry
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:general-relativity">
+         General Relativity
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:tangent-space">
+         Tangent Space
+        </a>
+       </nav>
+       <h1 id="22-vectors">
+        2.2 Vectors
+       </h1>
+       <h2 id="1-vectors-in-curved-geometry">
         1. Vectors in Curved Geometry
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-basis-transformation-and-vector-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Basis Transformation and Vector Transformation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-tangent-of-a-curve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Tangent of a Curve
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2-3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tensors; the Metric Tensor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2-4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Abstract Index Notation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quantum Mechanics
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Quantum Mechanics
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1. The Wave Function
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    1. The Wave Function
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../QM/Ch.1/wave-function/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Schrodinger Equation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-vectors-in-curved-geometry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Vectors in Curved Geometry
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-basis-transformation-and-vector-transformation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Basis Transformation and Vector Transformation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-tangent-of-a-curve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Tangent of a Curve
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-  <h1>Vectors</h1>
-
-<h2 id="1-vectors-in-curved-geometry">1. Vectors in Curved Geometry</h2>
-<p>In prerelativistic physics, it's assumed that space has natural structure of 3-dimensional vector space, once one has designated a point to serve as an origin. </p>
-<p>In special relativity, spacetime similarly has natural structure of 4-dimensional vector space. </p>
-<p>But, when one considers curved geometry, the vector space structure is lost. There is no natural notion how to add two points on a sphere and end up on the sphere? </p>
-<p>Nevertheless, the vector space structure can be recovered in the limit of infinitesimal displacements about a point. </p>
-<p>We would like to give a notion of tangent vector at <span class="arithmatex">\(p\)</span> which only refers to intrinsic structure of a manifold, not to its embeddings in <span class="arithmatex">\(\mathbb{R}^n\)</span>. </p>
-<p>In <span class="arithmatex">\(\mathbb{R}^n\)</span>, a vector <span class="arithmatex">\(v = (v^1, \dots, v^n)\)</span> defines the directional derivative operator <span class="arithmatex">\(\displaystyle \sum_\mu v^\mu \left( \frac{\partial}{\partial x^\mu} \right)\)</span>, and vice versa.</p>
-<p>Directional derivatives are characterized by linearity and Leibnitz rule. On a manifold <span class="arithmatex">\(M\)</span>, let <span class="arithmatex">\(\mathcal{F}\)</span> denote the collection of <span class="arithmatex">\(\mathcal{C}^\infty\)</span> functions from <span class="arithmatex">\(M\)</span> into <span class="arithmatex">\(\mathbb{R}\)</span>. We define a tangent vector <span class="arithmatex">\(v\)</span> at <span class="arithmatex">\(p \in M\)</span> to be a map <span class="arithmatex">\(v: \mathcal{F} \to \mathbb{R}\)</span> which is:</p>
-<ol>
-<li>Linearity : <span class="arithmatex">\(v(af + bg) = a v(f) + b v(g) \quad \forall f,g \in \mathcal{F}, \ a,b \in \mathbb{R}\)</span>.</li>
-<li>Leibnitz rule : <span class="arithmatex">\(v(fg) = f(p)v(g) + g(p)v(f)\)</span>.</li>
-</ol>
-<p>If <span class="arithmatex">\(h \in \mathcal{F}\)</span> is a constant function, i.e., <span class="arithmatex">\(h(q) = c \quad \forall q \in M\)</span>, then <span class="arithmatex">\(v(h) = 0\)</span> because <span class="arithmatex">\(v(h^2) = 2cv(h)\)</span>, <span class="arithmatex">\(v(h^2) = v(ch) = cv(h)\)</span>. </p>
-<p>This definition make precise meaning to a concept of infinitesimal displacement.</p>
-<p>Let <span class="arithmatex">\(V_p\)</span> be the collection of tangent vectors at <span class="arithmatex">\(p\)</span>. Then, <span class="arithmatex">\((v_1 + v_2)f = v_1(f) + v_2(f)\)</span> and <span class="arithmatex">\((av)(f) = a v(f)\)</span>.</p>
-<p>Second property of <span class="arithmatex">\(V_p\)</span> is given by the following theorem:</p>
-<p><strong>Theorem:</strong> <em>Let <span class="arithmatex">\(M\)</span> be an n-dimensional manifold. Let <span class="arithmatex">\(p \in M\)</span> and <span class="arithmatex">\(V_p\)</span> denote tangent space at <span class="arithmatex">\(p\)</span>. Then, <span class="arithmatex">\(\dim V_p = n\)</span>.</em></p>
-<p><em>Proof.</em> We shall show that <span class="arithmatex">\(\dim V_p = n\)</span> by constructing a basis of <span class="arithmatex">\(V_p\)</span>, i.e., by finding <span class="arithmatex">\(n\)</span> linearly independent tangent vectors which span <span class="arithmatex">\(V_p\)</span>. </p>
-<p>Let <span class="arithmatex">\(\psi: O \to U \subset \mathbb{R}^n\)</span> be a chart with <span class="arithmatex">\(p \in O\)</span>. For <span class="arithmatex">\(\mu = 1, \dots, n\)</span>, define <span class="arithmatex">\(X_\mu: \mathcal{F} \to \mathbb{R}\)</span> by:</p>
-<div class="arithmatex">\[X_\mu(f) = \left. \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1}) \right|_{\psi(p)}\]</div>
-<p>where <span class="arithmatex">\((x^1, \dots, x^n)\)</span> are the Cartesian coordinates of <span class="arithmatex">\(\mathbb{R}^n\)</span>. It is easily seen that <span class="arithmatex">\(X_1, \dots, X_n\)</span> are linearly independent tangent vectors. </p>
-<p>To show that they span <span class="arithmatex">\(V_p\)</span>, we expand <span class="arithmatex">\(f \circ \psi^{-1}\)</span> around <span class="arithmatex">\(a = \psi(p)\)</span>. For all <span class="arithmatex">\(q \in O\)</span> we have:</p>
-<div class="arithmatex">\[f(q) = f(p) + \sum_{\mu=1}^n [x^\mu \circ \psi(q) - x^\mu \circ \psi(p)] H_\mu(\psi(q))\]</div>
-<p>where the functions <span class="arithmatex">\(H_\mu\)</span> satisfy <span class="arithmatex">\(H_\mu(\psi(p)) = X_\mu(f)\)</span>.</p>
-<p>Let <span class="arithmatex">\(v \in V_p\)</span> be an arbitrary tangent vector. We apply <span class="arithmatex">\(v\)</span> to <span class="arithmatex">\(f\)</span>, using linearity, the Leibnitz property, and the fact that <span class="arithmatex">\(v\)</span> applied to a constant (like <span class="arithmatex">\(f(p)\)</span> or <span class="arithmatex">\(x^\mu \circ \psi(p)\)</span>) vanishes. Evaluating at <span class="arithmatex">\(p\)</span>, the terms where <span class="arithmatex">\(v\)</span> acts on <span class="arithmatex">\(H_\mu\)</span> zero out because the position difference is zero at <span class="arithmatex">\(p\)</span>. We obtain:</p>
-<div class="arithmatex">\[v(f) = \sum_{\mu=1}^n [H_\mu \circ \psi(p)] v(x^\mu \circ \psi)\]</div>
-<p>Substituting <span class="arithmatex">\(H_\mu \circ \psi(p) = X_\mu(f)\)</span>, we get:</p>
-<div class="arithmatex">\[v(f) = \sum_{\mu=1}^n v^\mu X_\mu(f)\]</div>
-<p>where the coefficients are defined as <span class="arithmatex">\(v^\mu = v(x^\mu \circ \psi)\)</span>. </p>
-<p>Thus, we have successfully expressed an arbitrary tangent vector <span class="arithmatex">\(v\)</span> as a linear combination of the <span class="arithmatex">\(X_\mu\)</span>:</p>
-<div class="arithmatex">\[v = \sum_{\mu=1}^n v^\mu X_\mu\]</div>
-<p>This shows the <span class="arithmatex">\(n\)</span> vectors <span class="arithmatex">\(X_\mu\)</span> span the tangent space, which completes the proof that <span class="arithmatex">\(\dim V_p = n\)</span>. <span class="arithmatex">\(\blacksquare\)</span></p>
-<p>The basis <span class="arithmatex">\(\{X_\mu \}\)</span> of the proof is called a <strong>coordinate basis</strong>. We often denote <span class="arithmatex">\(X_\mu\)</span> as <span class="arithmatex">\(\partial / \partial x^\mu\)</span>. </p>
-<h2 id="2-basis-transformation-and-vector-transformation">2. Basis Transformation and Vector Transformation</h2>
-<p>By choosing a different chart <span class="arithmatex">\(\psi'\)</span>, we obtain a different coordinate basis <span class="arithmatex">\(\{X_\mu '\}\)</span>. Since <span class="arithmatex">\(\{X_\mu '\}\)</span> also spans <span class="arithmatex">\(V_p\)</span>, we can express <span class="arithmatex">\(X_\mu\)</span> in terms of the new basis <span class="arithmatex">\(\{X_\mu '\}\)</span>. Using chain rule, we get
-$$
-    X_{\mu} = \sum_{\mu = 1}^n \left . \frac{\partial x' ^\nu}{\partial x^\mu} \right \vert <em _mu="\mu">{\psi (p)} X</em> ' 
-$$
-where <span class="arithmatex">\(x' ^\nu\)</span> denotes the <span class="arithmatex">\(\nu\)</span>th component of the map <span class="arithmatex">\(\psi ' \circ \psi^{-1}\)</span>. Hence, we find that components of <span class="arithmatex">\(v' ^\nu\)</span> of a vector <span class="arithmatex">\(v\)</span> in the new coordinate basis are related to the components <span class="arithmatex">\(v^\mu\)</span> in the old basis by
-$$
-    v'^\nu = \sum_{\mu=1}^n v^\mu \frac{\partial x' ^\nu}{\partial x^\mu} .
-$$
-This is called as the <strong>vector transformation law</strong>.</p>
-<h2 id="3-tangent-of-a-curve">3. Tangent of a Curve</h2>
-<p>A <strong>smooth curve</strong> <span class="arithmatex">\(C\)</span> on a manifold <span class="arithmatex">\(M\)</span> is a <span class="arithmatex">\(\mathcal{C}^\infty\)</span> map of <span class="arithmatex">\(\mathbb{R}\)</span> into <span class="arithmatex">\(M\)</span>. At each point <span class="arithmatex">\(p\in M\)</span> lying on the curve, we can associate a tangent vector <span class="arithmatex">\(T \in V_p\)</span> with <span class="arithmatex">\(C\)</span> as following. For <span class="arithmatex">\(f \in \mathcal{F}\)</span>, set <span class="arithmatex">\(T(f) = d (f \circ C)/dt\)</span>. Then,
-$$
-    T(f) = \frac{d}{dt} (f \circ C) = \sum_{\mu} \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1}) \frac{dx^\mu}{dt} = \sum_{\mu} \frac{dx^\mu}{dt} X_{\mu} (f)
-$$
-because the curve <span class="arithmatex">\(C\)</span> on <span class="arithmatex">\(M\)</span> will get mapped into a curve <span class="arithmatex">\(x^\mu (t)\)</span> in <span class="arithmatex">\(\mathbb{R}\)</span> when we choose a coordinate system <span class="arithmatex">\(\psi\)</span>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+       </h2>
+       <p>
+        In pre-relativistic physics, it is assumed that space has the natural structure of a 3-dimensional vector space, once one has designated a point to serve as an origin. In special relativity, Minkowski spacetime similarly has the natural structure of a 4-dimensional vector space.
+       </p>
+       <p>
+        However, when one considers curved geometry, the global vector space structure is lost. There is no natural or unique notion of how to add two points on a sphere and end up on the sphere. Nevertheless, the vector space structure can be recovered locally in the limit of infinitesimal displacements about a point.
+       </p>
+       <p>
+        We would like to give a rigorous mathematical definition of a tangent vector at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        which only refers to the intrinsic structure of the manifold
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        , completely independent of any embeddings in
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        .
+       </p>
+       <p>
+        In
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        , a standard vector
+        <span class="arithmatex">
+         \(v = (v^1, \dots, v^n)\)
+        </span>
+        intrinsically defines the directional derivative operator
+        <span class="arithmatex">
+         \(\sum_\mu v^\mu \left( \frac{\partial}{\partial x^\mu} \right)\)
+        </span>
+        , and vice versa. Directional derivatives are entirely characterized by two algebraic properties: linearity and the
+        <abbr title="The mathematical product rule for differentiation, requiring $D(fg) = f D(g) + g D(f)$.">
+         Leibniz rule
+        </abbr>
+        . We use this to abstract the concept of vectors.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 2.2.1 (Tangent Vector).
+         </strong>
+         On a manifold
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         , let
+         <span class="arithmatex">
+          \(\mathcal{F}\)
+         </span>
+         denote the collection of
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         functions from
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         into
+         <span class="arithmatex">
+          \(\mathbb{R}\)
+         </span>
+         . We define a tangent vector
+         <span class="arithmatex">
+          \(v\)
+         </span>
+         at
+         <span class="arithmatex">
+          \(p \in \mathcal{M}\)
+         </span>
+         to be a mapping
+         <span class="arithmatex">
+          \(v: \mathcal{F} \to \mathbb{R}\)
+         </span>
+         which satisfies
+        </p>
+        <ul>
+         <li>
+          <strong>
+           Linearity:
+          </strong>
+          <span class="arithmatex">
+           \(v(af + bg) = a v(f) + b v(g) \quad \forall  f,g \in \mathcal{F}, \ a,b \in \mathbb{R}\)
+          </span>
+          .
+         </li>
+         <li class="def">
+          <strong>
+           <abbr title="The mathematical product rule for differentiation, requiring $D(fg) = f D(g) + g D(f)$.">
+            Leibniz rule
+           </abbr>
+           :
+          </strong>
+          <span class="arithmatex">
+           \(v(fg) = f(p)v(g) + g(p)v(f)\)
+          </span>
+          .
+         </li>
+        </ul>
+       </blockquote>
+       <p>
+        If
+        <span class="arithmatex">
+         \(h \in \mathcal{F}\)
+        </span>
+        is a constant function, i.e.,
+        <span class="arithmatex">
+         \(h(q) = c \quad \forall q \in \mathcal{M}\)
+        </span>
+        , then
+        <span class="arithmatex">
+         \(v(h) = 0\)
+        </span>
+        because
+        <span class="arithmatex">
+         \(v(h^2) = 2cv(h)\)
+        </span>
+        by the
+        <abbr title="The mathematical product rule for differentiation, requiring $D(fg) = f D(g) + g D(f)$.">
+         Leibniz rule
+        </abbr>
+        , while
+        <span class="arithmatex">
+         \(v(h^2) = v(ch) = cv(h)\)
+        </span>
+        by linearity. This forces
+        <span class="arithmatex">
+         \(v(h)=0\)
+        </span>
+        . This mathematical behavior gives a precise meaning to the concept of an infinitesimal displacement (it cannot alter a constant value).
+       </p>
+       <p>
+        Let
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        be the collection of all tangent vectors at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        . We can define addition and scalar multiplication naturally:
+        <span class="arithmatex">
+         \((v_1 + v_2)(f) = v_1(f) + v_2(f)\)
+        </span>
+        and
+        <span class="arithmatex">
+         \((av)(f) = a v(f)\)
+        </span>
+        , meaning
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        forms a vector space.
+       </p>
+       <blockquote>
+        <p class="thm">
+         <strong>
+          Theorem 2.2.1 (Dimension of Tangent Space).
+         </strong>
+         &gt; Let
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         be an
+         <span class="arithmatex">
+          \(n\)
+         </span>
+         -dimensional manifold. Let
+         <span class="arithmatex">
+          \(p \in \mathcal{M}\)
+         </span>
+         and let
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         denote the tangent space at
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         . Then,
+         <span class="arithmatex">
+          \(\dim V_p = n\)
+         </span>
+         .
+        </p>
+        <p>
+         <em>
+          Proof.
+         </em>
+         &gt; We shall show that
+         <span class="arithmatex">
+          \(\dim V_p = n\)
+         </span>
+         by constructing a basis of
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         , i.e., by finding
+         <span class="arithmatex">
+          \(n\)
+         </span>
+         linearly independent tangent vectors which span
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         .
+        </p>
+        <p>
+         Let
+         <span class="arithmatex">
+          \(\psi: O \to U \subset \mathbb{R}^n\)
+         </span>
+         be a chart with
+         <span class="arithmatex">
+          \(p \in O\)
+         </span>
+         . For
+         <span class="arithmatex">
+          \(\mu = 1, \dots, n\)
+         </span>
+         , define an operator
+         <span class="arithmatex">
+          \(X_\mu: \mathcal{F} \to \mathbb{R}\)
+         </span>
+         by evaluating the partial derivative in the local coordinate patch
+        </p>
+        <div class="arithmatex">
+         \[X_\mu(f) = \left. \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1}) \right|_{\psi(p)}\]
         </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
+        <p>
+         where
+         <span class="arithmatex">
+          \((x^1, \dots, x^n)\)
+         </span>
+         are the Cartesian coordinates of
+         <span class="arithmatex">
+          \(\mathbb{R}^n\)
+         </span>
+         . It is easily verified that
+         <span class="arithmatex">
+          \(X_1, \dots, X_n\)
+         </span>
+         are linearly independent tangent vectors.
+        </p>
+        <p>
+         To show that they span
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         , we expand
+         <span class="arithmatex">
+          \(f \circ \psi^{-1}\)
+         </span>
+         around
+         <span class="arithmatex">
+          \(a = \psi(p)\)
+         </span>
+         using Taylor's theorem. For all
+         <span class="arithmatex">
+          \(q \in O\)
+         </span>
+         we have
+        </p>
+        <div class="arithmatex">
+         \[f(q) = f(p) + \sum_{\mu=1}^n [x^\mu \circ \psi(q) - x^\mu \circ \psi(p)] H_\mu(\psi(q)).\]
+        </div>
+        <p>
+         where the smooth functions
+         <span class="arithmatex">
+          \(H_\mu\)
+         </span>
+         satisfy
+         <span class="arithmatex">
+          \(H_\mu(\psi(p)) = X_\mu(f)\)
+         </span>
+         .
+        </p>
+        <p>
+         Let
+         <span class="arithmatex">
+          \(v \in V_p\)
+         </span>
+         be an arbitrary tangent vector. We apply
+         <span class="arithmatex">
+          \(v\)
+         </span>
+         to
+         <span class="arithmatex">
+          \(f\)
+         </span>
+         , using linearity, the Leibniz property, and the fact that
+         <span class="arithmatex">
+          \(v\)
+         </span>
+         applied to a constant vanishes. Evaluating at
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         , the terms where
+         <span class="arithmatex">
+          \(v\)
+         </span>
+         acts on
+         <span class="arithmatex">
+          \(H_\mu\)
+         </span>
+         zero out because the position difference
+         <span class="arithmatex">
+          \([x^\mu \circ \psi(p) - x^\mu \circ \psi(p)]\)
+         </span>
+         is zero at
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         . We obtain
+        </p>
+        <div class="arithmatex">
+         \[v(f) = \sum_{\mu=1}^n [H_\mu \circ \psi(p)] v(x^\mu \circ \psi).\]
+        </div>
+        <p>
+         Substituting
+         <span class="arithmatex">
+          \(H_\mu \circ \psi(p) = X_\mu(f)\)
+         </span>
+         , we get
+        </p>
+        <div class="arithmatex">
+         \[v(f) = \sum_{\mu=1}^n v^\mu X_\mu(f)\]
+        </div>
+        <p>
+         where the coefficients are defined as
+         <span class="arithmatex">
+          \(v^\mu = v(x^\mu \circ \psi)\)
+         </span>
+         .
+        </p>
+        <p>
+         Thus, we have successfully expressed an arbitrary tangent vector
+         <span class="arithmatex">
+          \(v\)
+         </span>
+         as a linear combination of the
+         <span class="arithmatex">
+          \(X_\mu\)
+         </span>
+        </p>
+        <div class="arithmatex">
+         \[v = \sum_{\mu=1}^n v^\mu X_\mu.\]
+        </div>
+        <p class="proof">
+         This shows the
+         <span class="arithmatex">
+          \(n\)
+         </span>
+         vectors
+         <span class="arithmatex">
+          \(X_\mu\)
+         </span>
+         span the tangent space, completing the proof that
+         <span class="arithmatex">
+          \(\dim V_p = n\)
+         </span>
+         .
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+       </blockquote>
+       <p>
+        The basis
+        <span class="arithmatex">
+         \(\{X_\mu \}\)
+        </span>
+        constructed in the proof is called a
+        <strong>
+         coordinate basis
+        </strong>
+        . We often denote
+        <span class="arithmatex">
+         \(X_\mu\)
+        </span>
+        simply as
+        <span class="arithmatex">
+         \(\partial / \partial x^\mu\)
+        </span>
+        .
+       </p>
+       <h2 id="2-basis-transformation-and-vector-transformation">
+        2. Basis Transformation and Vector Transformation
+       </h2>
+       <p>
+        By choosing a different chart
+        <span class="arithmatex">
+         \(\psi'\)
+        </span>
+        , we obtain a different coordinate basis
+        <span class="arithmatex">
+         \(\{X_\mu'\}\)
+        </span>
+        . Since
+        <span class="arithmatex">
+         \(\{X_\mu'\}\)
+        </span>
+        also spans
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        , we can express
+        <span class="arithmatex">
+         \(X_\mu\)
+        </span>
+        in terms of the new basis
+        <span class="arithmatex">
+         \(\{X_\mu'\}\)
+        </span>
+        . Using the multivariable chain rule, we get
+       </p>
+       <div class="arithmatex">
+        \[
+    X_{\mu} = \sum_{\nu = 1}^n \left. \frac{\partial x'^\nu}{\partial x^\mu} \right|_{\psi(p)} X_{\nu}' 
+\]
+       </div>
+       <p>
+        where
+        <span class="arithmatex">
+         \(x'^\nu\)
+        </span>
+        denotes the
+        <span class="arithmatex">
+         \(\nu\)
+        </span>
+        -th component of the transition map
+        <span class="arithmatex">
+         \(\psi' \circ \psi^{-1}\)
+        </span>
+        . Hence, equating
+        <span class="arithmatex">
+         \(v = \sum v^\mu X_\mu = \sum v'^\nu X_\nu'\)
+        </span>
+        , we find that components
+        <span class="arithmatex">
+         \(v'^\nu\)
+        </span>
+        of a vector
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        in the new coordinate basis are related to the components
+        <span class="arithmatex">
+         \(v^\mu\)
+        </span>
+        in the old basis by
+       </p>
+       <div class="arithmatex">
+        \[
+    v'^\nu = \sum_{\mu=1}^n v^\mu \frac{\partial x'^\nu}{\partial x^\mu}
+\]
+       </div>
+       <p>
+        This is universally known as the
+        <strong>
+         vector transformation law
+        </strong>
+        .
+       </p>
+       <h2 id="3-tangent-of-a-curve">
+        3. Tangent of a Curve
+       </h2>
+       <p>
+        A
+        <strong>
+         smooth curve
+        </strong>
+        <span class="arithmatex">
+         \(C\)
+        </span>
+        on a manifold
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        is a
+        <span class="arithmatex">
+         \(\mathcal{C}^\infty\)
+        </span>
+        map from
+        <span class="arithmatex">
+         \(\mathbb{R}\)
+        </span>
+        into
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        (often parameterized by
+        <span class="arithmatex">
+         \(t\)
+        </span>
+        or
+        <span class="arithmatex">
+         \(\lambda\)
+        </span>
+        ).
+       </p>
+       <p>
+        At each point
+        <span class="arithmatex">
+         \(p \in \mathcal{M}\)
+        </span>
+        lying on the curve, we can associate a tangent vector
+        <span class="arithmatex">
+         \(T \in V_p\)
+        </span>
+        with
+        <span class="arithmatex">
+         \(C\)
+        </span>
+        as follows. For any
+        <span class="arithmatex">
+         \(f \in \mathcal{F}\)
+        </span>
+        , set
+        <span class="arithmatex">
+         \(T(f) = d(f \circ C)/dt\)
+        </span>
+        . Using the chain rule,
+       </p>
+       <div class="arithmatex">
+        \[
+    T(f) = \frac{d}{dt} (f \circ C) = \sum_{\mu=1}^n \frac{\partial}{\partial x^\mu} (f \circ \psi^{-1}) \frac{dx^\mu}{dt} = \sum_{\mu=1}^n \frac{dx^\mu}{dt} X_{\mu} (f)
+\]
+       </div>
+       <p>
+        because the curve
+        <span class="arithmatex">
+         \(C\)
+        </span>
+        on
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        gets mapped into a coordinate curve
+        <span class="arithmatex">
+         \(x^\mu(t)\)
+        </span>
+        in
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        when we choose a coordinate system
+        <span class="arithmatex">
+         \(\psi\)
+        </span>
+        . Thus, the components
+        <span class="arithmatex">
+         \(T^\mu\)
+        </span>
+        of the tangent vector to the curve are simply the velocity components.
+       </p>
+       <div class="arithmatex">
+        \[
+    T^\mu = \frac{dx^\mu}{dt}
+\]
+       </div>
+       <blockquote>
+        <p>
+         <strong>
+          Remark (The Parallel Transport Problem).
+         </strong>
+         We can define another tangent space
+         <span class="arithmatex">
+          \(V_q\)
+         </span>
+         by choosing a different point
+         <span class="arithmatex">
+          \(q \in \mathcal{M}\)
+         </span>
+         . However, we do not have a natural way of identifying
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(V_q\)
+         </span>
+         ; there is no absolute way of determining whether a tangent vector at
+         <span class="arithmatex">
+          \(q\)
+         </span>
+         is "the same" as a tangent vector at
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         .
+        </p>
+        <p class="remark">
+         If we are given an additional structure called a
+         <strong>
+          <abbr title="An additional geometric structure (like Christoffel symbols) on a manifold that specifies how to transport vectors along curves.">
+           connection
+          </abbr>
+         </strong>
+         (e.g., the Christoffel symbols), we gain a notion of
+         <em>
+          parallel transport
+         </em>
+         of vectors from
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         to
+         <span class="arithmatex">
+          \(q\)
+         </span>
+         along a curve. However, if the spacetime curvature is nonzero, the identification of
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         with
+         <span class="arithmatex">
+          \(V_q\)
+         </span>
+         will strictly depend on the path chosen.
+        </p>
+       </blockquote>
+       <p>
+        A
+        <strong>
+         tangent field
+        </strong>
+        (or vector field)
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        on a manifold
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        is an assignment of a tangent vector
+        <span class="arithmatex">
+         \(v|_p \in V_p\)
+        </span>
+        at each point
+        <span class="arithmatex">
+         \(p \in \mathcal{M}\)
+        </span>
+        . Even though we do not have a notion of whether
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(V_q\)
+        </span>
+        are the same, we have a natural notion of
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        being smooth. If
+        <span class="arithmatex">
+         \(f\)
+        </span>
+        is a
+        <span class="arithmatex">
+         \(\mathcal{C}^\infty\)
+        </span>
+        function, then at each
+        <span class="arithmatex">
+         \(p \in \mathcal{M}\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(v|_p(f)\)
+        </span>
+        is a number, making
+        <span class="arithmatex">
+         \(v(f)\)
+        </span>
+        a scalar function on
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        . The vector field
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        is
+        <strong>
+         smooth
+        </strong>
+        if for each smooth function
+        <span class="arithmatex">
+         \(f\)
+        </span>
+        , the resulting function
+        <span class="arithmatex">
+         \(v(f)\)
+        </span>
+        is also smooth. In other words, a vector field
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        is smooth if and only if its coordinate basis components
+        <span class="arithmatex">
+         \(v^\mu\)
+        </span>
+        are smooth functions of the coordinates.
+       </p>
+       <p>
+        We discussed that the vector space structure can be recovered in the limit of infinitesimal displacements about a point. We now show a precise meaning of this idea.
+       </p>
+       <h2 id="4-vector-fields-orbits-and-commutators">
+        4. Vector Fields, Orbits, and Commutators
+       </h2>
+       <blockquote>
+        <p class="def">
+         <strong>
+          Definition 2.2.2 (One-Parameter Group of Diffeomorphisms).
+         </strong>
+         A
+         <strong>
+          one-parameter group of diffeomorphisms
+         </strong>
+         <span class="arithmatex">
+          \(\phi_t\)
+         </span>
+         is a
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         map from
+         <span class="arithmatex">
+          \(\mathbb{R} \times \mathcal{M} \to \mathcal{M}\)
+         </span>
+         such that for a fixed
+         <span class="arithmatex">
+          \(t \in \mathbb{R}\)
+         </span>
+         ,
+         <span class="arithmatex">
+          \(\phi_t : \mathcal{M} \to \mathcal{M}\)
+         </span>
+         is a diffeomorphism, and for all
+         <span class="arithmatex">
+          \(t,s \in \mathbb{R}\)
+         </span>
+         , we have the composition property
+         <span class="arithmatex">
+          \(\phi_t \circ \phi_s = \phi_{t+s}\)
+         </span>
+         .
+        </p>
+       </blockquote>
+       <p>
+        For a fixed
+        <span class="arithmatex">
+         \(p \in \mathcal{M}\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(\phi_t(p) : \mathbb{R} \to \mathcal{M}\)
+        </span>
+        is a curve, called an
+        <strong>
+         orbit
+        </strong>
+        of
+        <span class="arithmatex">
+         \(\phi_t\)
+        </span>
+        , which passes through
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        at
+        <span class="arithmatex">
+         \(t=0\)
+        </span>
+        . We can define
+        <span class="arithmatex">
+         \(v|_p\)
+        </span>
+        to be the tangent to this curve at
+        <span class="arithmatex">
+         \(t=0\)
+        </span>
+        . Associated to a one-parameter group of transformations of
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        is a vector field
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        , which can conceptually be thought of as the infinitesimal generator of these global transformations.
+       </p>
+       <p>
+        Conversely, given a smooth vector field
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        on
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        , we can ask if it is possible to find
+        <strong>
+         <abbr title='Curves that follow the "flow" of a vector field, meaning their tangent vector at every point matches the vector field.'>
+          integral curves
+         </abbr>
+        </strong>
+        of
+        <span class="arithmatex">
+         \(v\)
+        </span>
+        . An integral curve is a curve in
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        having the property that one and only one curve passes through each point
+        <span class="arithmatex">
+         \(p \in \mathcal{M}\)
+        </span>
+        , and the tangent to this curve at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        is exactly
+        <span class="arithmatex">
+         \(v|_p\)
+        </span>
+        .
+       </p>
+       <p>
+        Yes, we can. If we pick a coordinate system in a neighborhood of
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        as in the previous proof, we see that the problem of finding such curves reduces to solving the following system of ordinary differential equations in
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        .
+       </p>
+       <div class="arithmatex">
+        \[
+    \frac{d x^\mu}{dt} = v^\mu (x^1, \dots, x^n)
+\]
+       </div>
+       <p>
+        By standard mathematical theorems, this system of equations has a unique solution for smooth
+        <span class="arithmatex">
+         \(v^\mu\)
+        </span>
+        , and thus every smooth vector field yields a unique non-intersecting family of
+        <abbr title='Curves that follow the "flow" of a vector field, meaning their tangent vector at every point matches the vector field.'>
+         integral curves
+        </abbr>
+        (representing the "flow" of the vector field).
+       </p>
+       <p>
+        Since vector fields are essentially differential operators, they do not generally commute when applied to functions.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 2.2.3 (
+          <abbr title="An operator measuring the extent to which two vector fields fail to commute under composition; crucial for defining Lie derivatives and curvature.">
+           Commutator
+          </abbr>
+          / Lie Bracket).
+         </strong>
+         Given two vector fields
+         <span class="arithmatex">
+          \(v\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(w\)
+         </span>
+         , we can define a new vector field
+         <span class="arithmatex">
+          \([v,w]\)
+         </span>
+         .
+        </p>
+        <div class="arithmatex">
+         \[[v,w](f) = v[w(f)] - w[v(f)]\]
+        </div>
+       </blockquote>
+       <p class="def">
+        This is called the
+        <strong>
+         commutator
+        </strong>
+        (or Lie bracket), by its action on a function
+        <span class="arithmatex">
+         \(f\)
+        </span>
+        .
+       </p>
+       <p>
+        Note that the commutator of any two coordinate basis vector fields
+        <span class="arithmatex">
+         \(X_\mu = \partial/\partial x^\mu\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(X_\nu = \partial/\partial x^\nu\)
+        </span>
+        identically vanishes due to the symmetry of second partial derivatives. Conversely, given a collection
+        <span class="arithmatex">
+         \(X_1, \dots, X_n\)
+        </span>
+        of non-vanishing vector fields which commute with each other (
+        <span class="arithmatex">
+         \([X_i, X_j] = 0\)
+        </span>
+        ) and are linearly independent at each point, one can always find a local chart for which they are precisely the coordinate basis vector fields.
+       </p>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
     </div>
+   </footer>
   </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-      
-    
-  </body>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
 </html>

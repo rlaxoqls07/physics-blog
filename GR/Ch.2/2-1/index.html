@@ -1,966 +1,868 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-        <link rel="prev" href="../../Ch.1/1-1/">
-      
-      
-        <link rel="next" href="../2-2/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>Manifolds - My Math & Physics Blog</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi">
-    
-      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
-    
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#1-why-manifolds" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="My Math &amp; Physics Blog" class="md-header__button md-logo" aria-label="My Math & Physics Blog" data-md-component="logo">
-      
-  <img src="../../../assets/logo.svg" alt="logo">
-
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../../Ch.1/1-1/" rel="prev"/>
+  <link href="../2-2/" rel="next"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Manifolds - My Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#21-manifolds">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="My Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="My Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            My Math & Physics Blog
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Manifolds
-            
-          </span>
-        </div>
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        My Math &amp; Physics Blog
+       </span>
       </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Manifolds
+       </span>
+      </div>
+     </div>
     </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
     </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
         <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
         </div>
+       </div>
       </div>
+     </div>
     </div>
-  </div>
-</div>
-      
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="My Math &amp; Physics Blog" class="md-nav__button md-logo" aria-label="My Math & Physics Blog" data-md-component="logo">
-      
-  <img src="../../../assets/logo.svg" alt="logo">
-
-    </a>
-    My Math & Physics Blog
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    General Relativity
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    General Relativity
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1. Introduction
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    1. Introduction
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Ch.1/1-1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction to GR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="My Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="My Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          My Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#1-why-manifolds">
+                     <span class="md-ellipsis">
+                      1. Why Manifolds?
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#2-smooth-manifolds">
+                     <span class="md-ellipsis">
+                      2. Smooth Manifolds
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#3-product-manifolds">
+                     <span class="md-ellipsis">
+                      3. Product Manifolds
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#4-diffeomorphisms">
+                     <span class="md-ellipsis">
+                      4. Diffeomorphisms
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Quantum Mechanics
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Quantum Mechanics
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. The Wave Function
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. The Wave Function
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../QM/Ch.1/wave-function/">
+                  <span class="md-ellipsis">
+                   Schrodinger Equation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
         </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2. Manifolds and Tensor Fields
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    2. Manifolds and Tensor Fields
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Manifolds
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Manifolds
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-why-manifolds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#1-why-manifolds">
+            <span class="md-ellipsis">
+             1. Why Manifolds?
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#2-smooth-manifolds">
+            <span class="md-ellipsis">
+             2. Smooth Manifolds
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#3-product-manifolds">
+            <span class="md-ellipsis">
+             3. Product Manifolds
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#4-diffeomorphisms">
+            <span class="md-ellipsis">
+             4. Diffeomorphisms
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:differential-geometry">
+         Differential Geometry
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:general-relativity">
+         General Relativity
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:manifolds">
+         Manifolds
+        </a>
+       </nav>
+       <h1 id="21-manifolds">
+        2.1 Manifolds
+       </h1>
+       <h2 id="1-why-manifolds">
         1. Why Manifolds?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-manifolds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Manifolds
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-product-manifold" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Product Manifold
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-diffeomorphisms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Diffeomorphisms
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2-2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vectors
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2-3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tensors; the Metric Tensor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2-4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Abstract Index Notation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quantum Mechanics
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Quantum Mechanics
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1. The Wave Function
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    1. The Wave Function
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../QM/Ch.1/wave-function/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Schrodinger Equation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-why-manifolds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Why Manifolds?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-manifolds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Manifolds
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-product-manifold" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Product Manifold
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-diffeomorphisms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Diffeomorphisms
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-  <h1>Manifolds</h1>
-
-<h2 id="1-why-manifolds">1. Why Manifolds?</h2>
-<p>Our experience tells us that spacetime is a four-dimensional continuum in the sense that it requires four numbers to characterize an event. All events in spacetime is assumed that it can be put into one-to-one continuous correspondence with the points of <span class="arithmatex">\(\mathbb{R}^4\)</span>. </p>
-<p>However, in general relativity, we will be solving for the spacetime geometry and we do not wish to prejudice in advance any aspects of global nature of spacetime structure.</p>
-<p>Before defining the notion of a manifold, we recall the definition of an open ball.</p>
-<p>An <strong>open ball</strong> in <span class="arithmatex">\(\mathbb{R}^n\)</span> of radius <span class="arithmatex">\(r\)</span> centered around point <span class="arithmatex">\(y = (y^1 , \cdots, y^n)\)</span> consists of the points <span class="arithmatex">\(x\)</span> such that <span class="arithmatex">\(|x-y| &lt; r\)</span>, where 
-$$
-    |x-y| = \left [ \sum_{\mu=1}^n (x^\mu - y^\mu )^2 \right ].
-$$
-An <strong>open set</strong> in <span class="arithmatex">\(\mathbb{R}^n\)</span> is any set which can be expressed as a union of open balls. </p>
-<h2 id="2-manifolds">2. Manifolds</h2>
-<p>A <strong>manifold</strong> is a set made up of pieces that look like open subsets of <span class="arithmatex">\(\mathbb{R}^n\)</span> such that these pieces can be sewn together smoothly. More precisely, an <span class="arithmatex">\(n\)</span>-dimensional, <span class="arithmatex">\(\mathcal{C}^\infty\)</span>, real manifold <span class="arithmatex">\(M\)</span> is a set together with a collection of subsets <span class="arithmatex">\(\{O_\alpha\}\)</span> satisfying the following properties.
-1. Each <span class="arithmatex">\(p\in M\)</span> lies in at least one <span class="arithmatex">\(O_\alpha\)</span>, i.e., the collection <span class="arithmatex">\(\{O_\alpha\}\)</span> covers <span class="arithmatex">\(M\)</span>.
-2. For each <span class="arithmatex">\(\alpha\)</span>, there is a one-to-one, onto, map <span class="arithmatex">\(\psi_\alpha : O_\alpha \to U_\alpha\)</span>, where <span class="arithmatex">\(U_\alpha\)</span> is an open subset of <span class="arithmatex">\(\mathbb{R}^n\)</span>.
-3. If any two sets <span class="arithmatex">\(O_\alpha\)</span> and <span class="arithmatex">\(O_\beta\)</span> overlap, <span class="arithmatex">\(O_\alpha \cap O_\beta \ne \emptyset\)</span>, we can consider the map <span class="arithmatex">\(\psi_\beta \circ \psi_\alpha ^{-1}\)</span> which takes points in <span class="arithmatex">\(\psi (O_\alpha \cap O_\beta)\)</span> to points in <span class="arithmatex">\(\psi_\beta (O_\alpha \cap O_\beta)\)</span>. We require these subsets of <span class="arithmatex">\(\mathbb{R}^n\)</span> to be open and this map to be <span class="arithmatex">\(\mathcal{C}^\infty\)</span>. </p>
-<p>Each map <span class="arithmatex">\(\psi_\alpha\)</span> is called a <strong>chart</strong> by mathematicians or <strong>coordinate system</strong> by physicists. For convenience, we require that the cover <span class="arithmatex">\(\{O_\alpha \}\)</span> and chart family <span class="arithmatex">\(\{\psi_\alpha\}\)</span> to be maximal.</p>
-<p>Here, we consider manifolds which are <strong>Hausdorff</strong> and <strong>paracompact</strong>. </p>
-<h2 id="3-product-manifold">3. Product Manifold</h2>
-<p>Given two manifolds <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(M'\)</span> of dimension <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(n'\)</span> respectively, we can make the product space <span class="arithmatex">\(M \times M'\)</span> into an <span class="arithmatex">\((n+n')\)</span>-dimensional manifold as follows. If <span class="arithmatex">\(\psi_\alpha : O_\alpha \to U_\alpha\)</span> and <span class="arithmatex">\(\psi_\beta ' : O_\beta ' \to U_\beta '\)</span> are charts, we define <span class="arithmatex">\(U_{\alpha \beta} : O_{\alpha \beta} \to U_{\alpha \beta} \subset \mathbb{R}^{n+n'}\)</span> on <span class="arithmatex">\(M \times M'\)</span> by taking <span class="arithmatex">\(O_{\alpha \beta} = O_\alpha \times O_\beta '\)</span> and <span class="arithmatex">\(U_{\alpha \beta} = U_\alpha \times U_\beta '\)</span> and setting <span class="arithmatex">\(\psi_{\alpha \beta} (p,p') = \left [ \psi_\alpha (p) , \psi_\beta ' (p') \right ]\)</span>.</p>
-<h2 id="4-diffeomorphisms">4. Diffeomorphisms</h2>
-<p>We may now define the notion of differentiability and smoothness of maps between manifolds.</p>
-<p>Let <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(M'\)</span> be manifolds and let <span class="arithmatex">\(\{\psi_\alpha\}\)</span> and <span class="arithmatex">\(\{\psi'_\beta\}\)</span> denote the chart maps. A map <span class="arithmatex">\(f:M \to M'\)</span> is said to be <span class="arithmatex">\(\mathcal{C}^\infty\)</span> if for each <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span>, the map <span class="arithmatex">\(\psi'_\beta \circ f \circ \psi_\alpha^{-1}\)</span> taking <span class="arithmatex">\(U_\alpha \subset \mathbb{R}^n\)</span> into <span class="arithmatex">\(U'_\beta \subset \mathbb{R}^{n'}\)</span> is <span class="arithmatex">\(\mathcal{C}^\infty\)</span> in the sense used in advanced calculus.</p>
-<p>If <span class="arithmatex">\(f:M \to M'\)</span> is <span class="arithmatex">\(\mathcal{C}^\infty\)</span>, one-to-one, onto, and has <span class="arithmatex">\(\mathcal{C}^\infty\)</span> inverse, <span class="arithmatex">\(f\)</span> is called a <strong>diffeomorphism</strong> and <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(M'\)</span> are said to be <strong>diffeomorphic</strong>. Diffeomorphic manifolds have identical manifold structure.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+       </h2>
+       <p>
+        Our experience tells us that spacetime is a four-dimensional continuum in the sense that it requires four numbers to characterize an event. Historically, it is assumed that all events in spacetime can be put into a one-to-one continuous correspondence with the points of
+        <span class="arithmatex">
+         \(\mathbb{R}^4\)
+        </span>
+        .
+       </p>
+       <p>
+        However, in General Relativity, spacetime geometry is not a fixed background; we will be actively solving for the spacetime geometry dynamically. Therefore, we do not wish to prejudice in advance any aspects of the global topological nature of spacetime structure by restricting it to
+        <span class="arithmatex">
+         \(\mathbb{R}^4\)
+        </span>
+        .
+       </p>
+       <p>
+        Before defining the rigorous notion of a manifold, we must recall the foundational definition of an open ball in standard topology.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 2.1.1 (Open Ball &amp; Open Set).
+         </strong>
+         An
+         <strong>
+          open ball
+         </strong>
+         in
+         <span class="arithmatex">
+          \(\mathbb{R}^n\)
+         </span>
+         of radius
+         <span class="arithmatex">
+          \(r\)
+         </span>
+         centered around point
+         <span class="arithmatex">
+          \(y = (y^1, \dots, y^n)\)
+         </span>
+         consists of the points
+         <span class="arithmatex">
+          \(x\)
+         </span>
+         such that the Euclidean distance is strictly less than
+         <span class="arithmatex">
+          \(r\)
+         </span>
+         , where:
+        </p>
+        <div class="arithmatex">
+         \[
+    |x-y| = \left[ \sum_{\mu=1}^n (x^\mu - y^\mu )^2 \right]^{1/2}
+  \]
         </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
+        <p class="def">
+         An
+         <strong>
+          open set
+         </strong>
+         in
+         <span class="arithmatex">
+          \(\mathbb{R}^n\)
+         </span>
+         is defined as any set which can be expressed as a union of open balls.
+        </p>
+       </blockquote>
+       <h2 id="2-smooth-manifolds">
+        2. Smooth Manifolds
+       </h2>
+       <p>
+        A
+        <strong>
+         manifold
+        </strong>
+        is conceptually a set made up of pieces that look locally like open subsets of
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        , such that these pieces can be sewn together smoothly to form a complex global geometry.
+       </p>
+       <blockquote>
+        <p class="def">
+         <strong>
+          Definition 2.1.2 (Smooth Manifold).
+         </strong>
+         More precisely, an
+         <span class="arithmatex">
+          \(n\)
+         </span>
+         -dimensional,
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         real manifold
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         is a set together with a collection of subsets
+         <span class="arithmatex">
+          \(\{O_\alpha\}\)
+         </span>
+         satisfying the following three properties:
+1. Each point
+         <span class="arithmatex">
+          \(p \in \mathcal{M}\)
+         </span>
+         lies in at least one
+         <span class="arithmatex">
+          \(O_\alpha\)
+         </span>
+         ; i.e., the collection
+         <span class="arithmatex">
+          \(\{O_\alpha\}\)
+         </span>
+         covers
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         .
+2. For each
+         <span class="arithmatex">
+          \(\alpha\)
+         </span>
+         , there is a one-to-one, onto map
+         <span class="arithmatex">
+          \(\psi_\alpha : O_\alpha \to U_\alpha\)
+         </span>
+         , where
+         <span class="arithmatex">
+          \(U_\alpha\)
+         </span>
+         is an open subset of
+         <span class="arithmatex">
+          \(\mathbb{R}^n\)
+         </span>
+         .
+3. If any two sets
+         <span class="arithmatex">
+          \(O_\alpha\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(O_\beta\)
+         </span>
+         overlap (
+         <span class="arithmatex">
+          \(O_\alpha \cap O_\beta \ne \emptyset\)
+         </span>
+         ), we can consider the transition map
+         <span class="arithmatex">
+          \(\psi_\beta \circ \psi_\alpha^{-1}\)
+         </span>
+         which takes points in
+         <span class="arithmatex">
+          \(\psi_\alpha(O_\alpha \cap O_\beta)\)
+         </span>
+         to points in
+         <span class="arithmatex">
+          \(\psi_\beta(O_\alpha \cap O_\beta)\)
+         </span>
+         . We require these subsets of
+         <span class="arithmatex">
+          \(\mathbb{R}^n\)
+         </span>
+         to be open and this transition map to be smooth (
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         ).
+        </p>
+       </blockquote>
+       <p>
+        <img alt="Transition maps between charts" src="../../GR_Figures/02._Manifolds_and_Tensor_Fields/2.1_1.svg"/>
+       </p>
+       <p>
+        Each map
+        <span class="arithmatex">
+         \(\psi_\alpha\)
+        </span>
+        is called a
+        <strong>
+         <abbr title="A map that assigns local $\mathbb{R}^n$ coordinates to a patch of a curved manifold.">
+          chart
+         </abbr>
+        </strong>
+        by mathematicians or a
+        <strong>
+         coordinate system
+        </strong>
+        by physicists. For mathematical convenience, we require that the cover
+        <span class="arithmatex">
+         \(\{O_\alpha \}\)
+        </span>
+        and
+        <abbr title="A map that assigns local $\mathbb{R}^n$ coordinates to a patch of a curved manifold.">
+         chart
+        </abbr>
+        family
+        <span class="arithmatex">
+         \(\{\psi_\alpha\}\)
+        </span>
+        be maximal (containing all possible compatible charts).
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Remark (Physical Topological Requirements).
+         </strong>
+         In physically realistic models of relativity, we consider manifolds which are additionally
+         <strong>
+          <abbr title='A topological space where any two distinct points have disjoint open neighborhoods. (No "branching" spacetimes).'>
+           Hausdorff
+          </abbr>
+         </strong>
+         and
+         <strong>
+          <abbr title="A topological property ensuring every open cover has a locally finite open refinement. Crucial for defining integrals over the manifold.">
+           paracompact
+          </abbr>
+         </strong>
+         .
+        </p>
+        <ul>
+         <li>
+          <em>
+           <abbr title='A topological space where any two distinct points have disjoint open neighborhoods. (No "branching" spacetimes).'>
+            Hausdorff
+           </abbr>
+          </em>
+          prevents pathological "branching" spacetimes where a single particle trajectory bifurcates uncontrollably.
+         </li>
+         <li class="remark">
+          <em>
+           Paracompactness
+          </em>
+          guarantees the existence of a partition of unity, which is strictly necessary to define integration over the curved manifold.
+         </li>
+        </ul>
+       </blockquote>
+       <h2 id="3-product-manifolds">
+        3. Product Manifolds
+       </h2>
+       <p>
+        We can construct higher-dimensional spaces by combining two manifolds.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 2.1.3 (Product Manifold).
+         </strong>
+         Given two manifolds
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\mathcal{M}'\)
+         </span>
+         of dimension
+         <span class="arithmatex">
+          \(n\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(n'\)
+         </span>
+         respectively, we can make the product space
+         <span class="arithmatex">
+          \(\mathcal{M} \times \mathcal{M}'\)
+         </span>
+         into an
+         <span class="arithmatex">
+          \((n+n')\)
+         </span>
+         -dimensional manifold.
+        </p>
+        <p>
+         If
+         <span class="arithmatex">
+          \(\psi_\alpha : O_\alpha \to U_\alpha\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\psi_\beta' : O_\beta' \to U_\beta'\)
+         </span>
+         are charts, we define a new
+         <abbr title="A map that assigns local $\mathbb{R}^n$ coordinates to a patch of a curved manifold.">
+          chart
+         </abbr>
+         <span class="arithmatex">
+          \(U_{\alpha \beta} : O_{\alpha \beta} \to U_{\alpha \beta} \subset \mathbb{R}^{n+n'}\)
+         </span>
+         on
+         <span class="arithmatex">
+          \(\mathcal{M} \times \mathcal{M}'\)
+         </span>
+         by taking
+         <span class="arithmatex">
+          \(O_{\alpha \beta} = O_\alpha \times O_\beta'\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(U_{\alpha \beta} = U_\alpha \times U_\beta'\)
+         </span>
+         . Also we can set
+        </p>
+        <div class="arithmatex">
+         \[
+    \psi_{\alpha \beta} (p,p') = \left( \psi_\alpha(p) , \psi_\beta'(p') \right)
+\]
+        </div>
+        <p class="def">
+         for the new product manifold
+         <span class="arithmatex">
+          \(\mathcal{M} \times \mathcal{M}'\)
+         </span>
+         .
+        </p>
+       </blockquote>
+       <h2 id="4-diffeomorphisms">
+        4. Diffeomorphisms
+       </h2>
+       <p>
+        We may now formally define the notion of differentiability and smoothness of maps between arbitrary manifolds, bypassing the need for any embedding space.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 2.1.4 (Smooth Map &amp; Diffeomorphism).
+         </strong>
+         Let
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\mathcal{M}'\)
+         </span>
+         be manifolds and let
+         <span class="arithmatex">
+          \(\{\psi_\alpha\}\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\{\psi_\beta'\}\)
+         </span>
+         denote their respective
+         <abbr title="A map that assigns local $\mathbb{R}^n$ coordinates to a patch of a curved manifold.">
+          chart
+         </abbr>
+         maps. A map
+         <span class="arithmatex">
+          \(f:\mathcal{M} \to \mathcal{M}'\)
+         </span>
+         is said to be
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         if for each
+         <span class="arithmatex">
+          \(\alpha\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\beta\)
+         </span>
+         , the composed map
+         <span class="arithmatex">
+          \(\psi_\beta' \circ f \circ \psi_\alpha^{-1}\)
+         </span>
+         taking
+         <span class="arithmatex">
+          \(U_\alpha \subset \mathbb{R}^n\)
+         </span>
+         into
+         <span class="arithmatex">
+          \(U_\beta' \subset \mathbb{R}^{n'}\)
+         </span>
+         is
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         in the standard sense used in advanced calculus.
+        </p>
+        <p class="def">
+         If
+         <span class="arithmatex">
+          \(f:\mathcal{M} \to \mathcal{M}'\)
+         </span>
+         is
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         , one-to-one, onto (bijective), and has a
+         <span class="arithmatex">
+          \(\mathcal{C}^\infty\)
+         </span>
+         inverse,
+         <span class="arithmatex">
+          \(f\)
+         </span>
+         is called a
+         <strong>
+          diffeomorphism
+         </strong>
+         and
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\mathcal{M}'\)
+         </span>
+         are said to be
+         <strong>
+          diffeomorphic
+         </strong>
+         .
+        </p>
+       </blockquote>
+       <p>
+        Diffeomorphic manifolds have mathematically identical manifold structures; in the context of relativity, they represent the exact same physical spacetime.
+       </p>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
     </div>
+   </footer>
   </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-        <script src="../../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-      
-    
-  </body>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
 </html>

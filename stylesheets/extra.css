@@ -1,31 +1,181 @@
-/* 1. 정의 (Definition) */
-.def {
-    border-left: 3px solid #888;
-    background-color: transparent;
-    padding: 10px 15px;
-    margin: 1.2em 0;
-    color: var(--md-typeset-color); /* 현재 테마의 기본 글자색을 자동으로 따라감 */
+/* =========================================
+   Markdown Blockquote 기반 수학 환경 커스텀 
+   ========================================= */
+
+/* 1. 공통 속성: 글씨 진하게, 앞뒤 여백 살짝 */
+.md-typeset blockquote.def,
+.md-typeset blockquote.thm,
+.md-typeset blockquote.lem,
+.md-typeset blockquote.prop,
+.md-typeset blockquote.cor,
+.md-typeset blockquote.eg,
+.md-typeset blockquote.remark,
+.md-typeset blockquote.proof {
+    padding-left: 15px;
+    margin: 0.8em 0 !important; 
+    
+    /* 👇 여기를 수정했습니다! (가장 진하고 선명한 테마 기본 텍스트 색상) */
+    color: var(--md-default-fg-color) !important; 
+    
+    opacity: 1 !important;
+    background-color: transparent !important;
 }
 
-/* 2. 정리 (Theorem) */
-.thm {
-    border-left: 3px solid #bbb;
-    background-color: transparent;
-    padding: 10px 15px;
-    margin: 1.2em 0;
+/* 2. 주요 정리 계열 (이탤릭체 + 밝은 회색 선) */
+.md-typeset blockquote.thm,  /* Theorem (정리) */
+.md-typeset blockquote.lem,  /* Lemma (보조정리) */
+.md-typeset blockquote.prop, /* Proposition (명제) */
+.md-typeset blockquote.cor {   /* Corollary (따름정리) */
+    border-left: 3px solid #bbb !important;
     font-style: italic;
-    color: var(--md-typeset-color);
 }
 
-/* 3. 증명 (Proof) */
-.proof {
-    padding: 2px 15px;
-    margin: 0.2em 0 1.5em 0;
-    border: none;
-    color: var(--md-typeset-color);
-    opacity: 0.8; /* 글자색을 따라가되, 본문보다 살짝 투명하게(흐리게) 처리 */
+/* 3. 정의 계열 (정자체 + 중간 회색 선) */
+.md-typeset blockquote.def { /* Definition (정의) */
+    border-left: 3px solid #888 !important;
+    font-style: normal;
 }
 
-/* 내부 문단 여백 정리 */
-.def p:last-child, .thm p:last-child, .proof p:last-child { margin-bottom: 0; }
-.def p:first-child, .thm p:first-child, .proof p:first-child { margin-top: 0; }
+/* 4. 부가 설명 계열 (정자체 + 어두운 회색 선) */
+.md-typeset blockquote.eg,     /* Example (예제) */
+.md-typeset blockquote.remark {  /* Remark (참고) */
+    border-left: 3px solid #555 !important;
+    font-style: normal;
+}
+
+/* 5. 증명 (선 없음, 윗 박스와 살짝 더 밀착) */
+.md-typeset blockquote.proof {
+    border-left: none !important;
+    padding-left: 0 !important;
+    font-style: normal;
+    margin-top: 0.4em !important; /* 증명은 다른 환경보다 위쪽으로 조금 더 붙게 설정 */
+}
+
+/* 박스 안의 첫/마지막 문단 내부 여백 제거 */
+.md-typeset blockquote.def p:last-child, .md-typeset blockquote.thm p:last-child, 
+.md-typeset blockquote.lem p:last-child, .md-typeset blockquote.prop p:last-child, 
+.md-typeset blockquote.cor p:last-child, .md-typeset blockquote.eg p:last-child, 
+.md-typeset blockquote.remark p:last-child, .md-typeset blockquote.proof p:last-child {
+    margin-bottom: 0;
+}
+.md-typeset blockquote.def p:first-child, .md-typeset blockquote.thm p:first-child, 
+.md-typeset blockquote.lem p:first-child, .md-typeset blockquote.prop p:first-child, 
+.md-typeset blockquote.cor p:first-child, .md-typeset blockquote.eg p:first-child, 
+.md-typeset blockquote.remark p:first-child, .md-typeset blockquote.proof p:first-child {
+    margin-top: 0;
+}
+
+/* =========================================
+   각주 (Footnotes) 미니멀 스타일링
+   ========================================= */
+
+/* 각주 전체 영역 */
+.md-typeset .footnote {
+    font-size: 0.75em;                /* 본문보다 작고 차분한 글씨 크기 */
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* 아주 얇고 희미한 구분선 */
+    padding-top: 1.5em;
+    margin-top: 3em;
+    color: var(--md-default-fg-color--light) !important; /* 본문보다 한 톤 차분한 색상 */
+}
+
+/* 각주 번호와 링크 스타일 */
+.md-typeset .footnote-ref {
+    font-size: 0.75em;
+    vertical-align: super;            /* 위첨자 정렬 */
+    margin-left: 2px;
+    text-decoration: none;
+}
+
+/* 되돌아가기 화살표(↩) 스타일 */
+.md-typeset .footnote-backref {
+    font-family: sans-serif;
+    margin-left: 5px;
+    text-decoration: none;
+    opacity: 0.5;
+}
+.md-typeset .footnote-backref:hover {
+    opacity: 1;
+}
+
+
+/* =========================================
+   태그 (Tags) 미니멀 스타일링
+   ========================================= */
+
+/* 태그 전체를 감싸는 영역 여백 조절 */
+.md-tags {
+    margin-bottom: 1.5em !important;
+}
+
+/* 태그 개별 칩 스타일 */
+.md-tag {
+    background-color: rgba(255, 255, 255, 0.04) !important; /* 어두운 배경과 어우러지는 미세한 배경색 */
+    color: var(--md-default-fg-color) !important;          /* 본문 텍스트와 동일한 선명한 색상 */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;  /* 얇은 회색 테두리 선 */
+    border-radius: 2px !important;                          /* 둥근 모양 대신 세련되게 각진 모서리 */
+    font-size: 0.68em !important;                            /* 컴팩트한 크기 */
+    font-weight: 500 !important;
+    padding: 2px 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+/* 라이트 모드일 때 테두리 색상 최적화 */
+[data-md-color-scheme="default"] .md-tag {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 마우스를 올렸을 때 반전 효과 (adscft 스타일) */
+.md-tag:hover {
+    background-color: var(--md-default-fg-color) !important; /* 글자색과 배경색을 스왑 */
+    color: var(--md-default-bg-color) !important;
+    border-color: var(--md-default-fg-color) !important;
+    cursor: pointer;
+}
+
+/* =========================================
+   학술용 미니멀 툴팁 (Tooltip) 스타일
+   ========================================= */
+
+/* 링크에 마우스를 올렸을 때 나타나는 툴팁 박스 */
+[data-tooltip] {
+    position: relative;
+    cursor: help; /* 마우스를 올리면 물음표 커서로 변경 */
+    border-bottom: 1px dashed var(--md-default-fg-color--light); /* 링크 아래에 얇은 점선 */
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* 속성에 적은 텍스트를 그대로 가져옴 */
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* 미니멀 디자인 뼈대 */
+    width: 280px;
+    padding: 10px 14px;
+    font-size: 0.75em;
+    font-style: normal;
+    line-height: 1.5;
+    font-weight: normal;
+    text-align: left;
+    
+    /* 테마 대응 색상 및 얇은 테두리 */
+    background-color: var(--md-default-bg-color) !important;
+    color: var(--md-default-fg-color) !important;
+    border: 1px solid var(--md-default-fg-color--light) !important;
+    border-radius: 3px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    
+    /* 애니메이션 효과 */
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* 다크 모드(slate 테마)일 때 SVG 이미지 색상 반전 */
+[data-md-color-scheme="slate"] img[src$=".svg"] {
+  filter: invert(1) hue-rotate(180deg);
+}
