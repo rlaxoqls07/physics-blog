@@ -501,10 +501,12 @@
          \(v^{1*}, \dots, v^{n*} \in V^*\)
         </span>
         by their selective action on the basis vectors.
-$$
-    v^{\mu*} (v_{\nu}) = \delta^\mu_\nu
-$$
        </p>
+       <div class="arithmatex">
+        \[
+    v^{\mu*} (v_{\nu}) = \delta^\mu_\nu
+\]
+       </div>
        <p>
         Then, it naturally follows that
         <span class="arithmatex">
@@ -670,13 +672,12 @@ $$
          <span class="arithmatex">
           \(V\)
          </span>
-         is a multilinear map.
         </p>
         <div class="arithmatex">
          \[T : \underbrace{V^* \times \dots \times V^*}_{k \text{ times}} \times \underbrace{V \times \dots \times V}_{l \text{ times}} \to \mathbb{R}\]
         </div>
-        <p>
-         {: .def}
+        <p class="def">
+         is a multilinear map.
         </p>
        </blockquote>
        <p>
@@ -884,13 +885,13 @@ $$
          <span class="arithmatex">
           \(T \otimes T'\)
          </span>
-         on these inputs to be the scalar product
+         on these inputs as
         </p>
         <div class="arithmatex">
          \[(T \otimes T') = T(v^{1*}, \dots, v^{k*} ; w_1, \dots, w_l) \cdot T'(v^{(k+1)*}, \dots, v^{(k+k')*} ; w_{l+1}, \dots, w_{l+l'})\]
         </div>
-        <p>
-         {: .def}
+        <p class="def">
+         to be the scalar product.
         </p>
        </blockquote>
        <p>
@@ -991,40 +992,46 @@ $$
         .
        </p>
        <p>
-        In this specific case:
-* The dual space
-        <span class="arithmatex">
-         \(V_p^*\)
-        </span>
-        is usually called the
-        <strong>
-         <abbr title="The dual vector space to the tangent space at a given point on a manifold, consisting of all possible 1-forms.">
-          cotangent space
-         </abbr>
-        </strong>
-        at
-        <span class="arithmatex">
-         \(p\)
-        </span>
-        , and vectors in
-        <span class="arithmatex">
-         \(V_p^*\)
-        </span>
-        are called
-        <strong>
-         cotangent vectors
-        </strong>
-        (or covariant vectors).
-* We also usually refer to standard vectors in
-        <span class="arithmatex">
-         \(V_p\)
-        </span>
-        historically as
-        <strong>
-         contravariant vectors
-        </strong>
-        .
+        In this specific case,
        </p>
+       <ul>
+        <li>
+         The dual space
+         <span class="arithmatex">
+          \(V_p^*\)
+         </span>
+         is usually called the
+         <strong>
+          <abbr title="The dual vector space to the tangent space at a given point on a manifold, consisting of all possible 1-forms.">
+           cotangent space
+          </abbr>
+         </strong>
+         at
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         , and vectors in
+         <span class="arithmatex">
+          \(V_p^*\)
+         </span>
+         are called
+         <strong>
+          cotangent vectors
+         </strong>
+         (or covariant vectors).
+        </li>
+        <li>
+         We also usually refer to standard vectors in
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         historically as
+         <strong>
+          contravariant vectors
+         </strong>
+         .
+        </li>
+       </ul>
        <p>
         We can construct a local coordinate basis
         <span class="arithmatex">
@@ -1054,10 +1061,12 @@ $$
          \(x \to x'\)
         </span>
         , vector components transform as
-$$
-    v'^{\mu'} = \sum_{\mu=1}^n v^\mu \frac{\partial x'^{\mu'}}{\partial x^\mu}.
-$$
        </p>
+       <div class="arithmatex">
+        \[
+    v'^{\mu'} = \sum_{\mu=1}^n v^\mu \frac{\partial x'^{\mu'}}{\partial x^\mu}.
+\]
+       </div>
        <p>
         If
         <span class="arithmatex">
@@ -1092,13 +1101,12 @@ $$
          Jacobian
         </abbr>
         matrix factor for each index.
-$$
        </p>
-       <pre><code>T^{\prime \mu_1^\prime \dots \mu_k^\prime}{}_{\nu_1^\prime \dots \nu_l^\prime} = \sum_{\mu, \nu = 1}^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots \nu_l} \left( \frac{\partial x^{\prime \mu_1^\prime}}{\partial x^{\mu_1}} \dots \right) \left( \dots \frac{\partial x^{\nu_l}}{\partial x^{\prime \nu_l^\prime}} \right)
-</code></pre>
-       <p>
-        $$
-       </p>
+       <div class="arithmatex">
+        \[
+    T^{\prime \mu_1^\prime \dots \mu_k^\prime}{}_{\nu_1^\prime \dots \nu_l^\prime} = \sum_{\mu, \nu = 1}^n T^{\mu_1 \dots \mu_k}{}_{\nu_1 \dots \nu_l} \left( \frac{\partial x^{\prime \mu_1^\prime}}{\partial x^{\mu_1}} \dots \right) \left( \dots \frac{\partial x^{\nu_l}}{\partial x^{\prime \nu_l^\prime}} \right)
+\]
+       </div>
        <p>
         This is universally referred to as the
         <strong>
