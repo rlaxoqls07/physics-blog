@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../3-0/" rel="prev"/>
+  <link href="../../../QM/Ch.1/wave-function/" rel="next"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Derivative Operators and Parallel Transport - My Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#31-derivative-operators-and-parallel-transport">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="My Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="My Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        My Math &amp; Physics Blog
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Derivative Operators and Parallel Transport
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="My Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="My Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          My Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.2/2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.2/2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.2/2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Ch.2/2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../3-0/">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#1-definitions">
+                     <span class="md-ellipsis">
+                      1. Definitions
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#2-existence-and-uniqueness-of-derivative-operator">
+                     <span class="md-ellipsis">
+                      2. Existence and Uniqueness of Derivative Operator
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#3-difference-between-derivative-operators">
+                     <span class="md-ellipsis">
+                      3. Difference between Derivative Operators
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#4-christoffel-symbol">
+                     <span class="md-ellipsis">
+                      4. Christoffel Symbol
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#5-parallel-transport">
+                     <span class="md-ellipsis">
+                      5. Parallel Transport
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#6-parallel-transport-with-metric">
+                     <span class="md-ellipsis">
+                      6. Parallel Transport with Metric
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Quantum Mechanics
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Quantum Mechanics
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. The Wave Function
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. The Wave Function
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../QM/Ch.1/wave-function/">
+                  <span class="md-ellipsis">
+                   Schrodinger Equation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#1-definitions">
+            <span class="md-ellipsis">
+             1. Definitions
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#2-existence-and-uniqueness-of-derivative-operator">
+            <span class="md-ellipsis">
+             2. Existence and Uniqueness of Derivative Operator
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#3-difference-between-derivative-operators">
+            <span class="md-ellipsis">
+             3. Difference between Derivative Operators
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#4-christoffel-symbol">
+            <span class="md-ellipsis">
+             4. Christoffel Symbol
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#5-parallel-transport">
+            <span class="md-ellipsis">
+             5. Parallel Transport
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#6-parallel-transport-with-metric">
+            <span class="md-ellipsis">
+             6. Parallel Transport with Metric
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:derivative-operator">
+         Derivative Operator
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:differential-geometry">
+         Differential Geometry
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:general-relativity">
+         General Relativity
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:parallel-transport">
+         Parallel Transport
+        </a>
+       </nav>
+       <h1 id="31-derivative-operators-and-parallel-transport">
+        3.1 Derivative Operators and Parallel Transport
+       </h1>
+       <h2 id="1-definitions">
+        1. Definitions
+       </h2>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 3.1.1 (Derivative Operator).
+         </strong>
+         A
+         <strong>
+          derivative operator
+         </strong>
+         <span class="arithmatex">
+          \(\nabla\)
+         </span>
+         , which is sometimes called a
+         <strong>
+          <abbr title="A derivative operator that generalizes the directional derivative to tensor fields on a curved manifold.">
+           covariant derivative
+          </abbr>
+         </strong>
+         on a manifold
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         , is a map which takes each smooth tensor field of type
+         <span class="arithmatex">
+          \((k,l)\)
+         </span>
+         to a smooth tensor field of type
+         <span class="arithmatex">
+          \((k,l+1)\)
+         </span>
+         and satisfies the five properties below:
+        </p>
+        <ul>
+         <li>
+          Linearity: For all
+          <span class="arithmatex">
+           \(A, B \in \mathcal{T}(k, l)\)
+          </span>
+          and
+          <span class="arithmatex">
+           \(\alpha, \beta \in \mathbb{R}\)
+          </span>
+          ,
+         </li>
+        </ul>
+        <div class="arithmatex">
+         \[
+\nabla_c(\alpha A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}) = \alpha \nabla_c A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} + \beta \nabla_c B^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}
+\]
+        </div>
+        <ul>
+         <li>
+          Leibniz rule: For all
+          <span class="arithmatex">
+           \(A \in \mathcal{T}(k, l)\)
+          </span>
+          ,
+          <span class="arithmatex">
+           \(B \in \mathcal{T}(k', l')\)
+          </span>
+          ,
+         </li>
+        </ul>
+        <div class="arithmatex">
+         \[
+\begin{aligned}
+\nabla_e[A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}}] &amp;= [\nabla_e A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}]B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}} \\
+&amp;\quad + A^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}[\nabla_e B^{c_1 \cdots c_{k'}}{}_{d_1 \cdots d_{l'}}] \quad .
+\end{aligned}
+\]
+        </div>
+        <ul>
+         <li>
+          Commutativity with contraction: For all
+          <span class="arithmatex">
+           \(A \in \mathcal{T}(k, l)\)
+          </span>
+          ,
+         </li>
+        </ul>
+        <div class="arithmatex">
+         \[
+\nabla_d(A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}) = \nabla_d A^{a_1 \cdots c \cdots a_k}{}_{b_1 \cdots c \cdots b_l}
+\]
+        </div>
+        <ul>
+         <li>
+          Consistency with the notion of tangent vectors as directional derivatives on scalar fields: For all
+          <span class="arithmatex">
+           \(f \in \mathcal{F}\)
+          </span>
+          and all
+          <span class="arithmatex">
+           \(t^a \in V_p\)
+          </span>
+          ,
+         </li>
+        </ul>
+        <div class="arithmatex">
+         \[
+t(f) = t^a \nabla_a f \quad .
+\]
+        </div>
+        <ul>
+         <li>
+          Torsion free:
+          <sup id="fnref:1">
+           <a class="footnote-ref" href="#fn:1">
+            1
+           </a>
+          </sup>
+          For all
+          <span class="arithmatex">
+           \(f \in \mathcal{F}\)
+          </span>
+          ,
+         </li>
+        </ul>
+        <div class="arithmatex">
+         \[
+\nabla_a \nabla_b f = \nabla_b \nabla_a f \quad .
+\]
+        </div>
+        <p class="def">
+         <span class="arithmatex">
+          \(\;\)
+         </span>
+        </p>
+       </blockquote>
+       <p>
+        If we have
+        <span class="arithmatex">
+         \(T^{a_1 \cdots a_k}{}_{b_1 \cdots b_l} \in \mathcal{T}(k,l)\)
+        </span>
+        , we denote the tensor field resulting from the action of
+        <span class="arithmatex">
+         \(\nabla\)
+        </span>
+        on
+        <span class="arithmatex">
+         \(T\)
+        </span>
+        by
+        <span class="arithmatex">
+         \(\nabla_c \, T^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}\)
+        </span>
+        .
+       </p>
+       <p>
+        Conditions 4 and 5 with the Leibniz rule allow us to derive a simple expression for the commutator of two vector fields
+        <span class="arithmatex">
+         \(v^a\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(w^b\)
+        </span>
+        in terms of any derivative operator
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        . Applied to any smooth function
+        <span class="arithmatex">
+         \(f\)
+        </span>
+        ,
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+[v, w](f) &amp;= v\{w(f)\} - w\{v(f)\} \\\\
+&amp;= v^a \nabla_a (w^b \nabla_b f) - w^a \nabla_a (v^b \nabla_b f) \\\\
+&amp;= \{v^a \nabla_a w^b - w^a \nabla_a v^b\} \nabla_b f .
+\end{aligned}
+\]
+       </div>
+       <p>
+        Thus we have
+       </p>
+       <div class="arithmatex">
+        \[
+    \left [ v , w \right ]^b = v^a \nabla_{a} w^b - w^a \nabla_{a} v^b.
+\]
+       </div>
+       <h2 id="2-existence-and-uniqueness-of-derivative-operator">
+        2. Existence and Uniqueness of Derivative Operator
+       </h2>
+       <p>
+        Now we show that derivative operators exist. Let
+        <span class="arithmatex">
+         \(\psi\)
+        </span>
+        be a coordinate system and let
+        <span class="arithmatex">
+         \(\{\partial / \partial x^\mu \}\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\{dx^\mu\}\)
+        </span>
+        be associated coordinate bases. Then in the region covered by these coordinates, we may define a derivative operator,
+        <span class="arithmatex">
+         \(\partial_a\)
+        </span>
+        , called an
+        <strong>
+         ordinary derivative
+        </strong>
+        as follows.
+       </p>
+       <p>
+        For any smooth tensor field
+        <span class="arithmatex">
+         \(T^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}\)
+        </span>
+        we take its components
+        <span class="arithmatex">
+         \(T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l}\)
+        </span>
+        in this coordinate basis and define
+        <span class="arithmatex">
+         \(\partial_c T^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}\)
+        </span>
+        to be the tensor whose components in this coordinate basis are the partial derivatives
+        <span class="arithmatex">
+         \(\partial (T^{\mu_1 \cdots \mu_k}{}_{\nu_1 \cdots \nu_l}) / \partial x^\sigma\)
+        </span>
+        . Then, the five conditions follow from the properties of partial derivatives. Also, by equality of mixed partial derivatives, condition 5 holds for all tensor fields, not just scalar fields. Thus, given a system
+        <span class="arithmatex">
+         \(\psi\)
+        </span>
+        , we can construct an associated derivative operator
+        <span class="arithmatex">
+         \(\partial_a\)
+        </span>
+        .
+       </p>
+       <p>
+        What happens if we choose a different coordinate system
+        <span class="arithmatex">
+         \(\psi'\)
+        </span>
+        ? This will yield a different derivative operator
+        <span class="arithmatex">
+         \(\partial_a '\)
+        </span>
+        , that is, the components of the tensor
+        <span class="arithmatex">
+         \(\partial_c T^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}\)
+        </span>
+        in the new coordinates will not be equal to the partial derivatives of the primed components of
+        <span class="arithmatex">
+         \(T^{a_1 \cdots a_k}{}_{b_1 \cdots b_l}\)
+        </span>
+        with respect to the primed coordinates. Thus, a given ordinary derivative operator is coordinate dependent, i.e., it is not associated with the intrinsic structure of the manifold.
+       </p>
+       <p>
+        Now we consider the uniqueness of derivative operators. By condition 4, any two derivative operators
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\tilde{\nabla}_{a}\)
+        </span>
+        must agree in their action on scalar fields. We consider the difference between derivative operators in the next section.
+       </p>
+       <h2 id="3-difference-between-derivative-operators">
+        3. Difference between Derivative Operators
+       </h2>
+       <p>
+        To investigate their possible disagreements, let
+        <span class="arithmatex">
+         \(\omega_b\)
+        </span>
+        be a dual vector field and consider the difference
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a (f\omega_b) - \nabla_a (f\omega_b)\)
+        </span>
+        for an arbitrary scalar field
+        <span class="arithmatex">
+         \(f\)
+        </span>
+        . Then,
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+    \tilde{\nabla}_{a} (f \omega_{b}) - \nabla_{a} (f \omega_{b}) &amp;= \left ( \tilde{\nabla}_a f \right ) \omega_b + f \tilde{\nabla}_a \omega_b - \left ( \nabla_a f \right ) \omega_b - f \nabla_a \omega_b \\
+    &amp;= f \left ( \tilde{\nabla}_a \omega_b - \nabla_a \omega_b \right )
+\end{aligned}
+\]
+       </div>
+       <p>
+        At a point
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a \omega_b\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\nabla_a \omega_b\)
+        </span>
+        each depend on how
+        <span class="arithmatex">
+         \(\omega_b\)
+        </span>
+        changes as one moves away from
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        . However, the equation above shows that their difference depends only on the value of
+        <span class="arithmatex">
+         \(\omega_b\)
+        </span>
+        at the point
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        . To see this, suppose that
+        <span class="arithmatex">
+         \(\omega_b '\)
+        </span>
+        equals
+        <span class="arithmatex">
+         \(\omega_b\)
+        </span>
+        at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        and show that we get the same answer if we replace
+        <span class="arithmatex">
+         \(\omega_{b}\)
+        </span>
+        by
+        <span class="arithmatex">
+         \(\omega_b '\)
+        </span>
+        . Since
+        <span class="arithmatex">
+         \(\omega_b ' - \omega_b\)
+        </span>
+        vanishes at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        , we can find smooth functions
+        <span class="arithmatex">
+         \(f_{(\alpha)}\)
+        </span>
+        which vanish at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        and smooth dual vector fields,
+        <span class="arithmatex">
+         \(\mu_b ^{(\alpha)}\)
+        </span>
+        such that
+       </p>
+       <div class="arithmatex">
+        \[
+    \omega_{b}' - \omega_{b} = \sum_{\alpha=1}^n f_{(\alpha)} \mu_{b} ^{(\alpha)}.
+\]
+       </div>
+       <p>
+        Hence,
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+    \tilde{\nabla}_a \left ( \omega_b ' - \omega_b \right ) - \nabla_a \left ( \omega_b ' - \omega_b \right ) &amp;= \sum_\alpha \left \{ \tilde{\nabla}_a \left ( f_{(\alpha)} \mu_b ^{(\alpha)} \right ) - \nabla_a \left ( f_{(\alpha)} \mu_b ^{(\alpha)} \right ) \right \} \\
+    &amp;= \sum_\alpha f_{(\alpha)} \left \{\tilde{\nabla}_a \mu_b ^{(\alpha)} - \nabla_a \mu_b ^{(\alpha)} \right \} = 0
+\end{aligned}
+\]
+       </div>
+       <p>
+        since each
+        <span class="arithmatex">
+         \(f_{(\alpha)} = 0\)
+        </span>
+        at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        . Thus, we have
+       </p>
+       <div class="arithmatex">
+        \[
+    \tilde{\nabla}_a \omega_b ' - \nabla_a \omega_b ' = \tilde{\nabla}_{a} \omega_b - \nabla_a \omega_b.
+\]
+       </div>
+       <p>
+        Thus, we have shown that
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a - \nabla_a\)
+        </span>
+        defines a map of dual vectors at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        to tensors of type
+        <span class="arithmatex">
+         \((0,2)\)
+        </span>
+        at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        . Then,
+        <span class="arithmatex">
+         \(\left ( \tilde{\nabla}_a - \nabla_a \right )\)
+        </span>
+        defines a tensor of type
+        <span class="arithmatex">
+         \((1,2)\)
+        </span>
+        at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        , which we denote as
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        . To summarize, we have shown that given any two derivative operators
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        there exists a tensor field
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        such that
+       </p>
+       <div class="arithmatex">
+        \[
+    \nabla_{a} \omega_{b} = \tilde{\nabla}_{a} \omega_{b} - C^c {}_{ab} \, \omega_{c}.
+\]
+       </div>
+       <p>
+        We have a symmetry property of
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        . Take
+        <span class="arithmatex">
+         \(\omega_b = \nabla_b f = \tilde{\nabla}_b f\)
+        </span>
+        . Then,
+       </p>
+       <div class="arithmatex">
+        \[
+    \nabla_a \nabla_b f = \tilde{\nabla}_a \tilde{\nabla}_b f - C^c {}_{ab} \nabla_c f.
+\]
+       </div>
+       <p>
+        Since both
+        <span class="arithmatex">
+         \(\nabla_a \nabla_b f\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a \tilde{\nabla}_b f\)
+        </span>
+        are symmetric in
+        <span class="arithmatex">
+         \(a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(b\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        must also have the property
+       </p>
+       <div class="arithmatex">
+        \[
+    C^c {}_{ab} = C^c {}_{ba}.
+\]
+       </div>
+       <p>
+        For a vector field
+        <span class="arithmatex">
+         \(t^a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(1\)
+        </span>
+        -form field
+        <span class="arithmatex">
+         \(\omega_a\)
+        </span>
+        , property 4 gives that
+       </p>
+       <div class="arithmatex">
+        \[
+    \left ( \tilde{\nabla}_a - \nabla_a \right ) \left ( \omega_b t^b \right ) = 0.
+\]
+       </div>
+       <p>
+        On the other hand, by the Leibniz rule, we have
+       </p>
+       <div class="arithmatex">
+        \[
+    \left ( \tilde{\nabla}_a - \nabla_a \right ) \left ( \omega_b t^b \right ) = \left ( C^c {}_{ab} \omega_c \right ) t^b + \omega_b \left ( \tilde{\nabla}_a - \nabla_a \right ) t^b.
+\]
+       </div>
+       <p>
+        Substituting some indices, we get
+       </p>
+       <div class="arithmatex">
+        \[
+    \omega_b \left [ \left ( \tilde{\nabla}_a - \nabla_a \right ) t^b + C^b {}_{ac} t^c \right ] = 0
+\]
+       </div>
+       <p>
+        for all
+        <span class="arithmatex">
+         \(\omega_b\)
+        </span>
+        . This implies
+       </p>
+       <div class="arithmatex">
+        \[
+    \nabla_a t^b = \tilde{\nabla}_a t^b + C^b {}_{ac} t^c.
+\]
+       </div>
+       <p>
+        In a similar manner, we can derive the general formula for the action of
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        on an arbitrary tensor field in terms of
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        . For
+        <span class="arithmatex">
+         \(T \in \mathcal{T}(k,l)\)
+        </span>
+        , we find
+       </p>
+       <div class="arithmatex">
+        \[
+    \nabla_a T^{b_1 \cdots b_k} {}_{c_1 \cdots c_l} = \tilde{\nabla}_a T^{b_1 \cdots b_k} {}_{c_1 \cdots c_l} + \sum_i C^{b_i} {}_{ad} T^{b_1 \cdots d \cdots b_k}{}_{c_1 \cdots c_l} - \sum_j C^d {}_{ac_j} T^{b_1 \cdots b_l}{}_{c_1 \cdots d \cdots c_l}. \tag{*}
+\]
+       </div>
+       <p>
+        Thus, the difference between the two derivative operators
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a\)
+        </span>
+        is characterized by the tensor field
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        .
+       </p>
+       <p>
+        Conversely, it is easy to check that if
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a\)
+        </span>
+        is a derivative operator and
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        is an arbitrary smooth tensor field which is symmetric in its lower indices, then
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        defined by
+        <span class="arithmatex">
+         \((*)\)
+        </span>
+        will also be a derivative operator. So, on an
+        <span class="arithmatex">
+         \(n\)
+        </span>
+        -dimensional manifold,
+        <span class="arithmatex">
+         \(C^c {}_{ab}\)
+        </span>
+        has
+        <span class="arithmatex">
+         \(n^2 (n+1)/2\)
+        </span>
+        independent components to be specified at each point.
+       </p>
+       <h2 id="4-christoffel-symbol">
+        4. Christoffel Symbol
+       </h2>
+       <blockquote>
+        <p class="def">
+         <strong>
+          Definition 3.1.2 (Christoffel Symbol).
+         </strong>
+         The important application of
+         <span class="arithmatex">
+          \((*)\)
+         </span>
+         is when
+         <span class="arithmatex">
+          \(\tilde{\nabla}_a\)
+         </span>
+         is an ordinary derivative operator
+         <span class="arithmatex">
+          \(\partial_a\)
+         </span>
+         . In this case, the tensor field
+         <span class="arithmatex">
+          \(C^c {}_{ab}\)
+         </span>
+         is denoted as
+         <span class="arithmatex">
+          \(\Gamma^c {}_{ab}\)
+         </span>
+         and called a
+         <strong>
+          <abbr title="An array of numbers describing the metric connection in a specific coordinate basis, fundamentally used to calculate the covariant derivative.">
+           Christoffel symbol
+          </abbr>
+         </strong>
+         .
+        </p>
+       </blockquote>
+       <p>
+        For example, we write
+       </p>
+       <div class="arithmatex">
+        \[
+    \nabla_a t^b = \partial_a t^b + \Gamma^b {}_{ac} t^c.
+\]
+       </div>
+       <p>
+        Since we already know how to take
+        <span class="arithmatex">
+         \(\partial_a\)
+        </span>
+        , we only need to know about
+        <span class="arithmatex">
+         \(\Gamma^b {}_{ac}\)
+        </span>
+        to know how to compute the derivative
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        . Note that we have used a coordinate system to define
+        <span class="arithmatex">
+         \(\partial_a\)
+        </span>
+        . So, if we change coordinates, we also change our ordinary derivative operator
+        <span class="arithmatex">
+         \(\partial_a\)
+        </span>
+        to
+        <span class="arithmatex">
+         \(\partial_a '\)
+        </span>
+        , and thus we have our tensor
+        <span class="arithmatex">
+         \(\Gamma^c {}_{ab}\)
+        </span>
+        transformed to a new tensor
+        <span class="arithmatex">
+         \({\Gamma '}^c {}_{ab}\)
+        </span>
+        . Hence, the components of
+        <span class="arithmatex">
+         \(\Gamma^c {}_{ab}\)
+        </span>
+        will not be related to the components of
+        <span class="arithmatex">
+         \({\Gamma'}^c {}_{ab}\)
+        </span>
+        in the primed coordinates by the tensor transformation law.
+       </p>
+       <p>
+        We learn how to calculate the Christoffel symbols in the next few sections.
+       </p>
+       <h2 id="5-parallel-transport">
+        5. Parallel Transport
+       </h2>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 3.1.3 (Parallel Transport &amp; Connection).
+         </strong>
+         Given a derivative operator
+         <span class="arithmatex">
+          \(\nabla_a\)
+         </span>
+         , we can define the notion of parallel transport of a vector along a curve
+         <span class="arithmatex">
+          \(C\)
+         </span>
+         with a tangent
+         <span class="arithmatex">
+          \(t^a\)
+         </span>
+         . A vector
+         <span class="arithmatex">
+          \(v^a\)
+         </span>
+         given at each point on the curve is said to be
+         <strong>
+          parallelly transported
+         </strong>
+         as one moves along the curve if the equation
+        </p>
+        <div class="arithmatex">
+         \[
+    t^a \nabla_{a} v^b = 0
+\]
+        </div>
+        <p class="def">
+         is satisfied along the curve.
+        </p>
+       </blockquote>
+       <p>
+        More generally, one can define the parallel transport of a tensor by
+       </p>
+       <div class="arithmatex">
+        \[
+    t^a \nabla_a T^{b_1 \cdots b_k}{}_{c_1 \cdots c_l} = 0.
+\]
+       </div>
+       <p>
+        Choosing a coordinate system, we can express this as the following:
+       </p>
+       <div class="arithmatex">
+        \[
+    t^a \partial_a v^b + t^a \Gamma^b {}_{ac} v^c = 0
+\]
+       </div>
+       <p>
+        Or, equivalently, in terms of components in the coordinate basis and the parameter
+        <span class="arithmatex">
+         \(t\)
+        </span>
+        along the curve,
+       </p>
+       <div class="arithmatex">
+        \[
+    \frac{dv^\nu}{dt} + \sum_{\mu , \nu} t^\mu \Gamma^\nu {}_{\mu \lambda} v^\lambda = 0.
+\]
+       </div>
+       <p>
+        So, the parallel transport of
+        <span class="arithmatex">
+         \(v^a\)
+        </span>
+        depends only on the values of
+        <span class="arithmatex">
+         \(v^a\)
+        </span>
+        on the curve, so we may consider the parallel transport properties of vectors defined only along the curve as opposed to vector fields. Also, by the uniqueness of solution of ODE with a given initial value of
+        <span class="arithmatex">
+         \(v^a\)
+        </span>
+        , a vector at a point
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        on the curve uniquely defines a parallel transported vector everywhere else on the curve.
+       </p>
+       <p>
+        Now, we may use this notion of parallel transport to identify the tangent spaces
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(V_q\)
+        </span>
+        of points
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(q\)
+        </span>
+        if we are given a derivative operator and a curve connecting
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(q\)
+        </span>
+        . The mathematical structure arising from such a curve dependent identification of the tangent spaces of different points is called a
+        <strong>
+         <abbr title="A geometric object that specifies how to transport vectors along curves on a manifold, allowing the comparison of vectors at different points.">
+          connection
+         </abbr>
+        </strong>
+        . Conversely, one could start with the general notion of a
+        <abbr title="A geometric object that specifies how to transport vectors along curves on a manifold, allowing the comparison of vectors at different points.">
+         connection
+        </abbr>
+        and use it to define the notion of derivative operator.
+       </p>
+       <h2 id="6-parallel-transport-with-metric">
+        6. Parallel Transport with Metric
+       </h2>
+       <p>
+        Given only the manifold structure, many distinct derivative operators are possible and no one of them is naturally preferred over the others. We should now give a metric
+        <span class="arithmatex">
+         \(g_{ab}\)
+        </span>
+        on the manifold. Then, there is a natural choice of derivative operator, which is uniquely picked out. This is because the metric gives rise to a natural condition which we may impose on the notion of parallel transport.
+       </p>
+       <p>
+        Given two vectors
+        <span class="arithmatex">
+         \(v^a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(w^a\)
+        </span>
+        , we would like to require that their inner product
+        <span class="arithmatex">
+         \(g_{ab} v^a w^b\)
+        </span>
+        remain unchanged if we parallel transport them along any curve. Thus, we require
+       </p>
+       <div class="arithmatex">
+        \[
+    t^a \nabla_{a} \left (g_{bc} v^b w^c \right ) = 0
+\]
+       </div>
+       <p>
+        for
+        <span class="arithmatex">
+         \(v^b\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(w^c\)
+        </span>
+        which satisfy
+        <span class="arithmatex">
+         \(t^a \nabla_a v^b = 0\)
+        </span>
+        which was introduced earlier. Using the Leibniz rule,
+       </p>
+       <div class="arithmatex">
+        \[
+    t^a v^b w^c \nabla_a g_{bc} = 0.
+\]
+       </div>
+       <p>
+        This equation holds for all curves and parallelly transported vectors if and only if
+       </p>
+       <div class="arithmatex">
+        \[
+    \nabla_{a} g_{bc} = 0
+\]
+       </div>
+       <p>
+        which is the additional condition we want to impose on
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        . Then, this equation uniquely determines
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        by the following theorem.
+       </p>
+       <blockquote>
+        <p class="thm">
+         <strong>
+          Theorem 3.1.1.
+         </strong>
+         Let
+         <span class="arithmatex">
+          \(g_{ab}\)
+         </span>
+         be a metric. Then there exists a unique derivative operator
+         <span class="arithmatex">
+          \(\nabla_a\)
+         </span>
+         satisfying
+         <span class="arithmatex">
+          \(\nabla_a g_{bc} = 0\)
+         </span>
+         .
+        </p>
+        <p>
+         <em>
+          Proof.
+         </em>
+         Let
+         <span class="arithmatex">
+          \(\tilde{\nabla}_a\)
+         </span>
+         be any derivative operator. We would like to solve for
+         <span class="arithmatex">
+          \(C^c {}_{ab}\)
+         </span>
+         so that the derivative operator determined by
+         <span class="arithmatex">
+          \(\tilde{\nabla}_a\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(C^c {}_{ab}\)
+         </span>
+         will satisfy the required property. We will prove the theorem by showing that a unique solution for
+         <span class="arithmatex">
+          \(C^c {}_{ab}\)
+         </span>
+         exists. By
+         <span class="arithmatex">
+          \((*)\)
+         </span>
+         ,
+         <span class="arithmatex">
+          \(C^c {}_{ab}\)
+         </span>
+         must satisfy
+        </p>
+        <div class="arithmatex">
+         \[
+    0 = \nabla_a g_{bc} = \tilde{\nabla}_a g_{bc} - C^d {}_{ab} g_{dc} - C^d {}_{ac} g_{bd}
+\]
+        </div>
+        <p>
+         that is,
+        </p>
+        <div class="arithmatex">
+         \[
+    C_{cab} + C_{bac} = \tilde{\nabla}_a g_{bc}.
+\]
+        </div>
+        <p>
+         Then, by substituting the indices, we also have
+        </p>
+        <div class="arithmatex">
+         \[
+\begin{aligned}
+    C_{cba} + C_{abc} &amp;= \tilde{\nabla}_b g_{ac} \\
+    C_{bca} + C_{acb} &amp;= \tilde{\nabla}_c g_{ab}.
+\end{aligned}
+\]
+        </div>
+        <p>
+         By the three equations above,
+        </p>
+        <div class="arithmatex">
+         \[
+    2C_{cab} = \tilde{\nabla}_a g_{bc} + \tilde{\nabla}_b g_{ac} - \tilde{\nabla}_c g_{ab}
+\]
+        </div>
+        <p>
+         which is equivalent to
+        </p>
+        <div class="arithmatex">
+         \[
+    C^c {}_{ab} = \frac{1}{2} g^{cd} \left \{\tilde{\nabla}_a g_{bd} + \tilde{\nabla}_b g_{ad} - \tilde{\nabla}_d g_{ab} \right \}. \tag{**}
+\]
+        </div>
+        <p class="proof">
+         This choice of
+         <span class="arithmatex">
+          \(C^c {}_{ab}\)
+         </span>
+         solves
+         <span class="arithmatex">
+          \(\nabla_a g_{bc} = 0\)
+         </span>
+         and is unique, which completes the proof.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+       </blockquote>
+       <p>
+        Thus, a metric
+        <span class="arithmatex">
+         \(g_{ab}\)
+        </span>
+        naturally determines a derivative operator
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        . For the remainder of these articles, when a metric is present, we will always choose the derivative operator to be this natural one. Furthermore,
+        <span class="arithmatex">
+         \((*)\)
+        </span>
+        and
+        <span class="arithmatex">
+         \((**)\)
+        </span>
+        will tell us how to compute
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        in terms of any other derivative operator
+        <span class="arithmatex">
+         \(\tilde{\nabla}_a\)
+        </span>
+        . In particular, in terms of an ordinary derivative operator, the
+        <abbr title="An array of numbers describing the metric connection in a specific coordinate basis, fundamentally used to calculate the covariant derivative.">
+         Christoffel symbol
+        </abbr>
+        is
+       </p>
+       <div class="arithmatex">
+        \[
+    \Gamma^c {}_{ab} = \frac{1}{2} g^{cd} \left \{\partial_a g_{bd} + \partial_b g_{ad} - \partial_d g_{ab} \right \}
+\]
+       </div>
+       <p>
+        and thus the coordinate basis components of the
+        <abbr title="An array of numbers describing the metric connection in a specific coordinate basis, fundamentally used to calculate the covariant derivative.">
+         Christoffel symbol
+        </abbr>
+        are
+       </p>
+       <div class="arithmatex">
+        \[
+    \Gamma^\rho {}_{\mu \nu} = \frac{1}{2} \sum_\sigma g^{\rho \sigma} \left \{\frac{\partial g_{\nu \sigma}}{\partial x^\mu} + \frac{\partial g_{\mu \sigma}}{\partial x^\nu} - \frac{\partial g_{\mu \nu}}{\partial x^\sigma} \right \}.
+\]
+       </div>
+       <p>
+        Therefore, we can compute
+        <span class="arithmatex">
+         \(\Gamma^c {}_{ab}\)
+        </span>
+        by taking partial derivatives of the coordinate basis components of the metric, and hence we can also compute
+        <span class="arithmatex">
+         \(\nabla_a\)
+        </span>
+        .
+       </p>
+       <hr/>
+       <div class="footnote">
+        <hr/>
+        <ol>
+         <li id="fn:1">
+          <p>
+           If this condition is not imposed, it can be shown that there must exist a tensor
+           <span class="arithmatex">
+            \(T^c {}_{ab}\)
+           </span>
+           antisymmetric in
+           <span class="arithmatex">
+            \(a\)
+           </span>
+           and
+           <span class="arithmatex">
+            \(b\)
+           </span>
+           such that
+           <span class="arithmatex">
+            \(\nabla_a \nabla_b f - \nabla_b \nabla_a f = - T^c {}_{ab} \nabla_c f\)
+           </span>
+           .
+           <span class="arithmatex">
+            \(T^c {}_{ab}\)
+           </span>
+           is called the
+           <strong>
+            torsion tensor
+           </strong>
+           , and thus this condition states that the torsion tensor vanishes.
+           <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+        </ol>
+       </div>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
+</html>

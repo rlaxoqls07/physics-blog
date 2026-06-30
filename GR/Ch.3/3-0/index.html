@@ -3,10 +3,12 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../../Ch.2/2-4/" rel="prev"/>
+  <link href="../3-1/" rel="next"/>
   <link href="../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
   <title>
-   3.1 Derivative Operators and Parallel Transport - My Math &amp; Physics Blog
+   Overview - My Math &amp; Physics Blog
   </title>
   <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
   <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
@@ -28,6 +30,9 @@
   <label class="md-overlay" for="__drawer">
   </label>
   <div data-md-component="skip">
+   <a class="md-skip" href="#30-overview">
+    Skip to content
+   </a>
   </div>
   <div data-md-component="announce">
   </div>
@@ -51,7 +56,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        3.1 Derivative Operators and Parallel Transport
+        Overview
        </span>
       </div>
      </div>
@@ -151,8 +156,8 @@
             </span>
            </a>
           </li>
-          <li class="md-nav__item md-nav__item--nested">
-           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
            <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             <span class="md-ellipsis">
              General Relativity
@@ -160,7 +165,7 @@
             <span class="md-nav__icon md-icon">
             </span>
            </label>
-           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+           <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
             <label class="md-nav__title" for="__nav_3">
              <span class="md-nav__icon md-icon">
              </span>
@@ -240,6 +245,40 @@
                </ul>
               </nav>
              </li>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../3-1/">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
             </ul>
            </nav>
           </li>
@@ -303,9 +342,96 @@
      </div>
      <div class="md-content" data-md-component="content">
       <article class="md-content__inner md-typeset">
-       <h1>
-        3.1 Derivative Operators and Parallel Transport
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:curvature">
+         Curvature
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:differential-geometry">
+         Differential Geometry
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:general-relativity">
+         General Relativity
+        </a>
+       </nav>
+       <h1 id="30-overview">
+        3.0 Overview
        </h1>
+       <p>
+        We are interested in investigating the curvature of spacetime. The spacetime manifold
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        with spacetime metric
+        <span class="arithmatex">
+         \(g_{ab}\)
+        </span>
+        is not naturally embedded in a higher-dimensional space. We wish to develop an
+        <abbr title="A geometric property that can be determined entirely by measurements within the manifold itself, without looking at it from an outside higher-dimensional space.">
+         intrinsic notion
+        </abbr>
+        of curvature that can be applied to any manifold without reference to a higher-dimensional space in which it is embedded.
+       </p>
+       <p>
+        Such a notion of curvature can be elegantly defined by parallel transport. We have an intuitive notion of parallel transport on surfaces like a flat plane or a curved sphere. Then, we can alternatively characterize the curvature as follows:
+       </p>
+       <blockquote>
+        <p class="remark">
+         <strong>
+          Remark (Geodesics and Curvature).
+         </strong>
+         A
+         <strong>
+          <abbr title="The generalization of a straight line to curved spaces, representing the path of shortest (or extremal) distance between two points.">
+           geodesic
+          </abbr>
+         </strong>
+         is a curve whose tangent vector is parallel transported along itself. That is, it is the straightest possible curve in that geometry. A space will be considered curved if and only if some initially parallel geodesics fail to remain parallel.
+        </p>
+       </blockquote>
+       <p>
+        However, given only the bare manifold structure of space, we do not have a natural notion of parallel transport. Given two points
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(q\)
+        </span>
+        in a manifold, their tangent spaces
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(V_q\)
+        </span>
+        are strictly different vector spaces, and hence there is no absolute way of saying that a vector at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        is "the same" as a vector at
+        <span class="arithmatex">
+         \(q\)
+        </span>
+        . Thus, we need more than just the manifold structure to define parallel transport.
+       </p>
+       <p>
+        Knowing how to parallel transport vectors is fundamentally equivalent to knowing how to take derivatives of vector fields. If we know how to parallel transport vectors along a curve, we can define the derivative of a vector field in the direction of the curve by comparing the vectors. Conversely, given a notion of a derivative, we can define a vector to be parallel transported if its derivative along the given curve is exactly zero.
+       </p>
+       <p>
+        The failure of a vector to return to its original value when parallel transported around a closed loop translates mathematically into the
+        <abbr title="The property where changing the order of operations (like taking derivatives in different directions) yields a different final result.">
+         non-commutativity
+        </abbr>
+        of derivatives. So, the rigorous notion of curvature can be defined in terms of the failure of successive differentiations on tensor fields to commute.
+       </p>
+       <p>
+        Then, what extra structure do we need to define parallel transport on a manifold? Given a metric, there is a unique definition of parallel transport which strictly preserves the inner products of all pairs of vectors. So, given a manifold and a metric
+        <span class="arithmatex">
+         \((\mathcal{M} , g_{ab})\)
+        </span>
+        , we can uniquely define both the notion of parallel transport and the notion of derivative operators on a manifold.
+       </p>
       </article>
      </div>
      <script>
