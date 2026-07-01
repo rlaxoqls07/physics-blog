@@ -518,7 +518,7 @@
         , such that these pieces can be sewn together smoothly to form a complex global geometry.
        </p>
        <blockquote>
-        <p class="def">
+        <p>
          <strong>
           Definition 2.1.2 (Smooth Manifold).
          </strong>
@@ -539,74 +539,82 @@
           \(\{O_\alpha\}\)
          </span>
          satisfying the following three properties:
-1. Each point
-         <span class="arithmatex">
-          \(p \in \mathcal{M}\)
-         </span>
-         lies in at least one
-         <span class="arithmatex">
-          \(O_\alpha\)
-         </span>
-         ; i.e., the collection
-         <span class="arithmatex">
-          \(\{O_\alpha\}\)
-         </span>
-         covers
-         <span class="arithmatex">
-          \(\mathcal{M}\)
-         </span>
-         .
-2. For each
-         <span class="arithmatex">
-          \(\alpha\)
-         </span>
-         , there is a one-to-one, onto map
-         <span class="arithmatex">
-          \(\psi_\alpha : O_\alpha \to U_\alpha\)
-         </span>
-         , where
-         <span class="arithmatex">
-          \(U_\alpha\)
-         </span>
-         is an open subset of
-         <span class="arithmatex">
-          \(\mathbb{R}^n\)
-         </span>
-         .
-3. If any two sets
-         <span class="arithmatex">
-          \(O_\alpha\)
-         </span>
-         and
-         <span class="arithmatex">
-          \(O_\beta\)
-         </span>
-         overlap (
-         <span class="arithmatex">
-          \(O_\alpha \cap O_\beta \ne \emptyset\)
-         </span>
-         ), we can consider the transition map
-         <span class="arithmatex">
-          \(\psi_\beta \circ \psi_\alpha^{-1}\)
-         </span>
-         which takes points in
-         <span class="arithmatex">
-          \(\psi_\alpha(O_\alpha \cap O_\beta)\)
-         </span>
-         to points in
-         <span class="arithmatex">
-          \(\psi_\beta(O_\alpha \cap O_\beta)\)
-         </span>
-         . We require these subsets of
-         <span class="arithmatex">
-          \(\mathbb{R}^n\)
-         </span>
-         to be open and this transition map to be smooth (
-         <span class="arithmatex">
-          \(\mathcal{C}^\infty\)
-         </span>
-         ).
         </p>
+        <ol>
+         <li>
+          Each point
+          <span class="arithmatex">
+           \(p \in \mathcal{M}\)
+          </span>
+          lies in at least one
+          <span class="arithmatex">
+           \(O_\alpha\)
+          </span>
+          ; i.e., the collection
+          <span class="arithmatex">
+           \(\{O_\alpha\}\)
+          </span>
+          covers
+          <span class="arithmatex">
+           \(\mathcal{M}\)
+          </span>
+          .
+         </li>
+         <li>
+          For each
+          <span class="arithmatex">
+           \(\alpha\)
+          </span>
+          , there is a one-to-one, onto map
+          <span class="arithmatex">
+           \(\psi_\alpha : O_\alpha \to U_\alpha\)
+          </span>
+          , where
+          <span class="arithmatex">
+           \(U_\alpha\)
+          </span>
+          is an open subset of
+          <span class="arithmatex">
+           \(\mathbb{R}^n\)
+          </span>
+          .
+         </li>
+         <li class="def">
+          If any two sets
+          <span class="arithmatex">
+           \(O_\alpha\)
+          </span>
+          and
+          <span class="arithmatex">
+           \(O_\beta\)
+          </span>
+          overlap (
+          <span class="arithmatex">
+           \(O_\alpha \cap O_\beta \ne \emptyset\)
+          </span>
+          ), we can consider the transition map
+          <span class="arithmatex">
+           \(\psi_\beta \circ \psi_\alpha^{-1}\)
+          </span>
+          which takes points in
+          <span class="arithmatex">
+           \(\psi_\alpha(O_\alpha \cap O_\beta)\)
+          </span>
+          to points in
+          <span class="arithmatex">
+           \(\psi_\beta(O_\alpha \cap O_\beta)\)
+          </span>
+          . We require these subsets of
+          <span class="arithmatex">
+           \(\mathbb{R}^n\)
+          </span>
+          to be open and this transition map to be smooth (
+          <span class="arithmatex">
+           \(\mathcal{C}^\infty\)
+          </span>
+          ).
+         </li>
+        </ol>
        </blockquote>
        <p>
         <img alt="Transition maps between charts" src="../../GR_Figures/02._Manifolds_and_Tensor_Fields/2.1_1.svg"/>
