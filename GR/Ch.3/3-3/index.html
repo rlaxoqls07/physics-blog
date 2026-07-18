@@ -3,10 +3,12 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../3-2/" rel="prev"/>
+  <link href="../../../Paper_Review/Asp_CS_theory/Part1/" rel="next"/>
   <link href="../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
   <title>
-   3 3 - My Math &amp; Physics Blog
+   Part 3: Geodesics and Manifold Curvature - My Math &amp; Physics Blog
   </title>
   <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
   <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
@@ -28,6 +30,9 @@
   <label class="md-overlay" for="__drawer">
   </label>
   <div data-md-component="skip">
+   <a class="md-skip" href="#part-3-geodesics-and-manifold-curvature">
+    Skip to content
+   </a>
   </div>
   <div data-md-component="announce">
   </div>
@@ -51,7 +56,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        3 3
+        Part 3: Geodesics and Manifold Curvature
        </span>
       </div>
      </div>
@@ -151,8 +156,8 @@
             </span>
            </a>
           </li>
-          <li class="md-nav__item md-nav__item--nested">
-           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
            <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             <span class="md-ellipsis">
              General Relativity
@@ -160,7 +165,7 @@
             <span class="md-nav__icon md-icon">
             </span>
            </label>
-           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+           <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
             <label class="md-nav__title" for="__nav_3">
              <span class="md-nav__icon md-icon">
              </span>
@@ -240,8 +245,8 @@
                </ul>
               </nav>
              </li>
-             <li class="md-nav__item md-nav__item--nested">
-              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
               <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                <span class="md-ellipsis">
                 3. Curvature
@@ -249,7 +254,7 @@
                <span class="md-nav__icon md-icon">
                </span>
               </label>
-              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+              <nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
                <label class="md-nav__title" for="__nav_3_3">
                 <span class="md-nav__icon md-icon">
                 </span>
@@ -277,6 +282,124 @@
                   </span>
                  </a>
                 </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#1-the-geodesic-equation">
+                     <span class="md-ellipsis">
+                      1. The Geodesic Equation
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#2-exponential-map-and-riemannian-normal-coordinates">
+                     <span class="md-ellipsis">
+                      2. Exponential Map and Riemannian Normal Coordinates
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#3-gaussian-normal-coordinates-synchronous-coordinates">
+                     <span class="md-ellipsis">
+                      3. Gaussian Normal Coordinates (Synchronous Coordinates)
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#4-variational-principles-extremizing-length-and-proper-time">
+                     <span class="md-ellipsis">
+                      4. Variational Principles: Extremizing Length and Proper Time
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#5-the-geodesic-deviation-equation">
+                     <span class="md-ellipsis">
+                      5. The Geodesic Deviation Equation
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Paper Review
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Paper Review
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Aspects of Chern-Simons theory
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Aspects of Chern-Simons theory
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part1/">
+                  <span class="md-ellipsis">
+                   Kinematics and Planar Symmetries
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part2/">
+                  <span class="md-ellipsis">
+                   Topologically massive gauge theory
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part3/">
+                  <span class="md-ellipsis">
+                   Non-abelian Gauge Transformations and Topology
+                  </span>
+                 </a>
+                </li>
                </ul>
               </nav>
              </li>
@@ -292,15 +415,869 @@
       <div class="md-sidebar__scrollwrap">
        <div class="md-sidebar__inner">
         <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#1-the-geodesic-equation">
+            <span class="md-ellipsis">
+             1. The Geodesic Equation
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#2-exponential-map-and-riemannian-normal-coordinates">
+            <span class="md-ellipsis">
+             2. Exponential Map and Riemannian Normal Coordinates
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#3-gaussian-normal-coordinates-synchronous-coordinates">
+            <span class="md-ellipsis">
+             3. Gaussian Normal Coordinates (Synchronous Coordinates)
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#4-variational-principles-extremizing-length-and-proper-time">
+            <span class="md-ellipsis">
+             4. Variational Principles: Extremizing Length and Proper Time
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#5-the-geodesic-deviation-equation">
+            <span class="md-ellipsis">
+             5. The Geodesic Deviation Equation
+            </span>
+           </a>
+          </li>
+         </ul>
         </nav>
        </div>
       </div>
      </div>
      <div class="md-content" data-md-component="content">
       <article class="md-content__inner md-typeset">
-       <h1>
-        3 3
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:gaussian-normal-coordinates">
+         Gaussian Normal Coordinates
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:geodesic-deviation">
+         Geodesic Deviation
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:geodesics">
+         Geodesics
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:riemannian-normal-coordinates">
+         Riemannian Normal Coordinates
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:variational-principle">
+         Variational Principle
+        </a>
+       </nav>
+       <h1 id="part-3-geodesics-and-manifold-curvature">
+        Part 3: Geodesics and Manifold Curvature
        </h1>
+       <p>
+        Continuing our rigorous progression through the foundations of General Relativity, we now turn our attention to geodesics. In flat space, straight lines are trivial, but on a general curved manifold, we must fundamentally redefine what it means for a curve to be "straight." By leveraging our previously defined derivative operator, we can construct coordinate systems uniquely adapted to the manifold's geometry and explicitly relate the behavior of these curves to the Riemann curvature tensor.
+       </p>
+       <h2 id="1-the-geodesic-equation">
+        1. The Geodesic Equation
+       </h2>
+       <p>
+        Intuitively, geodesics are lines that curve as little as possible—the straightest possible lines in a given geometry.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 3.3.1 (Geodesic).
+         </strong>
+         Given a derivative operator
+         <span class="arithmatex">
+          \(\nabla_a\)
+         </span>
+         , a
+         <strong>
+          <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+           geodesic
+          </abbr>
+         </strong>
+         is a curve whose tangent vector is parallel propagated along itself. That is, a curve whose tangent
+         <span class="arithmatex">
+          \(T^a\)
+         </span>
+         satisfies:
+        </p>
+        <div class="arithmatex">
+         \[T^a \nabla_{a} T^b = 0\]
+        </div>
+        <p class="def">
+        </p>
+       </blockquote>
+       <p>
+        To satisfy the purely geometric requirement that the curve be as straight as possible, we technically only require that the tangent vector point in the
+        <em>
+         same direction
+        </em>
+        as itself when parallel propagated. This yields a weaker condition:
+       </p>
+       <div class="arithmatex">
+        \[T^a \nabla_a T^b = \alpha T^b\]
+       </div>
+       <p>
+        where
+        <span class="arithmatex">
+         \(\alpha\)
+        </span>
+        is an arbitrary function along the curve. However, we can always reparameterize the curve to eliminate
+        <span class="arithmatex">
+         \(\alpha\)
+        </span>
+        and recover the strict zero condition. A parameterization that satisfies
+        <span class="arithmatex">
+         \(T^a \nabla_a T^b = 0\)
+        </span>
+        is called an
+        <strong>
+         affine parameterization
+        </strong>
+        .
+       </p>
+       <p>
+        Let
+        <span class="arithmatex">
+         \(\psi\)
+        </span>
+        be a coordinate system mapping the
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        into a curve
+        <span class="arithmatex">
+         \(x^\mu (t)\)
+        </span>
+        in
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        . The components
+        <span class="arithmatex">
+         \(T^\mu\)
+        </span>
+        of
+        <span class="arithmatex">
+         \(T^a\)
+        </span>
+        must satisfy:
+       </p>
+       <div class="arithmatex">
+        \[\frac{dT^\mu}{dt} + \sum_{\sigma , \nu} \Gamma^{\mu}{}_{\sigma \nu} T^\sigma T^\nu = 0\]
+       </div>
+       <p>
+        Substituting the explicit definition of the tangent vector
+        <span class="arithmatex">
+         \(T^\mu = dx^\mu / dt\)
+        </span>
+        , we obtain the
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        equation in a coordinate basis:
+       </p>
+       <div class="arithmatex">
+        \[\frac{d^2 x^\mu}{dt^2} + \sum_{\sigma , \nu} \Gamma^\mu{}_{\sigma \nu} \frac{dx^\sigma}{dt} \frac{dx^\nu}{dt} = 0\]
+       </div>
+       <p>
+        This represents a coupled system of
+        <span class="arithmatex">
+         \(n\)
+        </span>
+        second-order ordinary differential equations. By standard existence and uniqueness theorems for ODEs, this system always has a unique solution for any given initial position
+        <span class="arithmatex">
+         \(x^\mu\)
+        </span>
+        and initial velocity
+        <span class="arithmatex">
+         \(dx^\mu / dt\)
+        </span>
+        . Thus, given any point
+        <span class="arithmatex">
+         \(p \in \mathcal{M}\)
+        </span>
+        and any initial tangent vector
+        <span class="arithmatex">
+         \(T^a \in V_p\)
+        </span>
+        , there exists a unique
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        through
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        with tangent
+        <span class="arithmatex">
+         \(T^a\)
+        </span>
+        .
+       </p>
+       <hr/>
+       <h2 id="2-exponential-map-and-riemannian-normal-coordinates">
+        2. Exponential Map and Riemannian Normal Coordinates
+       </h2>
+       <p>
+        The existence and uniqueness of geodesics provide a powerful tool for constructing coordinate systems that drastically simplify local computations.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 3.3.2 (Exponential Map).
+         </strong>
+         Let
+         <span class="arithmatex">
+          \(p \in \mathcal{M}\)
+         </span>
+         . The
+         <strong>
+          <abbr title="A mapping that takes a tangent vector from a point's tangent space and projects it onto the manifold by tracing a geodesic of unit parameter length.">
+           exponential map
+          </abbr>
+         </strong>
+         is a map from the tangent space
+         <span class="arithmatex">
+          \(V_p\)
+         </span>
+         to the manifold
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         . It maps a tangent vector
+         <span class="arithmatex">
+          \(T^a \in V_p\)
+         </span>
+         to the point in
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         that lies at a unit
+         <abbr title='A specific parameterization of a geodesic curve that strictly satisfies the unforced geodesic equation, effectively acting like a "natural" coordinate along the path.'>
+          affine parameter
+         </abbr>
+         (
+         <span class="arithmatex">
+          \(t=1\)
+         </span>
+         ) from
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         along the unique
+         <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+          geodesic
+         </abbr>
+         passing through
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         with initial tangent
+         <span class="arithmatex">
+          \(T^a\)
+         </span>
+         .
+        </p>
+        <p class="def">
+        </p>
+       </blockquote>
+       <p>
+        While geodesics may eventually cross or encounter singularities, there always exists a sufficiently small neighborhood of the origin in
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        where the
+        <abbr title="A mapping that takes a tangent vector from a point's tangent space and projects it onto the manifold by tracing a geodesic of unit parameter length.">
+         exponential map
+        </abbr>
+        is strictly well-defined and one-to-one.
+       </p>
+       <p>
+        Because
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        is an
+        <span class="arithmatex">
+         \(n\)
+        </span>
+        -dimensional vector space, it is naturally isomorphic to
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        . By using the
+        <abbr title="A mapping that takes a tangent vector from a point's tangent space and projects it onto the manifold by tracing a geodesic of unit parameter length.">
+         exponential map
+        </abbr>
+        to project the Cartesian coordinates of the tangent space directly onto the manifold
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        , we construct
+        <strong>
+         <abbr title="A local coordinate system created via the exponential map where the metric looks flat at the origin and all Christoffel symbols vanish at that point.">
+          Riemannian normal coordinates
+         </abbr>
+        </strong>
+        at
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        .
+       </p>
+       <p>
+        This coordinate system has two defining structural advantages:
+* All geodesics passing through
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        are mapped into perfectly straight lines passing through the origin of
+        <span class="arithmatex">
+         \(\mathbb{R}^n\)
+        </span>
+        .
+* The connection coefficients (Christoffel symbols),
+        <span class="arithmatex">
+         \(\Gamma^\mu_{\sigma\nu}\)
+        </span>
+        , strictly vanish at the point
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        , vastly simplifying local tensor calculus.
+       </p>
+       <hr/>
+       <h2 id="3-gaussian-normal-coordinates-synchronous-coordinates">
+        3. Gaussian Normal Coordinates (Synchronous Coordinates)
+       </h2>
+       <p>
+        While
+        <abbr title="A local coordinate system created via the exponential map where the metric looks flat at the origin and all Christoffel symbols vanish at that point.">
+         Riemannian normal coordinates
+        </abbr>
+        provide a local flattening around a single point
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        , we often need coordinate systems adapted to the time evolution of spacetime, such as in cosmological models or the
+        <span class="arithmatex">
+         \((3+1)\)
+        </span>
+        ADM decomposition.
+       </p>
+       <p>
+        When our calculations involve an
+        <span class="arithmatex">
+         \((n-1)\)
+        </span>
+        -dimensional embedded submanifold (a hypersurface
+        <span class="arithmatex">
+         \(S\)
+        </span>
+        ), we utilize
+        <strong>
+         <abbr title="A coordinate system constructed by extending geodesics orthogonally from a designated reference hypersurface, highly useful in cosmological modeling.">
+          Gaussian normal coordinates
+         </abbr>
+        </strong>
+        (or synchronous coordinates).
+       </p>
+       <p>
+        At each point
+        <span class="arithmatex">
+         \(p \in S\)
+        </span>
+        , the tangent space of the hypersurface can be viewed as an
+        <span class="arithmatex">
+         \((n-1)\)
+        </span>
+        -dimensional subspace of the full tangent space
+        <span class="arithmatex">
+         \(V_p\)
+        </span>
+        of
+        <span class="arithmatex">
+         \(\mathcal{M}\)
+        </span>
+        . Consequently, there exists a unique normal vector
+        <span class="arithmatex">
+         \(n^a \in V_p\)
+        </span>
+        that is strictly orthogonal to all vectors in the tangent space of
+        <span class="arithmatex">
+         \(S\)
+        </span>
+        (with respect to the metric
+        <span class="arithmatex">
+         \(g_{ab}\)
+        </span>
+        ). If
+        <span class="arithmatex">
+         \(S\)
+        </span>
+        is a non-null hypersurface, we normalize
+        <span class="arithmatex">
+         \(n^a\)
+        </span>
+        such that
+        <span class="arithmatex">
+         \(g_{ab}n^a n^b = \pm 1\)
+        </span>
+        .
+       </p>
+       <p>
+        We construct
+        <abbr title="A coordinate system constructed by extending geodesics orthogonally from a designated reference hypersurface, highly useful in cosmological modeling.">
+         Gaussian normal coordinates
+        </abbr>
+        as follows:
+       </p>
+       <ol>
+        <li>
+         For every point
+         <span class="arithmatex">
+          \(p \in S\)
+         </span>
+         , construct the unique
+         <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+          geodesic
+         </abbr>
+         through
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         with the initial tangent vector
+         <span class="arithmatex">
+          \(n^a\)
+         </span>
+         .
+        </li>
+        <li>
+         Choose arbitrary coordinates
+         <span class="arithmatex">
+          \((x^1, \dots, x^{n-1})\)
+         </span>
+         on a domain of the hypersurface
+         <span class="arithmatex">
+          \(S\)
+         </span>
+         .
+        </li>
+        <li>
+         Label each point in the neighborhood of
+         <span class="arithmatex">
+          \(S\)
+         </span>
+         by the
+         <abbr title='A specific parameterization of a geodesic curve that strictly satisfies the unforced geodesic equation, effectively acting like a "natural" coordinate along the path.'>
+          affine parameter
+         </abbr>
+         <span class="arithmatex">
+          \(t\)
+         </span>
+         along its corresponding
+         <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+          geodesic
+         </abbr>
+         , and the coordinates
+         <span class="arithmatex">
+          \((x^1, \dots, x^{n-1})\)
+         </span>
+         of its origin point
+         <span class="arithmatex">
+          \(p \in S\)
+         </span>
+         .
+        </li>
+       </ol>
+       <p>
+        This yields the coordinate chart
+        <span class="arithmatex">
+         \(q \mapsto (x^1, \dots, x^{n-1}, t)\)
+        </span>
+        . A crucial geometric property of
+        <abbr title="A coordinate system constructed by extending geodesics orthogonally from a designated reference hypersurface, highly useful in cosmological modeling.">
+         Gaussian normal coordinates
+        </abbr>
+        is that the geodesics remain orthogonal to
+        <em>
+         all
+        </em>
+        hypersurfaces
+        <span class="arithmatex">
+         \(S_t\)
+        </span>
+        defined by
+        <span class="arithmatex">
+         \(t = \text{Const}\)
+        </span>
+        .
+       </p>
+       <blockquote>
+        <p>
+         <em>
+          Proof of Preserved Orthogonality.
+         </em>
+         By construction, orthogonality holds on
+         <span class="arithmatex">
+          \(S_0 = S\)
+         </span>
+         . We must prove that the
+         <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+          geodesic
+         </abbr>
+         tangent field
+         <span class="arithmatex">
+          \(n^a\)
+         </span>
+         remains orthogonal to the coordinate basis fields
+         <span class="arithmatex">
+          \(X_1^a, \dots, X_{n-1}^a\)
+         </span>
+         generating the tangent space of
+         <span class="arithmatex">
+          \(S_t\)
+         </span>
+         everywhere. Denoting any one of these fields as
+         <span class="arithmatex">
+          \(X^a\)
+         </span>
+         :
+        </p>
+        <div class="arithmatex">
+         \[\begin{aligned} n^b \nabla_b \left(n_a X^a \right) &amp;= n_a n^b \nabla_b X^a \\ &amp;= n_a X^b \nabla_b n^a \\ &amp;= \frac{1}{2} X^b \nabla_b \left(n^a n_a \right) \\ &amp;= 0 \end{aligned}\]
+        </div>
+        <p>
+         The first equality applies the
+         <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+          geodesic
+         </abbr>
+         equation (
+         <span class="arithmatex">
+          \(n^b \nabla_b n_a = 0\)
+         </span>
+         ). The second equality relies on the fact that
+         <span class="arithmatex">
+          \(n^a\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(X^b\)
+         </span>
+         , as elements of a coordinate basis, commute (
+         <span class="arithmatex">
+          \([n, X]=0 \implies n^b\nabla_b X^a = X^b\nabla_b n^a\)
+         </span>
+         ). The third uses the Leibniz rule. The final equality holds because the normalization
+         <span class="arithmatex">
+          \(n^a n_a = \pm 1\)
+         </span>
+         is constant on
+         <span class="arithmatex">
+          \(\mathcal{M}\)
+         </span>
+         . Since
+         <span class="arithmatex">
+          \(n_a X^a = 0\)
+         </span>
+         initially on
+         <span class="arithmatex">
+          \(S\)
+         </span>
+         , its derivative along the
+         <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+          geodesic
+         </abbr>
+         is zero, proving it remains zero everywhere.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+        <p class="proof">
+        </p>
+       </blockquote>
+       <hr/>
+       <h2 id="4-variational-principles-extremizing-length-and-proper-time">
+        4. Variational Principles: Extremizing Length and Proper Time
+       </h2>
+       <p>
+        A profound property of geodesics derived from a metric-compatible connection is that they extremize the length (or
+        <abbr title="The physical time measured by a clock traveling along a specific timelike trajectory in spacetime.">
+         proper time
+        </abbr>
+        ) of curves connecting two points.
+       </p>
+       <p>
+        For a smooth curve
+        <span class="arithmatex">
+         \(C\)
+        </span>
+        with a Riemannian metric
+        <span class="arithmatex">
+         \(g_{ab}\)
+        </span>
+        , the length
+        <span class="arithmatex">
+         \(l\)
+        </span>
+        is:
+       </p>
+       <div class="arithmatex">
+        \[l = \int_a^b \left( g_{ab} T^a T^b \right)^{1/2} dt\]
+       </div>
+       <p>
+        where
+        <span class="arithmatex">
+         \(T^a\)
+        </span>
+        is the tangent to
+        <span class="arithmatex">
+         \(C\)
+        </span>
+        . Length is invariant under reparameterization
+        <span class="arithmatex">
+         \(s = s(t)\)
+        </span>
+        :
+       </p>
+       <div class="arithmatex">
+        \[l' = \int_a^b \left[ g_{ab} S^a S^b \right]^{1/2} ds = \int_a^b \left[ g_{ab} T^a T^b \right]^{1/2} \frac{dt}{ds} ds = l\]
+       </div>
+       <p>
+        For a metric of Lorentz signature
+        <span class="arithmatex">
+         \((-++\cdots+)\)
+        </span>
+        , we classify curves by the norm of their tangent:
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Timelike
+         </strong>
+         :
+         <span class="arithmatex">
+          \(g_{ab} T^a T^b &lt; 0\)
+         </span>
+        </li>
+        <li>
+         <strong>
+          Null
+         </strong>
+         :
+         <span class="arithmatex">
+          \(g_{ab} T^a T^b = 0\)
+         </span>
+        </li>
+        <li>
+         <strong>
+          Spacelike
+         </strong>
+         :
+         <span class="arithmatex">
+          \(g_{ab} T^a T^b &gt; 0\)
+         </span>
+        </li>
+       </ul>
+       <p>
+        For timelike curves, we extremize the
+        <strong>
+         <abbr title="The physical time measured by a clock traveling along a specific timelike trajectory in spacetime.">
+          proper time
+         </abbr>
+        </strong>
+        <span class="arithmatex">
+         \(\tau\)
+        </span>
+        :
+       </p>
+       <div class="arithmatex">
+        \[\tau = \int_a^b \left( -g_{ab} T^a T^b \right)^{1/2} dt\]
+       </div>
+       <p>
+        We wish to derive the condition that extremizes this functional. Focusing on spacelike curves (the timelike derivation is identical up to a sign), we treat this as a Lagrangian mechanics action problem. Because length is parameter-independent, we choose an affine parameterization such that
+        <span class="arithmatex">
+         \(g_{ab} T^a T^b = 1\)
+        </span>
+        . The variation
+        <span class="arithmatex">
+         \(\delta l\)
+        </span>
+        is:
+       </p>
+       <div class="arithmatex">
+        \[\begin{aligned} 0 &amp;= \int_a^b \sum_{\alpha, \beta} \left\{ g_{\alpha \beta} \frac{dx^\alpha}{dt} \frac{d(\delta x^\beta)}{dt} + \frac{1}{2} \sum_{\sigma} \frac{\partial g_{\alpha \beta}}{\partial x^\sigma} \frac{dx^\alpha}{dt} \frac{dx^\beta}{dt} \delta x^\sigma \right\} dt \\ &amp;= \int_a^b \sum_{\alpha, \beta} \left\{ - \frac{d}{dt} \left( g_{\alpha \beta} \frac{dx^\alpha}{dt} \right) + \frac{1}{2} \sum_\lambda \frac{\partial g_{\alpha \lambda}}{\partial x^\beta} \frac{dx^\alpha}{dt} \frac{dx^\lambda}{dt} \right\} \delta x^\beta dt \end{aligned}\]
+       </div>
+       <p>
+        For this integral to vanish for arbitrary variations
+        <span class="arithmatex">
+         \(\delta x^\beta\)
+        </span>
+        , the integrand must evaluate to zero:
+       </p>
+       <div class="arithmatex">
+        \[- \sum_\alpha g_{\alpha \beta} \frac{d^2 x^\alpha}{dt^2} - \sum_{\alpha, \lambda} \frac{\partial g_{\alpha \beta}}{\partial x^\lambda} \frac{dx^\lambda}{dt} \frac{dx^\alpha}{dt} + \frac{1}{2} \sum_{\alpha, \lambda} \frac{\partial g_{\alpha \lambda}}{\partial x^\beta} \frac{dx^\alpha}{dt} \frac{dx^\lambda}{dt} = 0\]
+       </div>
+       <p>
+        By isolating the second derivative and comparing it to the standard definition of the Christoffel symbols, this perfectly reproduces the
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        equation. Thus, a curve extremizes length (or
+        <abbr title="The physical time measured by a clock traveling along a specific timelike trajectory in spacetime.">
+         proper time
+        </abbr>
+        ) if and only if it is a
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        .
+       </p>
+       <p>
+        <em>
+         (Note: While geodesics extremize length, they are not guaranteed to be the global minimum. Two points on a sphere's equator can be connected by two distinct geodesics, only one of which represents the shortest path.)
+        </em>
+       </p>
+       <hr/>
+       <h2 id="5-the-geodesic-deviation-equation">
+        5. The Geodesic Deviation Equation
+       </h2>
+       <p>
+        Finally, we establish the physical manifestation of curvature by analyzing how families of geodesics behave relative to one another.
+       </p>
+       <p>
+        Let
+        <span class="arithmatex">
+         \(\gamma_s (t)\)
+        </span>
+        denote a smooth one-parameter family of geodesics. For each
+        <span class="arithmatex">
+         \(s \in \mathbb{R}\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(\gamma_s\)
+        </span>
+        is a
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        parameterized by
+        <abbr title='A specific parameterization of a geodesic curve that strictly satisfies the unforced geodesic equation, effectively acting like a "natural" coordinate along the path.'>
+         affine parameter
+        </abbr>
+        <span class="arithmatex">
+         \(t\)
+        </span>
+        . The mapping
+        <span class="arithmatex">
+         \((t,s) \mapsto \gamma_s (t)\)
+        </span>
+        defines a two-dimensional submanifold
+        <span class="arithmatex">
+         \(\Sigma\)
+        </span>
+        . Because these are geodesics, their tangent vectors
+        <span class="arithmatex">
+         \(T^a = (\partial/\partial t)^a\)
+        </span>
+        satisfy
+        <span class="arithmatex">
+         \(T^a \nabla_a T^b = 0\)
+        </span>
+        .
+       </p>
+       <p>
+        We define the
+        <strong>
+         deviation vector
+        </strong>
+        <span class="arithmatex">
+         \(X^a = (\partial / \partial s)^a\)
+        </span>
+        , which represents the spatial displacement to an infinitesimally nearby
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        . Because
+        <span class="arithmatex">
+         \(X^a\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(T^a\)
+        </span>
+        are coordinate basis vectors of
+        <span class="arithmatex">
+         \(\Sigma\)
+        </span>
+        , they commute:
+       </p>
+       <div class="arithmatex">
+        \[T^b \nabla_b X^a = X^b \nabla_b T^a\]
+       </div>
+       <p>
+        By utilizing gauge freedom in the affine parameterization, we can enforce
+        <span class="arithmatex">
+         \(X^a T_a = 0\)
+        </span>
+        everywhere on
+        <span class="arithmatex">
+         \(\Sigma\)
+        </span>
+        .
+       </p>
+       <p>
+        The quantity
+        <span class="arithmatex">
+         \(v^a = T^b \nabla_b X^a\)
+        </span>
+        describes the relative velocity of the nearby
+        <abbr title='A curve that generalizes the concept of a "straight line" to curved manifolds, characterized by parallel transporting its own tangent vector.'>
+         geodesic
+        </abbr>
+        . Taking one more derivative gives the relative acceleration
+        <span class="arithmatex">
+         \(a^a = T^c \nabla_c v^a\)
+        </span>
+        . We can directly relate this acceleration to the Riemann tensor:
+       </p>
+       <div class="arithmatex">
+        \[\begin{aligned} a^a &amp;= T^c \nabla_c (T^b \nabla_b X^a) \\\\ &amp;= T^c \nabla_c (X^b \nabla_b T^a) \\\\ &amp;= (T^c \nabla_c X^b)(\nabla_b T^a) + X^b T^c \nabla_c \nabla_b T^a \\\\ &amp;= (X^c \nabla_c T^b)(\nabla_b T^a) + X^b T^c \nabla_b \nabla_c T^a - R_{cbd}{}^a X^b T^c T^d \\\\ &amp;= X^c \nabla_c (T^b \nabla_b T^a) - R_{cbd}{}^a X^b T^c T^d \\\\ &amp;= - R_{cbd}{}^a X^b T^c T^d \end{aligned}\]
+       </div>
+       <p>
+        This result is the celebrated
+        <strong>
+         <abbr title="An equation in differential geometry that strictly relates the relative acceleration between two adjacent geodesics to the Riemann curvature tensor.">
+          geodesic deviation equation
+         </abbr>
+        </strong>
+        . It definitively proves that
+        <span class="arithmatex">
+         \(a^a = 0\)
+        </span>
+        for all families of geodesics if and only if the Riemann curvature tensor vanishes (
+        <span class="arithmatex">
+         \(R_{abc}{}^d = 0\)
+        </span>
+        ). In other words, tidal forces—the convergence or divergence of initially parallel free-falling test particles—are the strict geometric consequence of a non-zero Riemann tensor.
+       </p>
+       <!-- Tooltips Definitions -->
       </article>
      </div>
      <script>
