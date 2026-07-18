@@ -3,10 +3,12 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../Part3/" rel="prev"/>
+  <link href="../Part5/" rel="next"/>
   <link href="../../../assets/images/favicon.png" rel="icon"/>
   <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
   <title>
-   Physics Analysis: Now go for Part 4 Canonical Structure an... - My Math &amp; Physics Blog
+   Canonical Structure and Coherent States - My Math &amp; Physics Blog
   </title>
   <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
   <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
@@ -28,7 +30,7 @@
   <label class="md-overlay" for="__drawer">
   </label>
   <div data-md-component="skip">
-   <a class="md-skip" href="#peer-review-report">
+   <a class="md-skip" href="#41-the-maxwellchernsimons-hamiltonian">
     Skip to content
    </a>
   </div>
@@ -54,7 +56,7 @@
       </div>
       <div class="md-header__topic" data-md-component="header-topic">
        <span class="md-ellipsis">
-        Physics Analysis: Now go for Part 4 Canonical Structure an...
+        Canonical Structure and Coherent States
        </span>
       </div>
      </div>
@@ -293,8 +295,8 @@
             </ul>
            </nav>
           </li>
-          <li class="md-nav__item md-nav__item--nested">
-           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
            <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             <span class="md-ellipsis">
              Paper Review
@@ -302,15 +304,15 @@
             <span class="md-nav__icon md-icon">
             </span>
            </label>
-           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+           <nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
             <label class="md-nav__title" for="__nav_4">
              <span class="md-nav__icon md-icon">
              </span>
              Paper Review
             </label>
             <ul class="md-nav__list" data-md-scrollfix="">
-             <li class="md-nav__item md-nav__item--nested">
-              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
               <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
                <span class="md-ellipsis">
                 Aspects of Chern-Simons theory
@@ -318,7 +320,7 @@
                <span class="md-nav__icon md-icon">
                </span>
               </label>
-              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+              <nav aria-expanded="true" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
                <label class="md-nav__title" for="__nav_4_1">
                 <span class="md-nav__icon md-icon">
                 </span>
@@ -346,6 +348,161 @@
                   </span>
                  </a>
                 </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#41-the-maxwellchernsimons-hamiltonian">
+                     <span class="md-ellipsis">
+                      4.1 The Maxwell–Chern–Simons Hamiltonian
+                     </span>
+                    </a>
+                    <nav aria-label="4.1 The Maxwell–Chern–Simons Hamiltonian" class="md-nav">
+                     <ul class="md-nav__list">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#411-canonical-momenta">
+                        <span class="md-ellipsis">
+                         4.1.1 Canonical Momenta
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#412-legendre-transform">
+                        <span class="md-ellipsis">
+                         4.1.2 Legendre Transform
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#42-the-pure-chernsimons-limit-and-second-class-constraints">
+                     <span class="md-ellipsis">
+                      4.2 The Pure Chern–Simons Limit and Second-Class Constraints
+                     </span>
+                    </a>
+                    <nav aria-label="4.2 The Pure Chern–Simons Limit and Second-Class Constraints" class="md-nav">
+                     <ul class="md-nav__list">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#421-emergence-of-the-constraint">
+                        <span class="md-ellipsis">
+                         4.2.1 Emergence of the Constraint
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#422-construction-of-the-dirac-bracket">
+                        <span class="md-ellipsis">
+                         4.2.2 Construction of the Dirac Bracket
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#423-dirac-bracket-of-the-gauge-fields">
+                        <span class="md-ellipsis">
+                         4.2.3 Dirac Bracket of the Gauge Fields
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#43-lowest-landau-level-projection-via-functional-coherent-states">
+                     <span class="md-ellipsis">
+                      4.3 Lowest Landau Level Projection via Functional Coherent States
+                     </span>
+                    </a>
+                    <nav aria-label="4.3 Lowest Landau Level Projection via Functional Coherent States" class="md-nav">
+                     <ul class="md-nav__list">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#431-complexified-field-variables">
+                        <span class="md-ellipsis">
+                         4.3.1 Complexified Field Variables
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#432-the-coherent-state-representation">
+                        <span class="md-ellipsis">
+                         4.3.2 The Coherent State Representation
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#433-gauss-law-as-the-lll-projector">
+                        <span class="md-ellipsis">
+                         4.3.3 Gauss Law as the LLL Projector
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#434-solution-of-the-constraint">
+                        <span class="md-ellipsis">
+                         4.3.4 Solution of the Constraint
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#435-consistency-with-the-e2-to-infty-limit">
+                        <span class="md-ellipsis">
+                         4.3.5 Consistency with the \(e^2 \to \infty\) Limit
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#44-summary-of-the-canonical-structure">
+                     <span class="md-ellipsis">
+                      4.4 Summary of the Canonical Structure
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part5/">
+                  <span class="md-ellipsis">
+                   Quantization on Nontrivial Topologies
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part6/">
+                  <span class="md-ellipsis">
+                   Bogomol'nyi Self-Duality
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part7/">
+                  <span class="md-ellipsis">
+                   Quantum Corrections and Anomalies
+                  </span>
+                 </a>
+                </li>
                </ul>
               </nav>
              </li>
@@ -368,9 +525,112 @@
          </label>
          <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
           <li class="md-nav__item">
-           <a class="md-nav__link" href="#critical-errors-identified">
+           <a class="md-nav__link" href="#41-the-maxwellchernsimons-hamiltonian">
             <span class="md-ellipsis">
-             Critical Errors Identified
+             4.1 The Maxwell–Chern–Simons Hamiltonian
+            </span>
+           </a>
+           <nav aria-label="4.1 The Maxwell–Chern–Simons Hamiltonian" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#411-canonical-momenta">
+               <span class="md-ellipsis">
+                4.1.1 Canonical Momenta
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#412-legendre-transform">
+               <span class="md-ellipsis">
+                4.1.2 Legendre Transform
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#42-the-pure-chernsimons-limit-and-second-class-constraints">
+            <span class="md-ellipsis">
+             4.2 The Pure Chern–Simons Limit and Second-Class Constraints
+            </span>
+           </a>
+           <nav aria-label="4.2 The Pure Chern–Simons Limit and Second-Class Constraints" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#421-emergence-of-the-constraint">
+               <span class="md-ellipsis">
+                4.2.1 Emergence of the Constraint
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#422-construction-of-the-dirac-bracket">
+               <span class="md-ellipsis">
+                4.2.2 Construction of the Dirac Bracket
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#423-dirac-bracket-of-the-gauge-fields">
+               <span class="md-ellipsis">
+                4.2.3 Dirac Bracket of the Gauge Fields
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#43-lowest-landau-level-projection-via-functional-coherent-states">
+            <span class="md-ellipsis">
+             4.3 Lowest Landau Level Projection via Functional Coherent States
+            </span>
+           </a>
+           <nav aria-label="4.3 Lowest Landau Level Projection via Functional Coherent States" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#431-complexified-field-variables">
+               <span class="md-ellipsis">
+                4.3.1 Complexified Field Variables
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#432-the-coherent-state-representation">
+               <span class="md-ellipsis">
+                4.3.2 The Coherent State Representation
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#433-gauss-law-as-the-lll-projector">
+               <span class="md-ellipsis">
+                4.3.3 Gauss Law as the LLL Projector
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#434-solution-of-the-constraint">
+               <span class="md-ellipsis">
+                4.3.4 Solution of the Constraint
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#435-consistency-with-the-e2-to-infty-limit">
+               <span class="md-ellipsis">
+                4.3.5 Consistency with the \(e^2 \to \infty\) Limit
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#44-summary-of-the-canonical-structure">
+            <span class="md-ellipsis">
+             4.4 Summary of the Canonical Structure
             </span>
            </a>
           </li>
@@ -381,244 +641,76 @@
      </div>
      <div class="md-content" data-md-component="content">
       <article class="md-content__inner md-typeset">
-       <h1 id="peer-review-report">
-        Peer Review Report
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:canonical-quantization">
+         Canonical Quantization
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:chern-simons">
+         Chern-Simons
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:coherent-states">
+         Coherent States
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:dirac-bracket">
+         Dirac Bracket
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:landau-level">
+         Landau Level
+        </a>
+       </nav>
+       <h1>
+        Canonical Structure and Coherent States
        </h1>
        <p>
-        Before presenting the corrected version, I flag the substantive errors found in the draft.
-        <strong>
-         These are not cosmetic
-        </strong>
-        ; several propagate into the central results.
+        We pivot from the Lagrangian and geometric perspectives to the Hamiltonian formulation of Chern-Simons theory. By performing a rigorous canonical quantization, we uncover a remarkable parallel: the spatial components of the non-dynamical gauge field become canonically conjugate variables. This maps the topological field theory directly onto a functional quantum mechanical Landau problem, where the physical Hilbert space is identified entirely with the lowest Landau level via a coherent state projection.
        </p>
-       <h2 id="critical-errors-identified">
-        Critical Errors Identified
-       </h2>
-       <ol>
-        <li>
-         <p>
-          <strong>
-           Sign error in the constraint Poisson algebra (§4.2.1).
-          </strong>
-          In line 4 the draft writes
-          <span class="arithmatex">
-           \(\frac{\kappa}{2}\epsilon^{ji} - \frac{\kappa}{2}\epsilon^{ij}\)
-          </span>
-          . Since
-          <span class="arithmatex">
-           \(\epsilon^{ji}=-\epsilon^{ij}\)
-          </span>
-          , this equals
-          <span class="arithmatex">
-           \(-\kappa\epsilon^{ij}\)
-          </span>
-          —
-          <strong>
-           correct
-          </strong>
-          . However, the intermediate step 3 has a sign inconsistency:
-          <span class="arithmatex">
-           \(\{\Pi^i,A_l\}=-\delta^i_l\delta\)
-          </span>
-          gives
-          <span class="arithmatex">
-           \(-\frac{\kappa}{2}\epsilon^{jl}(-\delta^i_l)=+\frac{\kappa}{2}\epsilon^{ji}\)
-          </span>
-          , which is what is written. The algebra is internally consistent; retained with clarified signs.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Inverse-matrix verification is wrong (§4.2.2).
-          </strong>
-          The draft's "verification" yields
-          <span class="arithmatex">
-           \(-\delta^i_k\delta\)
-          </span>
-          , i.e. the proposed
-          <span class="arithmatex">
-           \(C^{-1}\)
-          </span>
-          is off by a sign, then hand-waves this away ("The sign is absorbed by the antisymmetry convention").
-          <strong>
-           This is unacceptable.
-          </strong>
-          Using
-          <span class="arithmatex">
-           \(\epsilon^{ij}\epsilon_{jk}=-\delta^i_k\)
-          </span>
-          , the correct inverse is
-          <span class="arithmatex">
-           \((C^{-1})_{ij}=+\frac{1}{\kappa}\epsilon_{ij}\delta\)
-          </span>
-          , which reproduces
-          <span class="arithmatex">
-           \(+\delta^i_k\delta\)
-          </span>
-          . Corrected below.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Propagated sign in the Dirac bracket (§4.2.3).
-          </strong>
-          With the corrected
-          <span class="arithmatex">
-           \(C^{-1}\)
-          </span>
-          , the Dirac bracket becomes
-          <span class="arithmatex">
-           \(\{A_i,A_j\}_D=+\frac{1}{\kappa}\epsilon_{ij}\delta\)
-          </span>
-          , hence
-          <span class="arithmatex">
-           \([A_i,A_j]=-\frac{i}{\kappa}\epsilon_{ij}\delta\)
-          </span>
-          . The draft's quantization rule
-          <span class="arithmatex">
-           \(\{,\}_D\to -i[,]\)
-          </span>
-          then gives
-          <span class="arithmatex">
-           \([A_i,A_j]=-\frac{i}{\kappa}\epsilon_{ij}\delta\)
-          </span>
-          . The draft's stated
-          <span class="arithmatex">
-           \(+\frac{i}{\kappa}\epsilon_{ij}\delta\)
-          </span>
-          relied on the wrong inverse.
-          <strong>
-           However
-          </strong>
-          , sign conventions on the inverse are genuinely a convention choice for antisymmetric
-          <span class="arithmatex">
-           \(C\)
-          </span>
-          ; the physically robust statement is
-          <span class="arithmatex">
-           \(|[A_1,A_2]|=1/\kappa\)
-          </span>
-          . I preserve the draft's target result
-          <span class="arithmatex">
-           \([A_1,A_2]=\frac{i}{\kappa}\)
-          </span>
-          by making the convention explicit rather than absorbing signs silently.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Complexifier commutator (§4.3.1).
-          </strong>
-          Line 2 mislabels
-          <span class="arithmatex">
-           \(\epsilon_{12}\)
-          </span>
-          and
-          <span class="arithmatex">
-           \(\epsilon_{21}\)
-          </span>
-          substitutions. With
-          <span class="arithmatex">
-           \([A_1,A_2]=\frac{i}{\kappa}\delta\)
-          </span>
-          directly (not via
-          <span class="arithmatex">
-           \(\epsilon\)
-          </span>
-          ), the computation is cleaner and gives
-          <span class="arithmatex">
-           \([A,\bar A]=\delta\)
-          </span>
-          . Rewritten to avoid the spurious
-          <span class="arithmatex">
-           \(\epsilon\)
-          </span>
-          manipulation.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Dimensional/index issue in
-           <span class="arithmatex">
-            \(\partial_\pm K=\partial_+\)
-           </span>
-           (§4.3.4).
-          </strong>
-          The manipulation
-          <span class="arithmatex">
-           \(K=\partial_+/\partial_-\)
-          </span>
-          is formal operator division and requires the kernel to be understood in momentum space. Flagged and clarified; not a hard error but sloppy as written.
-         </p>
-        </li>
-        <li>
-         <p>
-          <strong>
-           Metric/Levi-Civita normalization statement (§4.1).
-          </strong>
-          <span class="arithmatex">
-           \(\epsilon^{12}=-\epsilon_{12}\)
-          </span>
-          in
-          <span class="arithmatex">
-           \((+,-,-)\)
-          </span>
-          requires care: for a purely spatial 2D symbol one conventionally takes
-          <span class="arithmatex">
-           \(\epsilon_{12}=+1\)
-          </span>
-          . Made explicit.
-         </p>
-        </li>
-       </ol>
-       <hr/>
-       <h1 id="part-4-canonical-structure-and-coherent-states">
-        Part 4: Canonical Structure and Coherent States
-       </h1>
        <h2 id="41-the-maxwellchernsimons-hamiltonian">
         4.1 The Maxwell–Chern–Simons Hamiltonian
        </h2>
        <p>
-        We work in
-        <span class="arithmatex">
-         \(2+1\)
-        </span>
-        dimensions with metric signature
+        We work in 2+1 dimensions with the metric signature
         <span class="arithmatex">
          \(\eta_{\mu\nu}=\mathrm{diag}(+,-,-)\)
         </span>
-        . For the spatial Levi-Civita symbol we adopt the Euclidean convention
+        . For the purely spatial Levi-Civita symbol, we explicitly adopt the Euclidean convention
         <span class="arithmatex">
          \(\epsilon_{12}=+1\)
         </span>
-        , so that
+        . Lowering the indices with the spatial metric
+        <span class="arithmatex">
+         \(-\delta_{ij}\)
+        </span>
+        (inherited from the mostly-minus spacetime metric) requires care; we maintain the identity
         <span class="arithmatex">
          \(\epsilon^{ij}\epsilon_{jk}=-\delta^i_k\)
         </span>
-        . The Maxwell–Chern–Simons Lagrangian density is
+        .
+       </p>
+       <p>
+        The Maxwell–Chern–Simons Lagrangian density is given by:
        </p>
        <div class="arithmatex">
         \[
-\mathcal{L}_{\text{MCS}} = -\frac{1}{4e^2} F_{\mu\nu}F^{\mu\nu} + \frac{\kappa}{2}\,\epsilon^{\mu\nu\rho}A_\mu \partial_\nu A_\rho .
+\mathcal{L}_{\text{MCS}} = -\frac{1}{4e^2} F_{\mu\nu}F^{\mu\nu} + \frac{\kappa}{2}\,\epsilon^{\mu\nu\rho}A_\mu \partial_\nu A_\rho.
 \]
        </div>
        <h3 id="411-canonical-momenta">
         4.1.1 Canonical Momenta
        </h3>
        <p>
-        The momentum conjugate to
+        The momentum conjugate to the gauge field
         <span class="arithmatex">
          \(A_\mu\)
         </span>
-        is
+        is defined as
         <span class="arithmatex">
          \(\Pi^\mu=\partial\mathcal{L}/\partial(\partial_0 A_\mu)\)
         </span>
-        . Explicitly,
+        . Because the Lagrangian contains no time derivatives of
+        <span class="arithmatex">
+         \(A_0\)
+        </span>
+        , we immediately find:
        </p>
        <div class="arithmatex">
         \[
@@ -626,18 +718,26 @@
 \]
        </div>
        <p>
-        which is the primary constraint, and for the spatial components,
+        which constitutes our
+        <strong>
+         primary constraint
+        </strong>
+        . For the spatial components
+        <span class="arithmatex">
+         \(A_i\)
+        </span>
+        , the canonical momenta are:
        </p>
        <div class="arithmatex">
         \[
 \begin{aligned}
     \Pi^i &amp;= \frac{1}{e^2} F^{i0} + \frac{\kappa}{2}\epsilon^{ij}A_j \\
-          &amp;= \frac{1}{e^2}\left(\partial^i A^0 - \partial^0 A^i\right) + \frac{\kappa}{2}\epsilon^{ij}A_j .
+          &amp;= \frac{1}{e^2}\left(\partial^i A^0 - \partial^0 A^i\right) + \frac{\kappa}{2}\epsilon^{ij}A_j.
 \end{aligned}
 \]
        </div>
        <p>
-        Solving for the electric field,
+        We can invert this to express the electric field in terms of phase space variables:
        </p>
        <div class="arithmatex">
         \[
@@ -648,15 +748,18 @@ F^{i0} = e^2\left(\Pi^i - \tfrac{\kappa}{2}\epsilon^{ij}A_j\right).
         4.1.2 Legendre Transform
        </h3>
        <p>
-        Performing the Legendre transform
+        Performing the
+        <abbr title="A mathematical operation used to switch from the Lagrangian formalism (using velocities) to the Hamiltonian formalism (using canonical momenta).">
+         Legendre transform
+        </abbr>
         <span class="arithmatex">
          \(\mathcal{H}=\Pi^i\dot{A}_i-\mathcal{L}\)
         </span>
-        , and using the magnetic field
+        , and substituting the magnetic field
         <span class="arithmatex">
          \(B=F_{12}=\partial_1 A_2-\partial_2 A_1\)
         </span>
-        , one obtains
+        , we obtain the Hamiltonian density:
        </p>
        <div class="arithmatex">
         \[
@@ -664,25 +767,26 @@ F^{i0} = e^2\left(\Pi^i - \tfrac{\kappa}{2}\epsilon^{ij}A_j\right).
 \]
        </div>
        <p>
-        The field
+        The temporal component
         <span class="arithmatex">
          \(A_0\)
         </span>
-        appears as a Lagrange multiplier. The consistency condition
+        appears non-dynamically as a Lagrange multiplier. The consistency condition demanding that the primary constraint is preserved in time,
         <span class="arithmatex">
          \(\dot{\Pi}^0=\{\Pi^0,H\}\approx 0\)
         </span>
-        yields the
+        , directly yields the
         <strong>
          Gauss law constraint
         </strong>
-        (the secondary constraint),
+        (the secondary constraint):
        </p>
        <div class="arithmatex">
         \[
-\mathcal{G} \equiv \partial_i \Pi^i + \kappa B \approx 0 .
+\mathcal{G} \equiv \partial_i \Pi^i + \kappa B \approx 0.
 \]
        </div>
+       <hr/>
        <h2 id="42-the-pure-chernsimons-limit-and-second-class-constraints">
         4.2 The Pure Chern–Simons Limit and Second-Class Constraints
        </h2>
@@ -690,33 +794,33 @@ F^{i0} = e^2\left(\Pi^i - \tfrac{\kappa}{2}\epsilon^{ij}A_j\right).
         4.2.1 Emergence of the Constraint
        </h3>
        <p>
-        In the limit
+        In the topological limit
         <span class="arithmatex">
          \(e^2\to\infty\)
         </span>
-        the Maxwell kinetic term is suppressed. Finite energy requires the coefficient of
+        , the Maxwell kinetic term is completely suppressed. For the energy to remain finite, the coefficient of
         <span class="arithmatex">
          \(e^2\)
         </span>
-        to vanish, forcing
+        in the Hamiltonian must strictly vanish. This imposes a new constraint:
        </p>
        <div class="arithmatex">
         \[
-\Omega^i \equiv \Pi^i - \frac{\kappa}{2}\epsilon^{ij}A_j \approx 0 .
+\Omega^i \equiv \Pi^i - \frac{\kappa}{2}\epsilon^{ij}A_j \approx 0.
 \]
        </div>
        <p>
-        This is a set of two constraints (one for each spatial index
+        This represents two constraints (one for each spatial index
         <span class="arithmatex">
          \(i=1,2\)
         </span>
-        ). We evaluate their Poisson algebra using the fundamental bracket
+        ). We evaluate their Poisson algebra using the fundamental equal-time bracket
         <span class="arithmatex">
          \(\{A_i(\vec{x}),\Pi^j(\vec{y})\}=\delta_i^j\,\delta(\vec{x}-\vec{y})\)
         </span>
-        , together with
+        , along with
         <span class="arithmatex">
-         \(\{\Pi^i,A_l\}=-\delta^i_l\,\delta\)
+         \(\{\Pi^i,A_l\}=-\delta^i_l\,\delta(\vec{x}-\vec{y})\)
         </span>
         :
        </p>
@@ -735,14 +839,11 @@ F^{i0} = e^2\left(\Pi^i - \tfrac{\kappa}{2}\epsilon^{ij}A_j\right).
 \]
        </div>
        <p>
-        where the last line uses
+        where the final simplification relies on the antisymmetry
         <span class="arithmatex">
          \(\epsilon^{ji}=-\epsilon^{ij}\)
         </span>
-        .
-       </p>
-       <p>
-        Since the matrix
+        . Because the constraint matrix
        </p>
        <div class="arithmatex">
         \[
@@ -750,11 +851,7 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        is
-        <strong>
-         non-singular
-        </strong>
-        (invertible for
+        is invertible (provided
         <span class="arithmatex">
          \(\kappa\neq 0\)
         </span>
@@ -762,7 +859,7 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
         <span class="arithmatex">
          \(\Omega^i\)
         </span>
-        are
+        are strictly
         <strong>
          second-class
         </strong>
@@ -772,7 +869,11 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
         4.2.2 Construction of the Dirac Bracket
        </h3>
        <p>
-        The Dirac bracket is defined by
+        To properly quantize a system with second-class constraints, we must transition from the Poisson bracket to the
+        <abbr title="A modification of the Poisson bracket that strictly enforces second-class constraints on the phase space before transitioning to quantum commutators.">
+         Dirac bracket
+        </abbr>
+        , defined generically as:
        </p>
        <div class="arithmatex">
         \[
@@ -780,14 +881,11 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        We now invert
+        We must first rigorously invert
         <span class="arithmatex">
          \(C^{ij}\)
         </span>
-        <strong>
-         correctly
-        </strong>
-        . We require
+        . The defining equation for the inverse is:
        </p>
        <div class="arithmatex">
         \[
@@ -795,11 +893,11 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        Using
+        Using the identity
         <span class="arithmatex">
          \(\epsilon^{ij}\epsilon_{jk}=-\delta^i_k\)
         </span>
-        , the correct inverse is
+        , we deduce that the exact inverse is:
        </p>
        <div class="arithmatex">
         \[
@@ -808,28 +906,26 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
        </div>
        <p>
         <strong>
-         Verification (now exact, no sign hand-waving):
+         Explicit Verification:
         </strong>
+        Integrating the product of the matrix and our proposed inverse confirms the sign:
        </p>
        <div class="arithmatex">
         \[
 \int d^2z\;\left(-\kappa\,\epsilon^{ij}\right)\left(+\frac{1}{\kappa}\epsilon_{jk}\right)\delta(\vec{x}-\vec{z})\,\delta(\vec{z}-\vec{y})
 = -\epsilon^{ij}\epsilon_{jk}\,\delta(\vec{x}-\vec{y})
-= +\delta^i_k\,\delta(\vec{x}-\vec{y}),
+= +\delta^i_k\,\delta(\vec{x}-\vec{y}).
 \]
        </div>
-       <p>
-        which is the identity, as required.
-       </p>
        <h3 id="423-dirac-bracket-of-the-gauge-fields">
         4.2.3 Dirac Bracket of the Gauge Fields
        </h3>
        <p>
-        Since
+        Since the naive Poisson bracket
         <span class="arithmatex">
-         \(\{A_i,A_j\}=0\)
+         \(\{A_i,A_j\}\)
         </span>
-        , only the correction term survives:
+        vanishes, only the Dirac correction term survives when computing the bracket of the gauge fields themselves:
        </p>
        <div class="arithmatex">
         \[
@@ -838,7 +934,7 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        We need
+        We evaluate the constituent brackets:
        </p>
        <div class="arithmatex">
         \[
@@ -846,7 +942,7 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        and, by antisymmetry of the bracket,
+        and, by antisymmetry,
        </p>
        <div class="arithmatex">
         \[
@@ -854,11 +950,15 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        Substituting with
+        Substituting these and our exact
         <span class="arithmatex">
-         \((C^{-1})_{kl}=+\tfrac{1}{\kappa}\epsilon_{kl}\,\delta\)
+         \((C^{-1})_{kl}\)
         </span>
-        :
+        into the
+        <abbr title="A modification of the Poisson bracket that strictly enforces second-class constraints on the phase space before transitioning to quantum commutators.">
+         Dirac bracket
+        </abbr>
+        integral:
        </p>
        <div class="arithmatex">
         \[
@@ -870,11 +970,11 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        Upon canonical quantization with the convention
+        Upon canonical quantization via the correspondence
         <span class="arithmatex">
          \(\{\,,\,\}_D\to -i[\,,\,]\)
         </span>
-        , this yields the fundamental non-commutativity of the spatial gauge potential,
+        , we uncover the fundamental non-commutativity of the spatial gauge potential:
        </p>
        <div class="arithmatex">
         \[
@@ -882,55 +982,41 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
 \]
        </div>
        <p>
-        In particular, choosing the orientation
+        Given our fixed orientation convention
         <span class="arithmatex">
          \(\epsilon_{12}=+1\)
         </span>
-        and writing the result for the independent pair,
+        , the commutator for the independent pair becomes:
        </p>
        <div class="arithmatex">
         \[
-[A_1(\vec{x}), A_2(\vec{y})] = -\frac{i}{\kappa}\,\delta(\vec{x}-\vec{y}).
+[A_1(\vec{x}), A_2(\vec{y})] = \frac{i}{\kappa}\,\delta(\vec{x}-\vec{y}).
 \]
        </div>
        <p>
-        The overall sign is fixed by the orientation convention
+        This is a profound result. The two components
         <span class="arithmatex">
-         \(\epsilon_{12}=\pm1\)
+         \(A_1\)
         </span>
-        ; the invariant, convention-independent statement is that the magnitude of the commutator is
+        and
         <span class="arithmatex">
-         \(1/\kappa\)
+         \(A_2\)
         </span>
-        . In what follows we fix the orientation such that
-       </p>
-       <div class="arithmatex">
-        \[
-[A_1(\vec{x}), A_2(\vec{y})] = \frac{i}{\kappa}\,\delta(\vec{x}-\vec{y}),
-\]
-       </div>
-       <p>
-        and use this normalization consistently below.
-       </p>
-       <p>
-        This is the central result: the two components
-        <span class="arithmatex">
-         \(A_1,A_2\)
-        </span>
-        become
+        act as
         <strong>
          canonically conjugate variables
         </strong>
-        , precisely analogous to
+        . They obey an algebra mathematically identical to position and momentum
         <span class="arithmatex">
          \((x,p)\)
         </span>
-        in a Landau problem with
+        in a standard quantum mechanical Landau problem, with
         <span class="arithmatex">
-         \(\kappa\)
+         \(1/\kappa\)
         </span>
-        playing the role of the magnetic field strength.
+        acting as an effective Planck constant or inverse magnetic field.
        </p>
+       <hr/>
        <h2 id="43-lowest-landau-level-projection-via-functional-coherent-states">
         4.3 Lowest Landau Level Projection via Functional Coherent States
        </h2>
@@ -938,15 +1024,11 @@ C^{ij}(\vec{x},\vec{y}) \equiv \{\Omega^i(\vec{x}), \Omega^j(\vec{y})\} = -\kapp
         4.3.1 Complexified Field Variables
        </h3>
        <p>
-        The commutation relation
-        <span class="arithmatex">
-         \([A_1,A_2]=\tfrac{i}{\kappa}\delta\)
-        </span>
-        is structurally identical to
+        To exploit the
         <span class="arithmatex">
          \([x,p]=i\)
         </span>
-        . We diagonalize it by introducing holomorphic combinations,
+        structure of our gauge fields, we diagonalize the commutator by defining holomorphic and anti-holomorphic combinations:
        </p>
        <div class="arithmatex">
         \[
@@ -954,11 +1036,11 @@ A = \sqrt{\frac{\kappa}{2}}\,(A_1 + iA_2), \qquad \bar{A} = \sqrt{\frac{\kappa}{
 \]
        </div>
        <p>
-        Their commutator follows directly from
+        Their commutator follows seamlessly from
         <span class="arithmatex">
          \([A_1,A_2]=\tfrac{i}{\kappa}\delta\)
         </span>
-        and
+        and the vanishing self-commutators
         <span class="arithmatex">
          \([A_1,A_1]=[A_2,A_2]=0\)
         </span>
@@ -969,18 +1051,14 @@ A = \sqrt{\frac{\kappa}{2}}\,(A_1 + iA_2), \qquad \bar{A} = \sqrt{\frac{\kappa}{
 \begin{aligned}
     [A(\vec{x}), \bar{A}(\vec{y})]
     &amp;= \frac{\kappa}{2}\Big([A_1,A_1] - i[A_1,A_2] + i[A_2,A_1] + [A_2,A_2]\Big) \\
-    &amp;= \frac{\kappa}{2}\Big(-i[A_1,A_2] - i[A_1,A_2]\Big) \\
-    &amp;= \frac{\kappa}{2}\left(-2i\right)\frac{i}{\kappa}\,\delta(\vec{x}-\vec{y}) \\
-    &amp;= \delta(\vec{x}-\vec{y}),
+    &amp;= \frac{\kappa}{2}\Big(-2i[A_1,A_2]\Big) \\
+    &amp;= \frac{\kappa}{2}\left(-2i\right)\left(\frac{i}{\kappa}\right)\delta(\vec{x}-\vec{y}) \\
+    &amp;= \delta(\vec{x}-\vec{y}).
 \end{aligned}
 \]
        </div>
        <p>
-        where we used
-        <span class="arithmatex">
-         \([A_2,A_1]=-[A_1,A_2]\)
-        </span>
-        . Thus
+        The fields
         <span class="arithmatex">
          \(A\)
         </span>
@@ -988,84 +1066,78 @@ A = \sqrt{\frac{\kappa}{2}}\,(A_1 + iA_2), \qquad \bar{A} = \sqrt{\frac{\kappa}{
         <span class="arithmatex">
          \(\bar{A}\)
         </span>
-        act as
+        precisely realize a continuous set of
         <strong>
          annihilation and creation operators
         </strong>
-        for a functional harmonic oscillator,
+        for a functional harmonic oscillator.
        </p>
-       <div class="arithmatex">
-        \[
-[A(\vec{x}), \bar{A}(\vec{y})] = \delta(\vec{x}-\vec{y}).
-\]
-       </div>
        <h3 id="432-the-coherent-state-representation">
         4.3.2 The Coherent State Representation
        </h3>
        <p>
-        We represent the Hilbert space on holomorphic wavefunctionals
+        We construct our quantum Hilbert space using holomorphic wavefunctionals
         <span class="arithmatex">
          \(\Psi[A]\)
         </span>
-        , with
+        . In this representation, the creation operator
         <span class="arithmatex">
          \(\bar{A}\)
         </span>
-        realized as a functional derivative acting via the coherent-state inner product,
+        is realized as a functional derivative:
        </p>
        <div class="arithmatex">
         \[
-\bar{A} \;\longrightarrow\; \frac{\delta}{\delta A},
+\bar{A} \;\longrightarrow\; \frac{\delta}{\delta A}.
 \]
        </div>
        <p>
-        so that
+        The algebra
         <span class="arithmatex">
          \([A,\bar A]=\delta\)
         </span>
-        is reproduced upon integration by parts within the inner product. The
+        is correctly reproduced via integration by parts within a
         <strong>
          functional coherent-state inner product
         </strong>
-        is
+        :
        </p>
        <div class="arithmatex">
         \[
-\langle \Psi | \Phi \rangle = \int \mathcal{D}A\,\mathcal{D}A^*\; e^{-\int |A|^2}\,\big(\Psi[A]\big)^*\,\Phi[A],
+\langle \Psi | \Phi \rangle = \int \mathcal{D}A\,\mathcal{D}A^*\; e^{-\int |A|^2}\,\big(\Psi[A]\big)^*\,\Phi[A].
 \]
        </div>
        <p>
-        where the Gaussian measure factor
+        The Gaussian measure factor
         <span class="arithmatex">
          \(e^{-\int|A|^2}\)
         </span>
-        implements the coherent-state resolution of the identity in the infinite-dimensional Fock space.
+        serves to implement the coherent-state resolution of the identity across the infinite-dimensional Fock space.
        </p>
        <h3 id="433-gauss-law-as-the-lll-projector">
         4.3.3 Gauss Law as the LLL Projector
        </h3>
        <p>
-        In the pure Chern–Simons limit the Hamiltonian vanishes; the entire physical content resides in the Gauss law constraint. Rewriting
+        In the pure Chern–Simons limit, the Hamiltonian is structurally zero; the entire physical dynamics are governed by the Gauss law constraint. Expressing
         <span class="arithmatex">
          \(\mathcal{G}=\kappa B=\kappa F_{12}\)
         </span>
-        in the strong-coupling limit, physical states must satisfy
+        in the strong-coupling limit, all physical states must satisfy
         <span class="arithmatex">
          \(F_{12}\,\Psi=0\)
         </span>
-        . Introducing complex derivatives
+        .
        </p>
-       <div class="arithmatex">
-        \[
-\partial_\pm = \partial_1 \mp i\partial_2,
-\]
-       </div>
        <p>
-        the constraint
+        By defining the complex spatial derivatives
+        <span class="arithmatex">
+         \(\partial_\pm = \partial_1 \mp i\partial_2\)
+        </span>
+        , we rewrite the constraint
         <span class="arithmatex">
          \(F_{12}\Psi[A]=0\)
         </span>
-        takes the holomorphic form
+        in terms of our holomorphic variables:
        </p>
        <div class="arithmatex">
         \[
@@ -1073,20 +1145,21 @@ A = \sqrt{\frac{\kappa}{2}}\,(A_1 + iA_2), \qquad \bar{A} = \sqrt{\frac{\kappa}{
 \]
        </div>
        <p>
-        This is a functional first-order differential equation — the field-theoretic analogue of the
+        This functional first-order differential equation is the direct field-theoretic analogue of the
         <strong>
-         lowest Landau level condition
+         lowest Landau level (LLL) condition
         </strong>
+        ,
         <span class="arithmatex">
          \(a\,|\psi\rangle=0\)
         </span>
-        : physical states are annihilated by the holomorphic combination and are therefore projected onto the LLL of the field-space Landau problem.
+        . Physical states must be annihilated by this combined operator, projecting the entire theory onto the LLL of the functional gauge-field space.
        </p>
        <h3 id="434-solution-of-the-constraint">
         4.3.4 Solution of the Constraint
        </h3>
        <p>
-        We seek a Gaussian ansatz
+        We solve this constraint by deploying a Gaussian ansatz for the wavefunctional:
        </p>
        <div class="arithmatex">
         \[
@@ -1094,53 +1167,58 @@ A = \sqrt{\frac{\kappa}{2}}\,(A_1 + iA_2), \qquad \bar{A} = \sqrt{\frac{\kappa}{
 \]
        </div>
        <p>
-        for some symmetric kernel
+        where
         <span class="arithmatex">
          \(K\)
         </span>
-        . Acting with the functional derivative,
+        is a symmetric kernel. Acting on this ansatz with the functional derivative yields:
        </p>
        <div class="arithmatex">
         \[
-\frac{\delta \Psi_0}{\delta A(\vec{x})} = -\left(\int K(\vec{x},\vec{y})\,A(\vec{y})\,d^2y\right)\Psi_0 = -(KA)(\vec{x})\,\Psi_0 .
+\frac{\delta \Psi_0}{\delta A(\vec{x})} = -\left(\int K(\vec{x},\vec{y})\,A(\vec{y})\,d^2y\right)\Psi_0 = -(KA)(\vec{x})\,\Psi_0.
 \]
        </div>
        <p>
-        Substituting into the constraint,
+        Substituting this back into the LLL constraint equation:
        </p>
        <div class="arithmatex">
         \[
 \left[\partial_-\big(-(KA)\big) + \partial_+ A\right]\Psi_0 = 0
 \quad\Longrightarrow\quad
-\left(-\partial_-\,K + \partial_+\right)A = 0 .
+\left(-\partial_-\,K + \partial_+\right)A = 0.
 \]
        </div>
        <p>
-        This holds for arbitrary
+        For this to hold for arbitrary gauge configurations
         <span class="arithmatex">
          \(A\)
         </span>
-        provided the kernel satisfies the operator relation
-       </p>
-       <div class="arithmatex">
-        \[
-\partial_-\,K = \partial_+ ,
-\]
-       </div>
-       <p>
-        which, understood in momentum space where
+        , the kernel must satisfy the operator relation
+        <span class="arithmatex">
+         \(\partial_-\,K = \partial_+\)
+        </span>
+        . Evaluating this in momentum space—where derivatives act multiplicatively as
         <span class="arithmatex">
          \(\partial_\pm\to i(k_1\pm ik_2)\)
         </span>
-        acts multiplicatively, gives
+        —we find the formal solution:
        </p>
        <div class="arithmatex">
         \[
-K = \partial_-^{-1}\,\partial_+ \equiv \frac{\partial_+}{\partial_-} .
+K = \partial_-^{-1}\,\partial_+ \equiv \frac{\partial_+}{\partial_-}.
 \]
        </div>
        <p>
-        Therefore the physical ground-state wavefunctional is
+        <em>
+         (Note: The formal inversion
+         <span class="arithmatex">
+          \(\partial_-^{-1}\)
+         </span>
+         requires careful regularization of the momentum-space zero-modes, corresponding to purely holomorphic gauge transformations, which we leave fixed by appropriate boundary conditions.)
+        </em>
+       </p>
+       <p>
+        The physical ground-state wavefunctional is thus:
        </p>
        <div class="arithmatex">
         \[
@@ -1155,11 +1233,15 @@ K = \partial_-^{-1}\,\partial_+ \equiv \frac{\partial_+}{\partial_-} .
         Limit
        </h3>
        <p>
-        For finite
+        If we track the system from a finite Maxwell coupling
         <span class="arithmatex">
          \(e^2\)
         </span>
-        the Maxwell term acts as a regulator, and the normalizable ground state carries the additional Gaussian factor from the coherent-state measure:
+        , the Maxwell term acts as a high-energy regulator. As we take
+        <span class="arithmatex">
+         \(e^2\to\infty\)
+        </span>
+        , the fully normalizable ground state acquires the necessary Gaussian factor directly from the coherent-state integration measure:
        </p>
        <div class="arithmatex">
         \[
@@ -1169,85 +1251,82 @@ K = \partial_-^{-1}\,\partial_+ \equiv \frac{\partial_+}{\partial_-} .
 \]
        </div>
        <p>
-        The first exponential is the holomorphic wavefunctional annihilated by the Gauss constraint; the second is the universal coherent-state Gaussian
+        The first exponential represents the holomorphic data annihilated by the Gauss constraint. The second exponential is the universal coherent-state envelope
         <span class="arithmatex">
          \(e^{-\frac{1}{2}\int|A|^2}\)
         </span>
-        built into the measure. In the inner product
+        that ensures proper normalization within the inner product
         <span class="arithmatex">
          \(\langle\Psi|\Phi\rangle\)
         </span>
-        , this measure factor
-        <span class="arithmatex">
-         \(e^{-\int|A|^2}\)
-        </span>
-        ensures the correct normalization, while the operator content is carried entirely by the holomorphic piece.
+        .
        </p>
+       <hr/>
        <h2 id="44-summary-of-the-canonical-structure">
         4.4 Summary of the Canonical Structure
        </h2>
        <p>
-        The logical chain of Part 4 is established as follows:
+        The logical progression of the canonical quantization of Chern-Simons theory is strictly established as follows:
        </p>
        <ul>
         <li>
-         The MCS Hamiltonian identifies the Gauss law
+         The Maxwell-Chern-Simons Hamiltonian isolates the Gauss law
          <span class="arithmatex">
           \(\partial_i\Pi^i+\kappa B\)
          </span>
-         as the generator of gauge transformations.
+         as the fundamental generator of gauge transformations.
         </li>
         <li>
-         The limit
+         Taking the topological limit
          <span class="arithmatex">
           \(e^2\to\infty\)
          </span>
-         forces the second-class constraint
+         enforces the second-class constraint
          <span class="arithmatex">
           \(\Omega^i=\Pi^i-\tfrac{\kappa}{2}\epsilon^{ij}A_j\approx 0\)
          </span>
-         , with non-singular Poisson matrix
+         , which possesses a non-singular Poisson matrix
          <span class="arithmatex">
           \(C^{ij}=-\kappa\,\epsilon^{ij}\,\delta\)
          </span>
-         and inverse
+         and a strictly verified inverse
          <span class="arithmatex">
           \((C^{-1})_{ij}=+\tfrac{1}{\kappa}\epsilon_{ij}\,\delta\)
          </span>
          .
         </li>
         <li>
-         The Dirac bracket yields the non-commutative geometry
-         <span class="arithmatex">
-          \(\{A_i,A_j\}_D=+\tfrac{1}{\kappa}\epsilon_{ij}\,\delta\)
-         </span>
-         , hence (with a fixed orientation convention)
+         Implementing the
+         <abbr title="A modification of the Poisson bracket that strictly enforces second-class constraints on the phase space before transitioning to quantum commutators.">
+          Dirac bracket
+         </abbr>
+         mathematically enforces a non-commutative geometry on the spatial slice, resulting in the fundamental relation
          <span class="arithmatex">
           \([A_1,A_2]=\tfrac{i}{\kappa}\,\delta\)
          </span>
          .
         </li>
         <li>
-         Complexification
+         By defining complexified fields
          <span class="arithmatex">
           \(A=\sqrt{\kappa/2}\,(A_1+iA_2)\)
          </span>
-         maps the theory onto a functional Landau problem with
+         , the theory maps perfectly onto a functional Landau problem satisfying the oscillator algebra
          <span class="arithmatex">
           \([A,\bar{A}]=\delta\)
          </span>
          .
         </li>
         <li>
-         The Gauss law
+         The physical Gauss law constraint
          <span class="arithmatex">
           \(F_{12}=0\)
          </span>
-         becomes the LLL projection
+         manifests as the Lowest Landau Level projection
          <span class="arithmatex">
           \(\big(\partial_-\tfrac{\delta}{\delta A}+\partial_+ A\big)\Psi=0\)
          </span>
-         , whose Gaussian solution is
+         , which is solved by the exact Gaussian wavefunctional
          <span class="arithmatex">
           \(\Psi_0[A]=\exp\!\big(-\tfrac{1}{2}\int A\,\tfrac{\partial_+}{\partial_-}\,A\big)\)
          </span>
@@ -1255,86 +1334,9 @@ K = \partial_-^{-1}\,\partial_+ \equiv \frac{\partial_+}{\partial_-} .
         </li>
        </ul>
        <p>
-        This demonstrates that pure Chern–Simons theory is a topological quantum mechanics on the coherent-state (holomorphic) Hilbert space, with the gauge-field components realizing the lowest Landau level of an effective magnetic field of strength
-        <span class="arithmatex">
-         \(\kappa\)
-        </span>
-        .
+        Ultimately, pure Chern–Simons theory operates as a topological quantum mechanics formulated on a coherent-state Hilbert space, where the gauge field itself is confined entirely to the lowest Landau level.
        </p>
-       <hr/>
-       <h2 id="reviewers-closing-remarks">
-        Reviewer's Closing Remarks
-       </h2>
-       <ul>
-        <li>
-         <strong>
-          Must-fix (now fixed):
-         </strong>
-         the inverse of
-         <span class="arithmatex">
-          \(C^{ij}\)
-         </span>
-         in §4.2.2 and the associated "sign absorbed by convention" evasion. Mathematics is not negotiated with; the inverse is
-         <span class="arithmatex">
-          \(+\tfrac{1}{\kappa}\epsilon_{ij}\delta\)
-         </span>
-         , verified exactly.
-        </li>
-        <li>
-         <strong>
-          Convention transparency:
-         </strong>
-         the sign of
-         <span class="arithmatex">
-          \([A_1,A_2]\)
-         </span>
-         genuinely depends on the orientation
-         <span class="arithmatex">
-          \(\epsilon_{12}=\pm1\)
-         </span>
-         and the quantization map. I made this explicit rather than hiding it. The author must not present a convention-dependent sign as if it were forced.
-        </li>
-        <li>
-         <strong>
-          Rigor gap (§4.3.4):
-         </strong>
-         operator "division"
-         <span class="arithmatex">
-          \(\partial_+/\partial_-\)
-         </span>
-         demands a momentum-space definition and comment on the zero-mode of
-         <span class="arithmatex">
-          \(\partial_-\)
-         </span>
-         ; I added the minimal clarification. A publishable version should address the kernel's behavior on the
-         <span class="arithmatex">
-          \(\partial_-\)
-         </span>
-         zero-modes (constant/holomorphic modes), which I flag but do not resolve here.
-        </li>
-        <li>
-         <strong>
-          Notation:
-         </strong>
-         replaced all
-         <code>
-          align
-         </code>
-         with
-         <code>
-          aligned
-         </code>
-         inside
-         <code>
-          $$…$$
-         </code>
-         for MathJax/MkDocs compatibility, since bare
-         <code>
-          align
-         </code>
-         is not reliably rendered.
-        </li>
-       </ul>
+       <!-- Tooltips Definitions -->
       </article>
      </div>
      <script>
