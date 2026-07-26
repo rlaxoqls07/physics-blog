@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Quantum Corrections and Anomalies - Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#part-7-quantum-corrections-and-anomalies">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        Math &amp; Physics Blog
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Quantum Corrections and Anomalies
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-0/">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-1/">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-2/">
+                  <span class="md-ellipsis">
+                   Curvature
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-3/">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Paper Review
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Paper Review
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Aspects of Chern-Simons theory
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Aspects of Chern-Simons theory
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part1/">
+                  <span class="md-ellipsis">
+                   Kinematics and Planar Symmetries
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part2/">
+                  <span class="md-ellipsis">
+                   Topologically massive gauge theory
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part3/">
+                  <span class="md-ellipsis">
+                   Non-abelian Gauge Transformations and Topology
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part4/">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part5/">
+                  <span class="md-ellipsis">
+                   Quantization on Nontrivial Topologies
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part6/">
+                  <span class="md-ellipsis">
+                   Bogomol'nyi Self-Duality
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part7/">
+                  <span class="md-ellipsis">
+                   Quantum Corrections and Anomalies
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part1/">
+                  <span class="md-ellipsis">
+                   Test
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Seminar
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Seminar
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Curve Shortening Flow
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Curve Shortening Flow
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part0/">
+                  <span class="md-ellipsis">
+                   Introduction
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part1/">
+                  <span class="md-ellipsis">
+                   CSF is Heat Equation for Curves
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part2/">
+                  <span class="md-ellipsis">
+                   Evolution Equations
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part3/">
+                  <span class="md-ellipsis">
+                   More on Singularity Analysis
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part4/">
+                  <span class="md-ellipsis">
+                   Conclusion and Generalization
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#71-the-parity-anomaly-in-odd-dimensions">
+            <span class="md-ellipsis">
+             7.1 The Parity Anomaly in Odd Dimensions
+            </span>
+           </a>
+           <nav aria-label="7.1 The Parity Anomaly in Odd Dimensions" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#711-setup-the-fermion-determinant">
+               <span class="md-ellipsis">
+                7.1.1 Setup: The Fermion Determinant
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#712-expansion-of-the-effective-action">
+               <span class="md-ellipsis">
+                7.1.2 Expansion of the Effective Action
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#713-extraction-of-the-parity-odd-part">
+               <span class="md-ellipsis">
+                7.1.3 Extraction of the Parity-Odd Part
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#714-evaluation-of-the-scalar-integral">
+               <span class="md-ellipsis">
+                7.1.4 Evaluation of the Scalar Integral
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#715-the-low-energy-long-wavelength-limit">
+               <span class="md-ellipsis">
+                7.1.5 The Low-Energy (Long-Wavelength) Limit
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#716-induced-chernsimons-term">
+               <span class="md-ellipsis">
+                7.1.6 Induced Chern–Simons Term
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#717-the-anomaly-as-a-topological-obstruction">
+               <span class="md-ellipsis">
+                7.1.7 The Anomaly as a Topological Obstruction
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#718-non-abelian-generalization">
+               <span class="md-ellipsis">
+                7.1.8 Non-Abelian Generalization
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#72-finite-temperature-effective-action">
+            <span class="md-ellipsis">
+             7.2 Finite-Temperature Effective Action
+            </span>
+           </a>
+           <nav aria-label="7.2 Finite-Temperature Effective Action" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#721-the-difficulty-at-finite-temperature">
+               <span class="md-ellipsis">
+                7.2.1 The Difficulty at Finite Temperature
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#722-dimensional-reduction-to-quantum-mechanics">
+               <span class="md-ellipsis">
+                7.2.2 Dimensional Reduction to Quantum Mechanics
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#723-exact-diagonalization-via-the-holonomy">
+               <span class="md-ellipsis">
+                7.2.3 Exact Diagonalization via the Holonomy
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#724-the-determinant-ratio">
+               <span class="md-ellipsis">
+                7.2.4 The Determinant Ratio
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#725-the-nonanalytic-structure-and-resolution">
+               <span class="md-ellipsis">
+                7.2.5 The Nonanalytic Structure and Resolution
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#726-topological-origin-the-index-contribution">
+               <span class="md-ellipsis">
+                7.2.6 Topological Origin: The Index Contribution
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#73-the-colemanhill-theorem">
+            <span class="md-ellipsis">
+             7.3 The Coleman–Hill Theorem
+            </span>
+           </a>
+           <nav aria-label="7.3 The Coleman–Hill Theorem" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#731-statement">
+               <span class="md-ellipsis">
+                7.3.1 Statement
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#732-proof-of-non-renormalization-beyond-one-loop">
+               <span class="md-ellipsis">
+                7.3.2 Proof of Non-Renormalization Beyond One Loop
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#733-consequence-integer-shift-of-the-level">
+               <span class="md-ellipsis">
+                7.3.3 Consequence: Integer Shift of the Level
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#74-consistency-gauge-invariance-and-integer-quantization">
+            <span class="md-ellipsis">
+             7.4 Consistency: Gauge Invariance and Integer Quantization
+            </span>
+           </a>
+           <nav aria-label="7.4 Consistency: Gauge Invariance and Integer Quantization" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#741-large-gauge-transformations">
+               <span class="md-ellipsis">
+                7.4.1 Large Gauge Transformations
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#742-synthesis">
+               <span class="md-ellipsis">
+                7.4.2 Synthesis
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:chern-simons">
+         Chern-Simons
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:coleman-hill-theorem">
+         Coleman-Hill Theorem
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:finite-temperature-field-theory">
+         Finite-Temperature Field Theory
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:parity-anomaly">
+         Parity Anomaly
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:topological-obstruction">
+         Topological Obstruction
+        </a>
+       </nav>
+       <h1 id="part-7-quantum-corrections-and-anomalies">
+        Part 7: Quantum Corrections and Anomalies
+       </h1>
+       <h2 id="71-the-parity-anomaly-in-odd-dimensions">
+        7.1 The Parity Anomaly in Odd Dimensions
+       </h2>
+       <h3 id="711-setup-the-fermion-determinant">
+        7.1.1 Setup: The Fermion Determinant
+       </h3>
+       <p>
+        We consider
+        <span class="arithmatex">
+         \(N_f\)
+        </span>
+        two-component Dirac fermions in three Euclidean dimensions coupled to a background gauge field
+        <span class="arithmatex">
+         \(A_\mu\)
+        </span>
+        . The fundamental object is the effective action defined through the fermion determinant:
+       </p>
+       <div class="arithmatex">
+        \[
+S_{\text{eff}}[A,m] = N_f \log \det(i\partial\!\!\!/ + A\!\!\!/ + m).
+\]
+       </div>
+       <p>
+        The Dirac operator
+        <span class="arithmatex">
+         \(i\partial\!\!\!/ + A\!\!\!/ + m\)
+        </span>
+        is not Hermitian in three dimensions when
+        <span class="arithmatex">
+         \(m \neq 0\)
+        </span>
+        . The essential feature is that under the discrete parity transformation
+        <span class="arithmatex">
+         \(P\)
+        </span>
+        , which in
+        <span class="arithmatex">
+         \(d=3\)
+        </span>
+        we define as a single spatial reflection,
+       </p>
+       <div class="arithmatex">
+        \[
+x^1 \to -x^1, \quad A_1 \to -A_1, \quad \psi \to \gamma^1 \psi,
+\]
+       </div>
+       <p>
+        the mass term transforms as
+        <span class="arithmatex">
+         \(m\bar\psi\psi \to -m\bar\psi\psi\)
+        </span>
+        . Thus, a nonzero mass
+        <strong>
+         explicitly breaks parity
+        </strong>
+        . The central question of the parity anomaly is whether the theory can be regularized in a manner that preserves parity in the massless limit while simultaneously preserving exact gauge invariance. We will demonstrate that this is impossible: a topological obstruction—the parity anomaly—prevents it.
+       </p>
+       <h3 id="712-expansion-of-the-effective-action">
+        7.1.2 Expansion of the Effective Action
+       </h3>
+       <p>
+        Expanding the logarithm about the free operator yields:
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+S_{\text{eff}}[A,m] &amp;= N_f \operatorname{tr}\log(i\partial\!\!\!/ + m) \\
+    &amp;\quad + N_f \operatorname{tr}\!\left(\frac{1}{i\partial\!\!\!/ + m}\,A\!\!\!/\right) \\
+    &amp;\quad - \frac{N_f}{2}\operatorname{tr}\!\left(\frac{1}{i\partial\!\!\!/ + m}\,A\!\!\!/\,\frac{1}{i\partial\!\!\!/ + m}\,A\!\!\!/\right) + \cdots.
+\end{aligned}
+\]
+       </div>
+       <p>
+        The term quadratic in
+        <span class="arithmatex">
+         \(A\)
+        </span>
+        defines the vacuum polarization. Writing it with consistently contracted covariant indices, we obtain:
+       </p>
+       <div class="arithmatex">
+        \[
+S_{\text{eff}}^{\text{quad}}[A,m] = \frac{N_f}{2}\int \frac{d^3p}{(2\pi)^3}\,\big[A_\mu(-p)\,\Gamma^{\mu\nu}(p)\,A_\nu(p)\big],
+\]
+       </div>
+       <p>
+        where the vertex function is:
+       </p>
+       <div class="arithmatex">
+        \[
+\Gamma^{\mu\nu}(p,m) = \int \frac{d^3k}{(2\pi)^3}\,\operatorname{tr}\!\left[\gamma^\mu\,\frac{p\!\!\!/+k\!\!\!/-m}{(p+k)^2+m^2}\,\gamma^\nu\,\frac{k\!\!\!/-m}{k^2+m^2}\right].
+\]
+       </div>
+       <h3 id="713-extraction-of-the-parity-odd-part">
+        7.1.3 Extraction of the Parity-Odd Part
+       </h3>
+       <p>
+        The trace over the gamma matrices cleanly splits into a parity-even piece and a parity-odd piece. The parity-odd contribution arises
+        <strong>
+         exclusively
+        </strong>
+        from the single-
+        <span class="arithmatex">
+         \(m\)
+        </span>
+        terms multiplying the identity component of the numerator via the three-gamma trace. In
+        <span class="arithmatex">
+         \(d=3\)
+        </span>
+        , the fundamental identity is:
+       </p>
+       <div class="arithmatex">
+        \[
+\operatorname{tr}(\gamma^\mu\gamma^\nu\gamma^\rho) = -2\epsilon^{\mu\nu\rho}.
+\]
+       </div>
+       <p>
+        Isolating the terms in the numerator that carry a single factor of
+        <span class="arithmatex">
+         \(m\)
+        </span>
+        and produce three gamma matrices, we obtain a structure antisymmetric in
+        <span class="arithmatex">
+         \((\mu,\nu)\)
+        </span>
+        and linear in
+        <span class="arithmatex">
+         \(p\)
+        </span>
+        :
+       </p>
+       <div class="arithmatex">
+        \[
+\Gamma^{\mu\nu}_{\text{odd}}(p,m) = \epsilon^{\mu\nu\rho}p_\rho\,\Pi_{\text{odd}}(p^2,m).
+\]
+       </div>
+       <p>
+        The scalar coefficient is:
+       </p>
+       <div class="arithmatex">
+        \[
+\Pi_{\text{odd}}(p^2,m) = 2m \int \frac{d^3k}{(2\pi)^3}\,\frac{1}{[(p+k)^2+m^2][k^2+m^2]}.
+\]
+       </div>
+       <h3 id="714-evaluation-of-the-scalar-integral">
+        7.1.4 Evaluation of the Scalar Integral
+       </h3>
+       <p>
+        This integral is finite and can be evaluated using standard Feynman parametrization:
+       </p>
+       <div class="arithmatex">
+        \[
+\frac{1}{[(p+k)^2+m^2][k^2+m^2]} = \int_0^1 dx\,\frac{1}{[(k+xp)^2 + \Delta]^2}, \quad \Delta = x(1-x)p^2 + m^2.
+\]
+       </div>
+       <p>
+        Shifting
+        <span class="arithmatex">
+         \(k \to k - xp\)
+        </span>
+        and utilizing the standard three-dimensional Euclidean integral:
+       </p>
+       <div class="arithmatex">
+        \[
+\int \frac{d^3k}{(2\pi)^3}\,\frac{1}{(k^2+\Delta)^2} = \frac{1}{8\pi\sqrt{\Delta}},
+\]
+       </div>
+       <p>
+        we find:
+       </p>
+       <div class="arithmatex">
+        \[
+\Pi_{\text{odd}}(p^2,m) = 2m \int_0^1 \frac{dx}{8\pi\sqrt{x(1-x)p^2 + m^2}} = \frac{m}{4\pi}\int_0^1 \frac{dx}{\sqrt{x(1-x)p^2 + m^2}}.
+\]
+       </div>
+       <p>
+        Carrying out the elementary
+        <span class="arithmatex">
+         \(x\)
+        </span>
+        -integration yields the exact closed form:
+       </p>
+       <div class="arithmatex">
+        \[
+\Pi_{\text{odd}}(p^2,m) = \frac{1}{2\pi}\,\frac{m}{|p|}\,\arcsin\!\left(\frac{|p|}{\sqrt{p^2 + 4m^2}}\right).
+\]
+       </div>
+       <h3 id="715-the-low-energy-long-wavelength-limit">
+        7.1.5 The Low-Energy (Long-Wavelength) Limit
+       </h3>
+       <p>
+        The crucial topological observation is the behavior at
+        <span class="arithmatex">
+         \(p \to 0\)
+        </span>
+        . Since
+        <span class="arithmatex">
+         \(\arcsin(z) \to z\)
+        </span>
+        as
+        <span class="arithmatex">
+         \(z \to 0\)
+        </span>
+        , and
+        <span class="arithmatex">
+         \(|p|/\sqrt{p^2+4m^2} \to |p|/(2|m|)\)
+        </span>
+        , we obtain:
+       </p>
+       <div class="arithmatex">
+        \[
+\Pi_{\text{odd}}(0,m) = \frac{1}{2\pi}\,\frac{m}{|p|}\cdot\frac{|p|}{2|m|} = \frac{1}{4\pi}\,\frac{m}{|m|} = \frac{1}{4\pi}\,\operatorname{sgn}(m).
+\]
+       </div>
+       <p>
+        Therefore, the vertex function behaves as:
+       </p>
+       <div class="arithmatex">
+        \[
+\Gamma^{\mu\nu}_{\text{odd}}(p,m) \sim \frac{1}{4\pi}\,\operatorname{sgn}(m)\,\epsilon^{\mu\nu\rho}p_\rho + \mathcal{O}\!\left(\frac{p^2}{m^2}\right).
+\]
+       </div>
+       <p>
+        This is the central result. The leading coefficient is
+        <strong>
+         finite, nonzero, and independent of
+         <span class="arithmatex">
+          \(|m|\)
+         </span>
+        </strong>
+        , strictly depending only on the sign of the mass.
+       </p>
+       <h3 id="716-induced-chernsimons-term">
+        7.1.6 Induced Chern–Simons Term
+       </h3>
+       <p>
+        Substituting this back into
+        <span class="arithmatex">
+         \(S_{\text{eff}}^{\text{quad}}\)
+        </span>
+        and Fourier transforming to position space, the parity-odd part generates a local Chern–Simons term:
+       </p>
+       <div class="arithmatex">
+        \[
+S_{\text{eff}}^{\text{CS}} = -i\,\frac{N_f}{2}\,\frac{1}{4\pi}\,\operatorname{sgn}(m)\int d^3x\,\epsilon^{\mu\nu\rho}A_\mu\partial_\nu A_\rho.
+\]
+       </div>
+       <p>
+        By standard conventions (where the action is
+        <span class="arithmatex">
+         \(\tfrac{\kappa}{4\pi}\int \epsilon A \partial A\)
+        </span>
+        ), the induced Chern–Simons level is exactly:
+       </p>
+       <div class="arithmatex">
+        \[
+\kappa_{\text{ind}} = \frac{N_f}{2}\,\operatorname{sgn}(m).
+\]
+       </div>
+       <p>
+        For a single two-component fermion (
+        <span class="arithmatex">
+         \(N_f = 1\)
+        </span>
+        ), this yields a strict half-integer level
+        <span class="arithmatex">
+         \(\kappa_{\text{ind}} = \pm\tfrac{1}{2}\)
+        </span>
+        . This fractional level is the direct origin of the parity anomaly.
+       </p>
+       <h3 id="717-the-anomaly-as-a-topological-obstruction">
+        7.1.7 The Anomaly as a Topological Obstruction
+       </h3>
+       <p>
+        We can now formulate the obstruction rigorously. Consider the strictly massless theory
+        <span class="arithmatex">
+         \(m=0\)
+        </span>
+        . We are caught in a tension between two fundamental symmetries:
+       </p>
+       <ol>
+        <li>
+         <strong>
+          Parity Invariance:
+         </strong>
+         At
+         <span class="arithmatex">
+          \(m=0\)
+         </span>
+         , the classical action is parity-invariant. A parity-preserving regulator would strictly dictate an induced level of
+         <span class="arithmatex">
+          \(\kappa = 0\)
+         </span>
+         .
+        </li>
+        <li>
+         <strong>
+          Gauge Invariance:
+         </strong>
+         A properly regularized theory (e.g., using Pauli–Villars with a massive regulator
+         <span class="arithmatex">
+          \(M\)
+         </span>
+         ) contributes an induced level of
+         <span class="arithmatex">
+          \(\tfrac{1}{2}\operatorname{sgn}(M)\)
+         </span>
+         per fermion in the limit
+         <span class="arithmatex">
+          \(M \to \infty\)
+         </span>
+         . Exact gauge invariance under large gauge transformations algebraically demands that the total Chern–Simons level be an
+         <strong>
+          integer
+         </strong>
+         .
+        </li>
+       </ol>
+       <p>
+        For a single two-component fermion, the properly regulated effective action is:
+       </p>
+       <div class="arithmatex">
+        \[
+S_{\text{eff}}^{\text{reg}}[A,m=0] = S_{\text{eff}}[A,m=0] - \lim_{M\to\infty}S_{\text{eff}}[A,M].
+\]
+       </div>
+       <p>
+        This regulatory subtraction inherently contributes an induced level of
+        <span class="arithmatex">
+         \(-\tfrac{1}{2}\operatorname{sgn}(M)\)
+        </span>
+        . The final physical result is a
+        <strong>
+         half-integer
+        </strong>
+        Chern–Simons level. One cannot elevate this to an integer without manually adding a bare counterterm of level
+        <span class="arithmatex">
+         \(\pm\tfrac{1}{2}\)
+        </span>
+        , which explicitly breaks parity. Thus:
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Theorem 7.1.1 (The Parity Anomaly).
+         </strong>
+         In a 2+1 dimensional gauge theory with an odd number of fermion flavors (
+         <span class="arithmatex">
+          \(N_f\)
+         </span>
+         ), parity and gauge invariance cannot both be simultaneously preserved at the quantum level.
+        </p>
+        <p class="thm">
+        </p>
+       </blockquote>
+       <h3 id="718-non-abelian-generalization">
+        7.1.8 Non-Abelian Generalization
+       </h3>
+       <p>
+        For a non-Abelian gauge group, the cubic term in the perturbative expansion is non-vanishing. The parity-odd part of the three-point function necessarily incorporates the Lie algebra trace structure:
+       </p>
+       <div class="arithmatex">
+        \[
+\Gamma^{abc,\mu\nu\rho}_{\text{odd}}(p_1,p_2,m) \sim -i\,\frac{1}{4\pi}\,\operatorname{sgn}(m)\,\epsilon^{\mu\nu\rho}\operatorname{tr}(T^a [T^b, T^c]) + \mathcal{O}\!\left(\frac{p^2}{m^2}\right).
+\]
+       </div>
+       <p>
+        This cubic vertex perfectly combines with the quadratic term to elegantly reconstruct the fully
+        <strong>
+         gauge-invariant
+        </strong>
+        non-Abelian Chern–Simons action:
+       </p>
+       <div class="arithmatex">
+        \[
+S_{\text{eff}}^{\text{CS}} = -i\,\frac{N_f}{2}\,\frac{1}{4\pi}\,\operatorname{sgn}(m)\int d^3x\,\epsilon^{\mu\nu\rho}\operatorname{tr}\!\left(A_\mu\partial_\nu A_\rho + \frac{2}{3}A_\mu A_\nu A_\rho\right).
+\]
+       </div>
+       <p>
+        The highly specific
+        <span class="arithmatex">
+         \(\tfrac{2}{3}\)
+        </span>
+        coefficient of the cubic term is strictly
+        <strong>
+         fixed
+        </strong>
+        by the requirement that
+        <span class="arithmatex">
+         \(\Gamma^{\mu\nu}_{\text{odd}}\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\Gamma^{abc,\mu\nu\rho}_{\text{odd}}\)
+        </span>
+        seamlessly assemble into a gauge-covariant geometric structure; it is a consistency output of the anomaly, not a mathematical input.
+       </p>
+       <hr/>
+       <h2 id="72-finite-temperature-effective-action">
+        7.2 Finite-Temperature Effective Action
+       </h2>
+       <h3 id="721-the-difficulty-at-finite-temperature">
+        7.2.1 The Difficulty at Finite Temperature
+       </h3>
+       <p>
+        At finite temperature
+        <span class="arithmatex">
+         \(T = 1/\beta\)
+        </span>
+        , continuous Lorentz invariance is broken, rendering the perturbative expansion in
+        <span class="arithmatex">
+         \(\Pi_{\text{odd}}\)
+        </span>
+        structurally ambiguous. Perturbatively, the induced Chern–Simons coefficient appears to depend continuously on
+        <span class="arithmatex">
+         \(T\)
+        </span>
+        , which violently conflicts with the strict integer quantization required by large gauge invariance. This tension is resolved by executing an
+        <strong>
+         exact
+        </strong>
+        , non-perturbative computation.
+       </p>
+       <h3 id="722-dimensional-reduction-to-quantum-mechanics">
+        7.2.2 Dimensional Reduction to Quantum Mechanics
+       </h3>
+       <p>
+        Let us analyze the effective action for a spatially uniform temporal gauge field. The problem dramatically reduces to
+        <span class="arithmatex">
+         \((0+1)\)
+        </span>
+        -dimensional quantum mechanics:
+       </p>
+       <div class="arithmatex">
+        \[
+\mathcal{L} = \sum_{j=1}^{N_f}\psi_j^\dagger(\partial_\tau - iA + m)\psi_j - i\kappa A,
+\]
+       </div>
+       <p>
+        with the effective action given by the functional ratio of determinants:
+       </p>
+       <div class="arithmatex">
+        \[
+S[A] = \log\left[\frac{\det(\partial_\tau - iA + m)}{\det(\partial_\tau + m)}\right]^{N_f}.
+\]
+       </div>
+       <h3 id="723-exact-diagonalization-via-the-holonomy">
+        7.2.3 Exact Diagonalization via the Holonomy
+       </h3>
+       <p>
+        The sole gauge-invariant datum here is the holonomy variable:
+       </p>
+       <div class="arithmatex">
+        \[
+a \equiv \int_0^\beta A(\tau)\,d\tau.
+\]
+       </div>
+       <p>
+        Solving the first-order differential equation
+        <span class="arithmatex">
+         \((\partial_\tau - iA + m)\psi = \Lambda\psi\)
+        </span>
+        with the requisite antiperiodic boundary conditions for fermions,
+        <span class="arithmatex">
+         \(\psi(0) = -\psi(\beta)\)
+        </span>
+        , the exact eigenfunctions are:
+       </p>
+       <div class="arithmatex">
+        \[
+\psi(\tau) = e^{(\Lambda - m)\tau + i\int_0^\tau A(\tau')\,d\tau'},
+\]
+       </div>
+       <p>
+        and the antiperiodicity strictly quantizes the spectrum as:
+       </p>
+       <div class="arithmatex">
+        \[
+\Lambda_n = m - i\frac{a}{\beta} + \frac{(2n-1)\pi i}{\beta}, \quad n \in \mathbb{Z}.
+\]
+       </div>
+       <h3 id="724-the-determinant-ratio">
+        7.2.4 The Determinant Ratio
+       </h3>
+       <p>
+        Forming the ratio over all Matsubara modes and utilizing the infinite product representation of the hyperbolic cosine:
+       </p>
+       <div class="arithmatex">
+        \[
+\prod_{n=-\infty}^{\infty}\left[\frac{m - i\frac{a}{\beta} + \frac{(2n-1)\pi i}{\beta}}{m + \frac{(2n-1)\pi i}{\beta}}\right] = \frac{\cosh\!\left(\frac{\beta m}{2} - i\frac{a}{2}\right)}{\cosh\!\left(\frac{\beta m}{2}\right)}.
+\]
+       </div>
+       <p>
+        Expanding the numerator analytically via
+        <span class="arithmatex">
+         \(\cosh(x - iy) = \cosh x\cos y - i\sinh x\sin y\)
+        </span>
+        :
+       </p>
+       <div class="arithmatex">
+        \[
+S[A] = N_f\log\left[\cos\!\left(\frac{a}{2}\right) - i\tanh\!\left(\frac{\beta m}{2}\right)\sin\!\left(\frac{a}{2}\right)\right].
+\]
+       </div>
+       <p>
+        This expression is
+        <strong>
+         exact
+        </strong>
+        . It captures all polynomial orders in
+        <span class="arithmatex">
+         \(a\)
+        </span>
+        , meaning it captures all orders of the background field non-perturbatively.
+       </p>
+       <h3 id="725-the-nonanalytic-structure-and-resolution">
+        7.2.5 The Nonanalytic Structure and Resolution
+       </h3>
+       <p>
+        Expanding this exact result to low orders in the holonomy
+        <span class="arithmatex">
+         \(a\)
+        </span>
+        :
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+S[A] &amp;= -i\,\frac{N_f}{2}\Bigg[\tanh\!\left(\frac{\beta m}{2}\right)a
+    - \frac{i}{4}\operatorname{sech}^2\!\left(\frac{\beta m}{2}\right)a^2 \\
+    &amp;\qquad\qquad + \frac{1}{12}\tanh\!\left(\frac{\beta m}{2}\right)\operatorname{sech}^2\!\left(\frac{\beta m}{2}\right)a^3 + \cdots\Bigg].
+\end{aligned}
+\]
+       </div>
+       <p>
+        The linear (Chern–Simons) term possesses the coefficient:
+       </p>
+       <div class="arithmatex">
+        \[
+S^{(1)}[A] = -i\,\frac{N_f}{2}\tanh\!\left(\frac{\beta m}{2}\right)\int A,
+\]
+       </div>
+       <p>
+        implying a temperature-dependent induced level:
+       </p>
+       <div class="arithmatex">
+        \[
+\kappa_{\text{ren}} = \kappa_{\text{bare}} - \frac{N_f}{2}\tanh\!\left(\frac{\beta m}{2}\right).
+\]
+       </div>
+       <p>
+        At
+        <span class="arithmatex">
+         \(T=0\)
+        </span>
+        , this beautifully recovers
+        <span class="arithmatex">
+         \(-\tfrac{N_f}{2}\operatorname{sgn}(m)\)
+        </span>
+        , precisely matching the zero-temperature parity anomaly calculation.
+        <strong>
+         The apparent contradiction with integer quantization is resolved completely by the non-perturbative structure.
+        </strong>
+        While the linear coefficient varies continuously, the
+        <em>
+         full
+        </em>
+        effective action,
+       </p>
+       <div class="arithmatex">
+        \[
+S[A] = N_f\log\left[\cos\!\left(\frac{a}{2}\right) - i\tanh\!\left(\frac{\beta m}{2}\right)\sin\!\left(\frac{a}{2}\right)\right],
+\]
+       </div>
+       <p>
+        changes under a large gauge transformation
+        <span class="arithmatex">
+         \(a \to a + 2\pi\)
+        </span>
+        exactly by:
+       </p>
+       <div class="arithmatex">
+        \[
+\cos\!\left(\frac{a}{2}+\pi\right) = -\cos\!\left(\frac{a}{2}\right), \quad \sin\!\left(\frac{a}{2}+\pi\right) = -\sin\!\left(\frac{a}{2}\right).
+\]
+       </div>
+       <p>
+        The bracket identically flips sign, yielding
+        <span class="arithmatex">
+         \(S[A] \to S[A] + N_f\log(-1) = S[A] + i\pi N_f\)
+        </span>
+        . The change is an exact,
+        <strong>
+         temperature-independent
+        </strong>
+        integer multiple of
+        <span class="arithmatex">
+         \(i\pi\)
+        </span>
+        . The infinite tower of higher-order terms in
+        <span class="arithmatex">
+         \(a\)
+        </span>
+        conspires holistically to restore strict invariance of the partition function
+        <span class="arithmatex">
+         \(e^{-S}\)
+        </span>
+        . The continuous
+        <span class="arithmatex">
+         \(T\)
+        </span>
+        -dependence is merely a perturbative artifact.
+       </p>
+       <h3 id="726-topological-origin-the-index-contribution">
+        7.2.6 Topological Origin: The Index Contribution
+       </h3>
+       <p>
+        This entire phenomenon is deeply rooted in the Atiyah-Singer index theorem. For a nontrivial magnetic background where
+        <span class="arithmatex">
+         \(\int d^2x\,\epsilon^{ij}\partial_i A_j = 2\pi\mathcal{N}\)
+        </span>
+        (with
+        <span class="arithmatex">
+         \(\mathcal{N}\in\mathbb{Z}\)
+        </span>
+        ), the Dirac operator possesses exactly
+        <span class="arithmatex">
+         \(\mathcal{N}\)
+        </span>
+        zero modes. These topological zero modes contribute a parity-odd piece to the effective action:
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+S_{\text{eff}}^{\text{odd}}[A] &amp;= \frac{\mathcal{N}}{2}\Bigg(\log\!\left[\cos\!\frac{a}{2} - i\tanh\!\frac{\beta m}{2}\sin\!\frac{a}{2}\right] - \log\!\left[\cos\!\frac{a}{2} + i\tanh\!\frac{\beta m}{2}\sin\!\frac{a}{2}\right]\Bigg) \\
+    &amp;= -i\mathcal{N}\arctan\!\left[\tanh\!\left(\frac{\beta m}{2}\right)\tan\!\left(\frac{a}{2}\right)\right],
+\end{aligned}
+\]
+       </div>
+       <p>
+        which directly reconstructs the geometric Chern–Simons coupling. The integer counting
+        <span class="arithmatex">
+         \(\mathcal{N}\)
+        </span>
+        ties the parity anomaly definitively to the topological index.
+       </p>
+       <hr/>
+       <h2 id="73-the-colemanhill-theorem">
+        7.3 The Coleman–Hill Theorem
+       </h2>
+       <h3 id="731-statement">
+        7.3.1 Statement
+       </h3>
+       <blockquote>
+        <p>
+         <strong>
+          Theorem 7.3.1 (Coleman–Hill).
+         </strong>
+         In a parity-violating 2+1 dimensional gauge theory with a strict mass gap and preserved Lorentz invariance, the low-energy Chern–Simons coefficient receives exact quantum contributions
+         <strong>
+          only
+         </strong>
+         from one-loop diagrams containing the light degrees of freedom. All higher-loop radiative corrections to the topological shift of
+         <span class="arithmatex">
+          \(\kappa\)
+         </span>
+         identically vanish.
+        </p>
+        <p class="thm">
+        </p>
+       </blockquote>
+       <h3 id="732-proof-of-non-renormalization-beyond-one-loop">
+        7.3.2 Proof of Non-Renormalization Beyond One Loop
+       </h3>
+       <p>
+        The proof rests mathematically on two rigorous facts:
+       </p>
+       <ol>
+        <li>
+         <strong>
+          Analyticity:
+         </strong>
+         In a fully gapped theory, all correlation functions are perfectly analytic in the external momentum
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         near
+         <span class="arithmatex">
+          \(p=0\)
+         </span>
+         . The parity-odd form factor
+         <span class="arithmatex">
+          \(\Pi_{\text{odd}}(p^2)\)
+         </span>
+         admits a Taylor expansion with no nonanalytic (infrared) pieces
+         <span class="arithmatex">
+          \(\sim |p|\)
+         </span>
+         .
+        </li>
+        <li>
+         <strong>
+          The One-Particle Structure:
+         </strong>
+         In any two-loop or higher diagram, at least one internal photon line must carry the full external momentum flow. The required parity-odd structure requires a Levi-Civita tensor
+         <span class="arithmatex">
+          \(\epsilon^{\mu\nu\rho}\)
+         </span>
+         , which must be saturated by an internal or external momentum. Differentiating with respect to external momentum and taking the strict limit
+         <span class="arithmatex">
+          \(p=0\)
+         </span>
+         (to extract the topological shift
+         <span class="arithmatex">
+          \(\partial\kappa\)
+         </span>
+         ) causes the derivative to act on massive internal propagators. The integrand remains strictly finite, and the
+         <span class="arithmatex">
+          \(\epsilon\)
+         </span>
+         -tensor algebraically forces at least one factor of external momentum to remain, evaluating to zero at
+         <span class="arithmatex">
+          \(p=0\)
+         </span>
+         .
+        </li>
+       </ol>
+       <p>
+        Formally, higher-loop radiative corrections only generate strictly momentum-dependent kinetic corrections that vanish in the deep infrared limit (
+        <span class="arithmatex">
+         \(p \to 0\)
+        </span>
+        ):
+       </p>
+       <div class="arithmatex">
+        \[
+\lim_{p\to 0}\Pi_{\text{odd}}^{(\geq 2\text{-loop})}(p) = 0.
+\]
+       </div>
+       <p>
+        Only the one-loop diagram, where a massless or light internal line can harbor the necessary infrared pole, survives to contribute to the constant topological mass.
+       </p>
+       <h3 id="733-consequence-integer-shift-of-the-level">
+        7.3.3 Consequence: Integer Shift of the Level
+       </h3>
+       <p>
+        Introducing the level
+        <span class="arithmatex">
+         \(\kappa = m/e^2\)
+        </span>
+        , the physical shift reads:
+       </p>
+       <div class="arithmatex">
+        \[
+4\pi\kappa_{\text{ren}} = 4\pi\kappa_{\text{bare}} + N.
+\]
+       </div>
+       <p>
+        The shift is a
+        <strong>
+         pure integer
+        </strong>
+        <span class="arithmatex">
+         \(N\)
+        </span>
+        (determined by the dual Coxeter number or fermion flavor count). This is the absolute field-theoretic statement of Coleman–Hill: the one-loop contribution
+        <span class="arithmatex">
+         \(N/4\pi\)
+        </span>
+        is exact. Higher-loop corrections produce
+        <span class="arithmatex">
+         \(\mathcal{O}(p^2/m^2)\)
+        </span>
+        terms, but they do not alter the topological, momentum-independent quantized coefficient.
+       </p>
+       <hr/>
+       <h2 id="74-consistency-gauge-invariance-and-integer-quantization">
+        7.4 Consistency: Gauge Invariance and Integer Quantization
+       </h2>
+       <h3 id="741-large-gauge-transformations">
+        7.4.1 Large Gauge Transformations
+       </h3>
+       <p>
+        Under a large gauge transformation
+        <span class="arithmatex">
+         \(A_\mu \to A_\mu + \tfrac{1}{e}\partial_\mu\Lambda\)
+        </span>
+        with winding number:
+       </p>
+       <div class="arithmatex">
+        \[
+N \equiv \frac{1}{2\pi}\int_0^\beta \partial_\tau\Lambda \, d\tau \in \mathbb{Z},
+\]
+       </div>
+       <p>
+        the topological Chern–Simons action shifts by:
+       </p>
+       <div class="arithmatex">
+        \[
+\Delta S = -i\kappa\int_0^\beta \partial_\tau\Lambda \, d\tau = -2\pi i\kappa N.
+\]
+       </div>
+       <p>
+        For the quantum path integral measure
+        <span class="arithmatex">
+         \(e^{-\Delta S}\)
+        </span>
+        to remain single-valued, we require
+        <span class="arithmatex">
+         \(2\pi\kappa N \in 2\pi\mathbb{Z}\)
+        </span>
+        , meaning
+        <span class="arithmatex">
+         \(\kappa \in \mathbb{Z}\)
+        </span>
+        (depending on the normalization convention, here presented as
+        <span class="arithmatex">
+         \(\tfrac{1}{2}\mathbb{Z}\)
+        </span>
+        for the single fermion case).
+       </p>
+       <h3 id="742-synthesis">
+        7.4.2 Synthesis
+       </h3>
+       <p>
+        The three quantum phenomena are structurally unified:
+       </p>
+       <ol>
+        <li>
+         The
+         <strong>
+          parity anomaly
+         </strong>
+         proves a single fermion generates a fractional Chern-Simons level, forcing a fundamental clash between parity and gauge invariance.
+        </li>
+        <li>
+         The
+         <strong>
+          finite-temperature effective action
+         </strong>
+         proves that apparent continuous variations of the coupling are perturbative illusions; non-perturbatively, the theory preserves exact large-gauge invariance.
+        </li>
+        <li>
+         The
+         <strong>
+          Coleman–Hill theorem
+         </strong>
+         guarantees the topological (constant) part of
+         <span class="arithmatex">
+          \(\kappa\)
+         </span>
+         is exclusively renormalized at one-loop, freezing the integer shift against any higher-order continuous deformations.
+        </li>
+       </ol>
+       <p>
+        Together, they guarantee that the Chern–Simons level is a robust, mathematically protected topological invariant.
+       </p>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
+</html>

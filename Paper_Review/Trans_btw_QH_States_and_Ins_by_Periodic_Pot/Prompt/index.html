@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Physics Analysis: Role: You are an expert theoretical phys... - Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#peer-review-critical-assessment">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        Math &amp; Physics Blog
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Physics Analysis: Role: You are an expert theoretical phys...
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-0/">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-1/">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-2/">
+                  <span class="md-ellipsis">
+                   Curvature
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-3/">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Paper Review
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Paper Review
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Aspects of Chern-Simons theory
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Aspects of Chern-Simons theory
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part1/">
+                  <span class="md-ellipsis">
+                   Kinematics and Planar Symmetries
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part2/">
+                  <span class="md-ellipsis">
+                   Topologically massive gauge theory
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part3/">
+                  <span class="md-ellipsis">
+                   Non-abelian Gauge Transformations and Topology
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part4/">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part5/">
+                  <span class="md-ellipsis">
+                   Quantization on Nontrivial Topologies
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part6/">
+                  <span class="md-ellipsis">
+                   Bogomol'nyi Self-Duality
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../Asp_CS_theory/Part7/">
+                  <span class="md-ellipsis">
+                   Quantum Corrections and Anomalies
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part1/">
+                  <span class="md-ellipsis">
+                   Test
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Seminar
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Seminar
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Curve Shortening Flow
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Curve Shortening Flow
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part0/">
+                  <span class="md-ellipsis">
+                   Introduction
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part1/">
+                  <span class="md-ellipsis">
+                   CSF is Heat Equation for Curves
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part2/">
+                  <span class="md-ellipsis">
+                   Evolution Equations
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part3/">
+                  <span class="md-ellipsis">
+                   More on Singularity Analysis
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Seminar/Curve_Shortening_Flow/Part4/">
+                  <span class="md-ellipsis">
+                   Conclusion and Generalization
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#substantive-issues">
+            <span class="md-ellipsis">
+             Substantive Issues
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#formatting-issues-corrected">
+            <span class="md-ellipsis">
+             Formatting Issues Corrected
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#corrected-version">
+            <span class="md-ellipsis">
+             Corrected Version
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#recommendation">
+            <span class="md-ellipsis">
+             Recommendation
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <h1 id="peer-review-critical-assessment">
+        Peer Review: Critical Assessment
+       </h1>
+       <p>
+        <strong>
+         Reviewer verdict: This is not a mathematical derivation.
+        </strong>
+        The document you submitted under the label "draft mathematical derivation" contains
+        <em>
+         zero
+        </em>
+        derivations. It is an administrative confirmation memo — a table of contents plus a compliance checklist. There are no theorems, no proofs, no gauge transformations to check for sign errors, and no covariant indices to repair beyond a single decorative Lorentz-vector-free equation.
+       </p>
+       <p>
+        I will nonetheless discharge my duties on the material actually present.
+       </p>
+       <h2 id="substantive-issues">
+        Substantive Issues
+       </h2>
+       <ol>
+        <li>
+         <p>
+          <strong>
+           Physics error — Chern–Simons quantization condition.
+          </strong>
+          The draft asserts
+$
+          <span class="arithmatex">
+           \(\kappa = \frac{n}{4\pi}.\)
+          </span>
+          $
+This is dimensionally and conventionally suspect. For a nonabelian Chern–Simons term the level quantization is standardly written
+$
+          <span class="arithmatex">
+           \(\kappa = \frac{k}{4\pi}, \qquad k \in \mathbb{Z},\)
+          </span>
+          $
+where
+          <span class="arithmatex">
+           \(k\)
+          </span>
+          is the integer
+          <em>
+           level
+          </em>
+          and
+          <span class="arithmatex">
+           \(\kappa\)
+          </span>
+          the coupling. Writing
+          <span class="arithmatex">
+           \(\kappa = n/(4\pi)\)
+          </span>
+          conflates the coupling with the topological integer and buries the actual quantization statement
+          <span class="arithmatex">
+           \(k \in \mathbb{Z}\)
+          </span>
+          .
+          <strong>
+           This should not survive into Part 3 uncorrected.
+          </strong>
+         </p>
+        </li>
+        <li>
+         <p>
+          <strong>
+           No indices to fix.
+          </strong>
+          Your prompt asks me to "fix dropped covariant indices" and "sign errors in gauge transformations." None appear in this text. The abstract Poincaré-algebra and MCS references never write out
+          <span class="arithmatex">
+           \(A_\mu\)
+          </span>
+          ,
+          <span class="arithmatex">
+           \(F_{\mu\nu}\)
+          </span>
+          ,
+          <span class="arithmatex">
+           \(\partial_\mu A_\nu\)
+          </span>
+          , or
+          <span class="arithmatex">
+           \(\delta A_\mu = \partial_\mu \lambda\)
+          </span>
+          , so there is nothing to correct.
+          <strong>
+           I flag this as a scope mismatch between the prompt and the supplied content.
+          </strong>
+         </p>
+        </li>
+        <li>
+         <p>
+          <strong>
+           Metric-signature claim is unbacked.
+          </strong>
+          You promise "strict conventions on metric signature" but never state it. In
+          <span class="arithmatex">
+           \(2+1\)
+          </span>
+          D one must fix
+          <span class="arithmatex">
+           \((+,-,-)\)
+          </span>
+          vs.
+          <span class="arithmatex">
+           \((-,+,+)\)
+          </span>
+          <em>
+           before
+          </em>
+          the anyonic-spin and Chern–Simons sign discussion, because the sign of the topological mass depends on it. Declare it in Part 1 or the "sign discipline" promise is vacuous.
+         </p>
+        </li>
+       </ol>
+       <h2 id="formatting-issues-corrected">
+        Formatting Issues Corrected
+       </h2>
+       <ul>
+        <li>
+         Standardized the em-dash usage in list items.
+        </li>
+        <li>
+         Ensured all display math uses
+         <code>
+          $$
+         </code>
+         delimiters per your MathJax directive.
+        </li>
+        <li>
+         Corrected the quantization equation to expose the integer condition explicitly.
+        </li>
+       </ul>
+       <h2 id="corrected-version">
+        Corrected Version
+       </h2>
+       <div class="highlight">
+        <pre><span></span><code>&lt;!-- File: /Users/taebinkim/physics-blog/docs/part_1.md --&gt;
+
+<span class="gh"># Confirmation of Series Structure and Directives</span>
+
+I confirm full understanding of the following:
+
+<span class="gu">## 1. The 7-Part Structure</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 1:**</span> Kinematics and Planar Symmetries — Poincaré algebra in $2+1$D, anyonic spin generation, and discrete symmetries ($\mathcal{P}, \mathcal{C}, \mathcal{T}$).
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 2:**</span> Topologically Massive Gauge Theory — Maxwell–Chern–Simons Lagrangian, dual field formalism, and Higgs-free mass generation.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 3:**</span> Nonabelian Gauge Transformations and Topology — Lie algebra representations, winding number density, and the level quantization condition
+
+$$
+\kappa = \frac{k}{4\pi}, \qquad k \in \mathbb{Z}.
+$$
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 4:**</span> Canonical Structure and Coherent States — Hamiltonian formulation, Dirac brackets for second-class constraints, and LLL projection via functional coherent states.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 5:**</span> Quantization on Nontrivial Topologies — Torus quantization, magnetic translation groups, and WZW functionals.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 6:**</span> Bogomol'nyi Self-Duality — First-order self-duality equations, Liouville equation solutions, and moduli space geometry.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Part 7:**</span> Quantum Corrections and Anomalies — Parity anomaly, finite-temperature effective actions, and the Coleman–Hill theorem.
+
+<span class="gu">## 2. Narrative and Rigor Requirements</span>
+
+<span class="k">-</span><span class="w"> </span>I will maintain <span class="gs">**exclusive focus on pure mathematical theory**</span>, formal derivations, and topological structures (gauge invariance, Hodge decompositions, WZW functionals, moduli spaces).
+<span class="k">-</span><span class="w"> </span>I will provide <span class="gs">**strong mathematical and physical motivation**</span> at the opening of each part and construct <span class="gs">**seamless transitions**</span> connecting each part's conclusion to the next part's introduction, forming a cohesive narrative arc.
+<span class="k">-</span><span class="w"> </span>I will adhere to strict conventions on metric signature, index placement, and sign discipline throughout. The metric signature is fixed globally as
+
+$$
+\eta_{\mu\nu} = \operatorname{diag}(+,-,-), \qquad \mu,\nu \in \{0,1,2\},
+$$
+
+  with the gauge field transforming as
+
+$$
+\delta A<span class="ge">_\mu = \partial_</span>\mu \lambda
+$$
+
+  in the abelian case, and
+
+$$
+\delta A<span class="ge">_\mu = D_</span>\mu \lambda = \partial_\mu \lambda + i[A_\mu, \lambda]
+$$
+
+  in the nonabelian case.
+
+<span class="gu">## 3. Format and File-Saving Directive</span>
+
+<span class="k">-</span><span class="w"> </span>Output will be <span class="gs">**clean Markdown**</span> with LaTeX (<span class="sb">`$`</span> inline, <span class="sb">`$$`</span> display), MkDocs-compatible.
+<span class="k">-</span><span class="w"> </span>Each article will be wrapped in a Markdown code block with the target save path declared at the top via an HTML comment (e.g., <span class="sb">`&lt;!-- File: /Users/taebinkim/physics-blog/docs/part_N.md --&gt;`</span>).
+<span class="k">-</span><span class="w"> </span><span class="gs">**Note on local execution:**</span> I do not currently have local file-writing capabilities in this environment, so I cannot execute a direct save to disk. I will therefore provide the fully-formatted output with the target path header so you can save it directly during your local build.
+
+I am ready. <span class="gs">**Awaiting your command to begin writing Part 1: Kinematics and Planar Symmetries.**</span>
+</code></pre>
+       </div>
+       <h2 id="recommendation">
+        Recommendation
+       </h2>
+       <p>
+        <strong>
+         Accept only as a scoping memo, not as a derivation.
+        </strong>
+        To meet the stated remit of a "mathematical derivation" review, resubmit actual derivation content (Poincaré algebra brackets, the MCS action with explicit
+        <span class="arithmatex">
+         \(\epsilon^{\mu\nu\rho}A_\mu \partial_\nu A_\rho\)
+        </span>
+        terms, and worked gauge variations). I have supplied the signature and gauge-transformation conventions above as scaffolding, but the burden of producing genuine mathematics remains on the author.
+       </p>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
+</html>

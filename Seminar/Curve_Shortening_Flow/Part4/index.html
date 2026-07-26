@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../Part3/" rel="prev"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Curve Shortening Flow: Part 4 - Conclusion and Generalization - Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#4-conclusion-and-generalization">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        Math &amp; Physics Blog
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Curve Shortening Flow: Part 4 - Conclusion and Generalization
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-0/">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-1/">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-2/">
+                  <span class="md-ellipsis">
+                   Curvature
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-3/">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Paper Review
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Paper Review
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Aspects of Chern-Simons theory
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Aspects of Chern-Simons theory
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part1/">
+                  <span class="md-ellipsis">
+                   Kinematics and Planar Symmetries
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part2/">
+                  <span class="md-ellipsis">
+                   Topologically massive gauge theory
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part3/">
+                  <span class="md-ellipsis">
+                   Non-abelian Gauge Transformations and Topology
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part4/">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part5/">
+                  <span class="md-ellipsis">
+                   Quantization on Nontrivial Topologies
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part6/">
+                  <span class="md-ellipsis">
+                   Bogomol'nyi Self-Duality
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part7/">
+                  <span class="md-ellipsis">
+                   Quantum Corrections and Anomalies
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Trans_btw_QH_States_and_Ins_by_Periodic_Pot/Part1/">
+                  <span class="md-ellipsis">
+                   Test
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Seminar
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Seminar
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Curve Shortening Flow
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Curve Shortening Flow
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part0/">
+                  <span class="md-ellipsis">
+                   Introduction
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part1/">
+                  <span class="md-ellipsis">
+                   CSF is Heat Equation for Curves
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part2/">
+                  <span class="md-ellipsis">
+                   Evolution Equations
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part3/">
+                  <span class="md-ellipsis">
+                   More on Singularity Analysis
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   Conclusion and Generalization
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   Conclusion and Generalization
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#41-summary-of-lecture">
+                     <span class="md-ellipsis">
+                      4.1 Summary of Lecture
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#42-generalizations-mean-curvature-and-ricci-flow">
+                     <span class="md-ellipsis">
+                      4.2 Generalizations: Mean Curvature and Ricci Flow
+                     </span>
+                    </a>
+                    <nav aria-label="4.2 Generalizations: Mean Curvature and Ricci Flow" class="md-nav">
+                     <ul class="md-nav__list">
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#421-mean-curvature-flow-extrinsic">
+                        <span class="md-ellipsis">
+                         4.2.1 Mean Curvature Flow (Extrinsic)
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#422-ricci-flow-intrinsic">
+                        <span class="md-ellipsis">
+                         4.2.2 Ricci Flow (Intrinsic)
+                        </span>
+                       </a>
+                      </li>
+                      <li class="md-nav__item">
+                       <a class="md-nav__link" href="#423-perelmans-monotonicity-and-the-poincare-conjecture">
+                        <span class="md-ellipsis">
+                         4.2.3 Perelman's Monotonicity and the Poincaré Conjecture
+                        </span>
+                       </a>
+                      </li>
+                     </ul>
+                    </nav>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#41-summary-of-lecture">
+            <span class="md-ellipsis">
+             4.1 Summary of Lecture
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#42-generalizations-mean-curvature-and-ricci-flow">
+            <span class="md-ellipsis">
+             4.2 Generalizations: Mean Curvature and Ricci Flow
+            </span>
+           </a>
+           <nav aria-label="4.2 Generalizations: Mean Curvature and Ricci Flow" class="md-nav">
+            <ul class="md-nav__list">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#421-mean-curvature-flow-extrinsic">
+               <span class="md-ellipsis">
+                4.2.1 Mean Curvature Flow (Extrinsic)
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#422-ricci-flow-intrinsic">
+               <span class="md-ellipsis">
+                4.2.2 Ricci Flow (Intrinsic)
+               </span>
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="#423-perelmans-monotonicity-and-the-poincare-conjecture">
+               <span class="md-ellipsis">
+                4.2.3 Perelman's Monotonicity and the Poincaré Conjecture
+               </span>
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:mean-curvature-flow">
+         Mean Curvature Flow
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:poincare-conjecture">
+         Poincare Conjecture
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:ricci-flow">
+         Ricci Flow
+        </a>
+       </nav>
+       <h1 id="4-conclusion-and-generalization">
+        4. Conclusion and Generalization
+       </h1>
+       <h2 id="41-summary-of-lecture">
+        4.1 Summary of Lecture
+       </h2>
+       <p>
+        Throughout this lecture, we have rigorously built the machinery required to understand the macroscopic and microscopic behavior of the curve shortening flow. By analyzing the evolution of intrinsic geometric quantities, we saw that any simple closed curve must inevitably develop a singularity in finite time, as its enclosed area decreases at a strictly constant rate of
+        <span class="arithmatex">
+         \(2\pi\)
+        </span>
+        .
+       </p>
+       <p>
+        The crux of our analysis lay in classifying the precise nature of this final singularity. By leveraging parabolic rescaling, Gaussian density, and Hamilton's point-picking method, we extracted eternal limit flows. Then, using Huisken's distance comparison principle, we generated a geometric contradiction that systematically ruled out the Grim Reaper, proving that Type II singularities cannot form on simple closed curves.
+       </p>
+       <p>
+        This powerful restriction forces all singularities for embedded curves to be Type I. Because the only compact, embedded Type I singularity model in the plane is the shrinking circle, the curve's ultimate fate is geometrically sealed:
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Grayson's Phase:
+         </strong>
+         Any initial "dents" or regions of negative curvature are pushed outward and smoothed out faster than the overall curve collapses. The avoidance principle and the exclusion of Type II singular bottlenecks guarantee that the curve becomes strictly convex without ever self-intersecting.
+        </li>
+        <li>
+         <strong>
+          Gage-Hamilton's Phase:
+         </strong>
+         Once the curve is strictly convex, the flow acts as a perfectly symmetric heat equation, driving the geometry toward perfect isotropy. The curve asymptotically rounds into a perfect circle as it shrinks down to a single singular point.
+        </li>
+       </ul>
+       <p>
+        This completes the modern PDE-based perspective on the Gage-Hamilton-Grayson Theorem. Ultimately, the curve shortening flow serves as a beautiful, mathematically rich paradigm for parabolic geometric flows. The techniques developed here—maximum principles, monotonicity formulas, and blow-up analysis—lay the essential conceptual groundwork for studying higher-dimensional flows, such as the Mean Curvature Flow and the Ricci Flow, which dictate the topology of the universe itself.
+       </p>
+       <h2 id="42-generalizations-mean-curvature-and-ricci-flow">
+        4.2 Generalizations: Mean Curvature and Ricci Flow
+       </h2>
+       <p>
+        While the curve shortening flow provides a profound geometric framework for 1-dimensional curves in
+        <span class="arithmatex">
+         \(\mathbb{R}^2\)
+        </span>
+        , its underlying principles naturally generalize to higher dimensions and intrinsic geometries.
+       </p>
+       <h3 id="421-mean-curvature-flow-extrinsic">
+        4.2.1 Mean Curvature Flow (Extrinsic)
+       </h3>
+       <p>
+        The most direct higher-dimensional analog to the curve shortening flow is the
+        <em>
+         Mean Curvature Flow
+        </em>
+        (MCF). Instead of a curve, we consider an
+        <span class="arithmatex">
+         \(n\)
+        </span>
+        -dimensional hypersurface
+        <span class="arithmatex">
+         \(M_t\)
+        </span>
+        embedded in
+        <span class="arithmatex">
+         \(\mathbb{R}^{n+1}\)
+        </span>
+        . The flow equation is governed by:
+       </p>
+       <div class="arithmatex">
+        \[
+    \partial_t x = \vec{H}
+\]
+       </div>
+       <p>
+        where
+        <span class="arithmatex">
+         \(\vec{H}\)
+        </span>
+        is the mean curvature vector. While Huisken proved that strictly convex surfaces under MCF shrink to round points (analogous to the Gage-Hamilton phase), Grayson's theorem does not hold in higher dimensions. Non-convex surfaces can develop localized singularities before collapsing entirely, such as the famous "neckpinch" singularity (e.g., a topological dumbbell snapping in the middle).
+       </p>
+       <h3 id="422-ricci-flow-intrinsic">
+        4.2.2 Ricci Flow (Intrinsic)
+       </h3>
+       <p>
+        Rather than embedding a manifold in a higher-dimensional ambient space, one can evolve the intrinsic geometry of the manifold itself. This is achieved by the
+        <em>
+         Ricci flow
+        </em>
+        , introduced by Richard Hamilton in 1982
+        <sup id="fnref:1">
+         <a class="footnote-ref" href="#fn:1">
+          1
+         </a>
+        </sup>
+        . For a Riemannian manifold equipped with a metric tensor
+        <span class="arithmatex">
+         \(g_{ij}\)
+        </span>
+        , the Ricci flow is defined by the evolution equation:
+       </p>
+       <div class="arithmatex">
+        \[
+    \partial_t g_{ij} = -2R_{ij}
+\]
+       </div>
+       <p>
+        where
+        <span class="arithmatex">
+         \(R_{ij}\)
+        </span>
+        is the Ricci curvature tensor. This equation acts as a non-linear diffusion equation for the metric. In the rigorous theoretical frameworks of General Relativity, the vacuum Einstein field equations demand that the Ricci tensor vanishes (
+        <span class="arithmatex">
+         \(R_{ij} = 0\)
+        </span>
+        ). In this context, the Ricci flow can be viewed as a dynamical, parabolic system seeking to smooth the metric toward such an exact Einstein manifold.
+       </p>
+       <h3 id="423-perelmans-monotonicity-and-the-poincare-conjecture">
+        4.2.3 Perelman's Monotonicity and the Poincaré Conjecture
+       </h3>
+       <p>
+        Hamilton introduced the Ricci flow with the ambitious goal of proving Thurston's Geometrization Conjecture, which contains the famous Poincaré Conjecture as a special case
+        <sup id="fnref2:1">
+         <a class="footnote-ref" href="#fn:1">
+          1
+         </a>
+        </sup>
+        . However, much like the neckpinches in the Mean Curvature Flow, the Ricci flow develops severe, complex singularities in 3 dimensions that halt the flow.
+       </p>
+       <p>
+        The critical breakthrough came in 2002 when Grisha Perelman introduced a deeply physics-inspired functional called the
+        <span class="arithmatex">
+         \(\mathcal{W}\)
+        </span>
+        -entropy
+        <sup id="fnref:2">
+         <a class="footnote-ref" href="#fn:2">
+          2
+         </a>
+        </sup>
+        . He proved a remarkable monotonicity formula, establishing that this entropy is strictly non-decreasing along the Ricci flow:
+       </p>
+       <div class="arithmatex">
+        \[
+    \frac{d}{dt} \mathcal{W}(g_{ij}, f, \tau) \ge 0
+\]
+       </div>
+       <p>
+        This monotonicity was revolutionary. It definitively ruled out the existence of "breather" singularities (regions of spacetime that fluctuate wildly without resolving) and provided the strict analytic control needed to classify all local singularity models (the "point selection argument" utilized earlier in these notes originates from this exact paper). By meticulously performing geometric surgery to cut out these singularities before they could disrupt the flow, Perelman pushed the Ricci flow to its topological limit, successfully resolving the Poincaré Conjecture.
+       </p>
+       <div class="footnote">
+        <hr/>
+        <ol>
+         <li id="fn:1">
+          <p>
+           Hamilton, R. S. (1982). Three-manifolds with positive Ricci curvature.
+           <em>
+            Journal of Differential Geometry
+           </em>
+           , 17(2), 255-306.
+           <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">
+            ↩
+           </a>
+           <a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+         <li id="fn:2">
+          <p>
+           Perelman, G. (2002). The entropy formula for the Ricci flow and its geometric applications.
+           <em>
+            arXiv preprint math/0211159
+           </em>
+           .
+           <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+        </ol>
+       </div>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
+</html>

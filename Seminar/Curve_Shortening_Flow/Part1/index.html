@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../Part0/" rel="prev"/>
+  <link href="../Part2/" rel="next"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Curve Shortening Flow: Part 1 - CSF is Heat Equation for Curves - Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#1-curve-shortening-flow-is-heat-equation-for-curves">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        Math &amp; Physics Blog
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Curve Shortening Flow: Part 1 - CSF is Heat Equation for Curves
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-0/">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-1/">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-2/">
+                  <span class="md-ellipsis">
+                   Curvature
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-3/">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Paper Review
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Paper Review
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Aspects of Chern-Simons theory
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Aspects of Chern-Simons theory
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part1/">
+                  <span class="md-ellipsis">
+                   Kinematics and Planar Symmetries
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part2/">
+                  <span class="md-ellipsis">
+                   Topologically massive gauge theory
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part3/">
+                  <span class="md-ellipsis">
+                   Non-abelian Gauge Transformations and Topology
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part4/">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part5/">
+                  <span class="md-ellipsis">
+                   Quantization on Nontrivial Topologies
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part6/">
+                  <span class="md-ellipsis">
+                   Bogomol'nyi Self-Duality
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part7/">
+                  <span class="md-ellipsis">
+                   Quantum Corrections and Anomalies
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Trans_btw_QH_States_and_Ins_by_Periodic_Pot/Part1/">
+                  <span class="md-ellipsis">
+                   Test
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Seminar
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Seminar
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Curve Shortening Flow
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Curve Shortening Flow
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part0/">
+                  <span class="md-ellipsis">
+                   Introduction
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   CSF is Heat Equation for Curves
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   CSF is Heat Equation for Curves
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#11-short-review-on-curves">
+                     <span class="md-ellipsis">
+                      1.1 Short Review on Curves
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#12-review-on-definition-of-csf">
+                     <span class="md-ellipsis">
+                      1.2 Review on Definition of CSF
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#13-change-of-length-and-area">
+                     <span class="md-ellipsis">
+                      1.3 Change of Length and Area
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part2/">
+                  <span class="md-ellipsis">
+                   Evolution Equations
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part3/">
+                  <span class="md-ellipsis">
+                   More on Singularity Analysis
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part4/">
+                  <span class="md-ellipsis">
+                   Conclusion and Generalization
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#11-short-review-on-curves">
+            <span class="md-ellipsis">
+             1.1 Short Review on Curves
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#12-review-on-definition-of-csf">
+            <span class="md-ellipsis">
+             1.2 Review on Definition of CSF
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#13-change-of-length-and-area">
+            <span class="md-ellipsis">
+             1.3 Change of Length and Area
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:avoidance-principle">
+         Avoidance Principle
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:curve-shortening-flow">
+         Curve Shortening Flow
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:differential-geometry">
+         Differential Geometry
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:gage-hamilton-grayson-theorem">
+         Gage-Hamilton-Grayson Theorem
+        </a>
+       </nav>
+       <h1 id="1-curve-shortening-flow-is-heat-equation-for-curves">
+        1. Curve Shortening Flow is Heat Equation for Curves
+       </h1>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 1.1 (Curve shortening flow).
+         </strong>
+         Let
+         <span class="arithmatex">
+          \(\{\Gamma_t \}_{t \ge 0}\)
+         </span>
+         be a family of simple closed smooth curves embedded in
+         <span class="arithmatex">
+          \(\mathbb{R}^2\)
+         </span>
+         . We say that
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         evolves by a
+         <em>
+          curve shortening flow
+         </em>
+         if every point on
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         , say
+         <span class="arithmatex">
+          \(X\)
+         </span>
+         , moves by its curvature vector at
+         <span class="arithmatex">
+          \(X \in \Gamma_t\)
+         </span>
+         , i.e.,
+        </p>
+        <div class="arithmatex">
+         \[
+    \partial_t X = \vec{K}.
+\]
+        </div>
+        <p class="def">
+        </p>
+       </blockquote>
+       <p>
+        Many differential geometry books follow different conventions for parameterization.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Remark.
+         </strong>
+         We provide a counterclockwise parameterization for a simple closed smooth curve during this lecture. Also, we would denote the normal vector
+         <span class="arithmatex">
+          \(\vec{N}\)
+         </span>
+         to always refer to the inner part of the simple closed curve. The inner part is defined by the Jordan curve theorem.
+        </p>
+        <p class="remark">
+        </p>
+       </blockquote>
+       <h2 id="11-short-review-on-curves">
+        1.1 Short Review on Curves
+       </h2>
+       <p>
+        Before we discuss curve shortening flows, we would briefly review curves. Let
+        <span class="arithmatex">
+         \(\gamma\)
+        </span>
+        be a parameterization of a curve as
+       </p>
+       <div class="arithmatex">
+        \[
+    \gamma : S^1 \times [0,T) \to \mathbb{R}^2 , \quad (u,t) \mapsto \gamma(u,t).
+\]
+       </div>
+       <blockquote>
+        <p class="def">
+         <strong>
+          Definition 1.2 (Curvature vector).
+         </strong>
+         Let
+         <span class="arithmatex">
+          \(\gamma : I \to \mathbb{R}^2\)
+         </span>
+         be a curve parameterized by arc length
+         <span class="arithmatex">
+          \(s\)
+         </span>
+         . Then,
+         <span class="arithmatex">
+          \(\gamma''(s) = \vec{K}(s)\)
+         </span>
+         is called the
+         <em>
+          curvature vector
+         </em>
+         of
+         <span class="arithmatex">
+          \(\gamma\)
+         </span>
+         at
+         <span class="arithmatex">
+          \(s\)
+         </span>
+         . The size
+         <span class="arithmatex">
+          \(\left \vert \vec{K}(s) \right \vert\)
+         </span>
+         is called the
+         <em>
+          curvature
+         </em>
+         and denoted as
+         <span class="arithmatex">
+          \(\kappa\)
+         </span>
+         .
+        </p>
+       </blockquote>
+       <p>
+        We denoted the magnitude of curvature vector as
+        <span class="arithmatex">
+         \(\kappa\)
+        </span>
+        . We would also like to give a notion of direction of curvature vector.
+       </p>
+       <blockquote>
+        <p class="def">
+         <strong>
+          Definition 1.3 (Normal vector).
+         </strong>
+         The unit vector
+         <span class="arithmatex">
+          \(\vec{N} (s)\)
+         </span>
+         such that
+         <span class="arithmatex">
+          \(\gamma''(s) = \kappa \vec{N}(s)\)
+         </span>
+         is called the
+         <em>
+          normal vector
+         </em>
+         of
+         <span class="arithmatex">
+          \(\gamma\)
+         </span>
+         at
+         <span class="arithmatex">
+          \(s\)
+         </span>
+         .
+        </p>
+       </blockquote>
+       <p>
+        By differentiating
+        <span class="arithmatex">
+         \(\gamma'(s) \cdot \gamma'(s) = 1\)
+        </span>
+        , we get that
+        <span class="arithmatex">
+         \(\gamma''(s) \cdot \gamma'(s) = 0\)
+        </span>
+        , which means that
+        <span class="arithmatex">
+         \(\vec{N}(s)\)
+        </span>
+        is normal to
+        <span class="arithmatex">
+         \(\gamma'(s)\)
+        </span>
+        . We also define the unit tangent vector as follows.
+       </p>
+       <blockquote>
+        <p class="def">
+         <strong>
+          Definition 1.4 (Tangent vector).
+         </strong>
+         The unit vector
+         <span class="arithmatex">
+          \(\vec{T}(s)\)
+         </span>
+         such that
+         <span class="arithmatex">
+          \(\vec{T}(s) = \gamma'(s)\)
+         </span>
+         is called the
+         <em>
+          tangent vector
+         </em>
+         of
+         <span class="arithmatex">
+          \(\gamma\)
+         </span>
+         at
+         <span class="arithmatex">
+          \(s\)
+         </span>
+         .
+        </p>
+       </blockquote>
+       <p>
+        What if we use different parameterization than
+        <span class="arithmatex">
+         \(s\)
+        </span>
+        ?
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Remark.
+         </strong>
+         Using
+         <span class="arithmatex">
+          \(u\)
+         </span>
+         instead of the reparameterized parameter
+         <span class="arithmatex">
+          \(s\)
+         </span>
+         , we get
+        </p>
+        <div class="arithmatex">
+         \[
+    \vec{T} = \frac{\gamma_u}{|\gamma_u|}.
+\]
+        </div>
+        <p>
+         Also, we define
+        </p>
+        <div class="arithmatex">
+         \[
+    g = |\gamma_u| = \frac{ds}{du}.
+\]
+        </div>
+        <p>
+         So, the curvature vector is given by
+        </p>
+        <div class="arithmatex">
+         \[
+    \vec{K} = \frac{\partial \vec{T}}{\partial s} = \frac{1}{g} \frac{\partial \vec{T}}{\partial u} = \frac{1}{g} \left ( \frac{\gamma_u}{g} \right )_u = \frac{g \gamma_{uu} - g_u \gamma_u}{g^3}.
+\]
+        </div>
+        <p>
+         If
+         <span class="arithmatex">
+          \(\gamma\)
+         </span>
+         is a regular curve, then
+         <span class="arithmatex">
+          \(g \ne 0\)
+         </span>
+         , which makes the above equation well-defined. Then, we can consider the following:
+        </p>
+        <div class="arithmatex">
+         \[
+    \vec{K} = \kappa \vec{N} = \vec{T} \wedge \vec{K} = \frac{\gamma_u}{|\gamma_u|} \wedge \vec{K} = \frac{\gamma_u \wedge \gamma_{uu}}{g^3}.
+\]
+        </div>
+        <p>
+         So, we can also say that
+         <span class="arithmatex">
+          \(\vec{K} = \kappa \vec{N}\)
+         </span>
+         where
+        </p>
+        <div class="arithmatex">
+         \[
+    \kappa = \frac{\det (\gamma_u , \gamma_{uu})}{g^3}.
+\]
+        </div>
+        <p class="remark">
+        </p>
+       </blockquote>
+       <p>
+        Now we give an example of a graph function.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Example 1.5.
+         </strong>
+         Consider that we have a graph function
+         <span class="arithmatex">
+          \(y = f(u)\)
+         </span>
+         , i.e.,
+         <span class="arithmatex">
+          \(\gamma(u) = \left ( u , f(u) \right )\)
+         </span>
+         . Then we get the curvature
+         <span class="arithmatex">
+          \(\kappa\)
+         </span>
+         as
+        </p>
+        <div class="arithmatex">
+         \[
+    \kappa = \frac{\begin{vmatrix} 1 &amp; f_u \\ 0 &amp; f_{uu} \end{vmatrix}}{\left ( \left ( 1 + f_u ^2 \right )^{1/2} \right )^3} = \frac{f_{uu}}{\left ( 1 + f_u ^2 \right )^{3/2}}.
+\]
+        </div>
+        <p class="example">
+        </p>
+       </blockquote>
+       <h2 id="12-review-on-definition-of-csf">
+        1.2 Review on Definition of CSF
+       </h2>
+       <p>
+        By reviewing the definition of curve shortening flow using the language of Section 1.1,
+        <span class="arithmatex">
+         \(\Gamma_t\)
+        </span>
+        evolves by curve shortening flow if and only if
+       </p>
+       <div class="arithmatex">
+        \[
+    \gamma_t = \vec{K} = \frac{\det(\gamma_u , \gamma_{uu})}{|\gamma_u|^3} \vec{N}.
+\]
+       </div>
+       <blockquote>
+        <p>
+         <strong>
+          Example 1.6 (Examples of Curve Shortening Flow).
+         </strong>
+        </p>
+        <ol>
+         <li>
+          <p>
+           Consider
+           <span class="arithmatex">
+            \(\Gamma_t = \partial B_{r(t)} (0)\)
+           </span>
+           where
+           <span class="arithmatex">
+            \(B_r (p)\)
+           </span>
+           is a ball of radius
+           <span class="arithmatex">
+            \(r\)
+           </span>
+           centered at
+           <span class="arithmatex">
+            \(p\)
+           </span>
+           . We have
+           <span class="arithmatex">
+            \(\kappa = 1/r(t) &gt; 0\)
+           </span>
+           . Then,
+           <span class="arithmatex">
+            \(\Gamma_t\)
+           </span>
+           evolves by curve shortening flow if and only if
+          </p>
+          <div class="arithmatex">
+           \[ \dot{r}(t) = - \frac{1}{r(t)} \implies \frac{1}{2} \left \{ \left ( r(t) \right )^2 \right \}^\prime = -1 \implies r(t) = \sqrt{r_0^2 - 2t}. \]
+          </div>
+         </li>
+         <li>
+          <p>
+           Consider a graph
+           <span class="arithmatex">
+            \(f(u,t)\)
+           </span>
+           .
+          </p>
+          <blockquote>
+           <p>
+            <strong>
+             Exercise.
+            </strong>
+            <span class="arithmatex">
+             \(\Gamma_t\)
+            </span>
+            evolves by curve shortening flow if and only if
+            <span class="arithmatex">
+             \(f\)
+            </span>
+            satisfies the following:
+           </p>
+           <div class="arithmatex">
+            \[ f_t = \frac{f_{uu}}{\left ( 1 + f_u^2 \right )} \]
+           </div>
+           <p class="exercise">
+           </p>
+          </blockquote>
+          <p>
+           Note the absence of power
+           <span class="arithmatex">
+            \(3/2\)
+           </span>
+           compared with the curvature formula for a graph function.
+          </p>
+          <p>
+           There is a very well-known solution for this PDE, which is given by the following explicit formula:
+          </p>
+          <div class="arithmatex">
+           \[ f(u,t) = t - \log (\cos u ) , \quad u \in \left ( - \frac{\pi}{2} , \frac{\pi}{2} \right ). \]
+          </div>
+          <p>
+           This is called the
+           <em>
+            Grim reaper
+           </em>
+           solution.
+          </p>
+         </li>
+        </ol>
+        <p class="example">
+        </p>
+       </blockquote>
+       <p>
+        Now we state the main theorem of this course. We first get an intuition from the figure below.
+       </p>
+       <div class="highlight">
+        <pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
+    <span class="k">\centering</span>
+    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
+        scale=1,
+        &gt;=<span class="nb">{</span>Stealth[length=2.5mm, width=1.5mm]<span class="nb">}</span>,
+        line join=round,
+        line cap=round
+    ]
+        <span class="c">% Grid and axes (optional, kept subtle)</span>
+        <span class="k">\draw</span><span class="na">[very thin, gray!20, step=1]</span> (-5,-4) grid (5,4);
+        <span class="k">\draw</span><span class="na">[-&gt;, gray!50]</span> (-5,0) -- (5,0) node[right] <span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span>;
+        <span class="k">\draw</span><span class="na">[-&gt;, gray!50]</span> (0,-4) -- (0,4) node[above] <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% t = 0 (Initial non-convex "starfish" curve)</span>
+        <span class="c">% r(theta) = 3 + 1.2*cos(3*theta)</span>
+        <span class="k">\draw</span> [thick, draw=black!85] plot [domain=0:360, samples=200, smooth] 
+            (<span class="nb">{</span>(3 + 1.2*cos(3*<span class="k">\x</span>))*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>(3 + 1.2*cos(3*<span class="k">\x</span>))*sin(<span class="k">\x</span>)<span class="nb">}</span>);
+        <span class="k">\node</span><span class="na">[black!85]</span> at (4.6, 0.4) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_</span><span class="m">0</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% t = t_1 (Convex, slightly elongated curve)</span>
+        <span class="c">% r(theta) = 2.2 + 0.3*cos(3*theta)</span>
+        <span class="k">\draw</span> [thick, draw=blue!80] plot [domain=0:360, samples=200, smooth] 
+            (<span class="nb">{</span>(2.2 + 0.3*cos(3*<span class="k">\x</span>))*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>(2.2 + 0.3*cos(3*<span class="k">\x</span>))*sin(<span class="k">\x</span>)<span class="nb">}</span>);
+        <span class="k">\node</span><span class="na">[blue!80]</span> at (2.8, 0.8) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_{t_</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% t = t_2 (More circular, smaller)</span>
+        <span class="k">\draw</span> [thick, draw=teal!90] plot [domain=0:360, samples=100, smooth] 
+            (<span class="nb">{</span>1.2*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>1.2*sin(<span class="k">\x</span>)<span class="nb">}</span>);
+        <span class="k">\node</span><span class="na">[teal!90]</span> at (1.4, 0.6) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_{t_</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% t = t_3 (Shrinking to a round point)</span>
+        <span class="k">\draw</span> [thick, draw=magenta!90] plot [domain=0:360, samples=50, smooth] 
+            (<span class="nb">{</span>0.3*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>0.3*sin(<span class="k">\x</span>)<span class="nb">}</span>);
+        <span class="k">\node</span><span class="na">[magenta!90]</span> at (0.5, 0.3) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_{t_</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% Flow Vectors at t=0 (\partial_t X = \vec{K})</span>
+        <span class="c">% Highly convex points (flow inward rapidly)</span>
+        <span class="c">% theta = 0</span>
+        <span class="k">\draw</span><span class="na">[-&gt;, thick, red]</span> (4.2,0) -- (2.8,0) node[midway, below] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
+        <span class="c">% theta = 120</span>
+        <span class="k">\draw</span><span class="na">[-&gt;, thick, red]</span> (-2.1, 3.637) -- (-1.4, 2.425) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
+        <span class="c">% theta = 240</span>
+        <span class="k">\draw</span><span class="na">[-&gt;, thick, red]</span> (-2.1, -3.637) -- (-1.4, -2.425) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% Non-convex "dents" (flow outward to become convex)</span>
+        <span class="c">% theta = 60</span>
+        <span class="k">\draw</span><span class="na">[-&gt;, thick, orange]</span> (0.9, 1.558) -- (1.3, 2.25) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
+        <span class="c">% theta = 180</span>
+        <span class="k">\draw</span><span class="na">[-&gt;, thick, orange]</span> (-1.8, 0) -- (-2.6, 0) node[midway, below] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
+        <span class="c">% theta = 300</span>
+        <span class="k">\draw</span><span class="na">[-&gt;, thick, orange]</span> (0.9, -1.558) -- (1.3, -2.25) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
+
+        <span class="c">% Center point (singularity)</span>
+        <span class="k">\filldraw</span><span class="na">[black]</span> (0,0) circle (1pt);
+
+    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>A geometric visualization of curve shortening flow acting on a non-convex curve. The flow velocity is governed by the local curvature vector <span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span>. Regions of high positive curvature (spikes) retract inward (red vectors), whereas regions of negative curvature (dents) are pushed outward (orange vectors). This mechanism guarantees that any simple closed curve will eventually resolve its self-intersections and become perfectly convex, ultimately shrinking to a circular singularity.<span class="nb">}</span>
+    <span class="k">\label</span><span class="nb">{</span>fig:Intuition of Gage-Hamilton-Grayson thm<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</code></pre>
+       </div>
+       <blockquote>
+        <p>
+         <strong>
+          Theorem 1.7 (Gage-Hamilton-Grayson)
+          <sup id="fnref:1">
+           <a class="footnote-ref" href="#fn:1">
+            1
+           </a>
+          </sup>
+          <sup id="fnref:2">
+           <a class="footnote-ref" href="#fn:2">
+            2
+           </a>
+          </sup>
+          .
+         </strong>
+         For any given smooth simple closed curve
+         <span class="arithmatex">
+          \(\Gamma_0\)
+         </span>
+         in
+         <span class="arithmatex">
+          \(\mathbb{R}^2\)
+         </span>
+         , there uniquely exists a solution to the curve shortening flow
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         on a maximal finite time interval
+         <span class="arithmatex">
+          \([0, T)\)
+         </span>
+         . As
+         <span class="arithmatex">
+          \(t \to T\)
+         </span>
+         , the curve
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         becomes asymptotically circular and converges to a single point
+         <span class="arithmatex">
+          \(x_0 \in \mathbb{R}^2\)
+         </span>
+         . Moreover,
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{1}{\sqrt{T-t}} \left ( \Gamma_t - x_0 \right ) \overset{t \nearrow T}{\longrightarrow } \partial B_{\sqrt2} (0)
+\]
+        </div>
+        <p>
+         converges smoothly.
+        </p>
+        <p class="thm">
+        </p>
+       </blockquote>
+       <p>
+        Actually, the proof of this remarkable result is historically and mathematically divided into two distinct phases:
+       </p>
+       <ul>
+        <li>
+         <strong>
+          Gage-Hamilton (1986):
+         </strong>
+         This governs the final asymptotic phase. Gage and Hamilton
+         <sup id="fnref2:1">
+          <a class="footnote-ref" href="#fn:1">
+           1
+          </a>
+         </sup>
+         proved that once a simple closed curve is strictly convex, it will shrink to a point in finite time, becoming asymptotically circular as it collapses.
+        </li>
+        <li>
+         <strong>
+          Grayson (1987):
+         </strong>
+         This governs the initial phase of the flow. Grayson
+         <sup id="fnref2:2">
+          <a class="footnote-ref" href="#fn:2">
+           2
+          </a>
+         </sup>
+         proved that an arbitrary, non-convex smooth simple closed curve will eventually become strictly convex without ever forming singularities or self-intersections.
+        </li>
+       </ul>
+       <p>
+        However, we would not follow Gage-Hamilton-Grayson's proof of this theorem, but rather we would follow a more modern method throughout this course. We have some reference, a lecture note by R. Haslholfer,
+        <em>
+         Lectures on Curve Shortening Flow
+        </em>
+        <sup id="fnref:3">
+         <a class="footnote-ref" href="#fn:3">
+          3
+         </a>
+        </sup>
+        .
+       </p>
+       <h2 id="13-change-of-length-and-area">
+        1.3 Change of Length and Area
+       </h2>
+       <p>
+        Recall the definition that
+        <span class="arithmatex">
+         \(g = |\gamma_u|\)
+        </span>
+        , or
+        <span class="arithmatex">
+         \(ds = g du\)
+        </span>
+        . Then,
+       </p>
+       <div class="arithmatex">
+        \[
+    \frac{\partial}{\partial t} ds = g_t du , \quad g^2 = \langle \gamma_u , \gamma_u \rangle \implies \left ( g^2 \right )_t = 2gg_t = 2 \langle \gamma_{ut} , \gamma_u \rangle = 2 \langle \gamma_{tu} , \gamma_u \rangle.
+\]
+       </div>
+       <p>
+        We know that
+        <span class="arithmatex">
+         \(\gamma_u = g \gamma_s = g \vec{T}\)
+        </span>
+        and
+        <span class="arithmatex">
+         \(\gamma_t = \kappa \vec{N}\)
+        </span>
+        . Because the tangent and normal vectors are orthogonal,
+        <span class="arithmatex">
+         \(\langle \gamma_t, \gamma_u \rangle = \langle \kappa \vec{N}, g \vec{T} \rangle = 0\)
+        </span>
+        . Taking the spatial derivative
+        <span class="arithmatex">
+         \(\partial_u\)
+        </span>
+        of this inner product yields
+        <span class="arithmatex">
+         \(\langle \gamma_{tu}, \gamma_u \rangle + \langle \gamma_t, \gamma_{uu} \rangle = 0\)
+        </span>
+        . Thus,
+       </p>
+       <div class="arithmatex">
+        \[
+    \left ( g^2 \right )_t = - 2 \langle \gamma_t , \gamma_{uu} \rangle.
+\]
+       </div>
+       <p>
+        Since
+        <span class="arithmatex">
+         \(\gamma_u = g \vec{T}\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(\gamma_{uu} = g_u \vec{T} + g \vec{T}_u = g_u \vec{T} + g \cdot g \vec{T}_s = g_u \vec{T} + g^2 \kappa \vec{N}\)
+        </span>
+        . The first term gives
+        <span class="arithmatex">
+         \(0\)
+        </span>
+        by taking the inner product with
+        <span class="arithmatex">
+         \(\gamma_t = \kappa \vec{N}\)
+        </span>
+        , so
+       </p>
+       <div class="arithmatex">
+        \[
+\begin{aligned}
+    (g^2 )_t &amp;= 2gg_t = -2g^2 \kappa^2 \\
+    g_t &amp;= -g \kappa^2 \\
+    \frac{\partial}{\partial t} ds &amp;= - g\kappa^2 du = - \kappa^2 ds.
+\end{aligned}
+\]
+       </div>
+       <p>
+        Then, we get the evolution of the length of the curve:
+       </p>
+       <div class="arithmatex">
+        \[
+    L(t) = \int_{S^1} ds , \quad \frac{d}{dt} L(t) = \int_{S^1} - \kappa^2 ds \le 0.
+\]
+       </div>
+       <blockquote>
+        <p>
+         <strong>
+          Remark.
+         </strong>
+         We used
+         <span class="arithmatex">
+          \(\gamma_t = \kappa \vec{N}\)
+         </span>
+         . But suppose that
+         <span class="arithmatex">
+          \(\gamma_t = v \vec{N}\)
+         </span>
+         . Then,
+         <span class="arithmatex">
+          \(\frac{\partial}{\partial t} ds = - \kappa v ds\)
+         </span>
+         .
+        </p>
+        <p class="remark">
+        </p>
+       </blockquote>
+       <p>
+        Now denote
+        <span class="arithmatex">
+         \(A(t)\)
+        </span>
+        as the area of the region bounded by
+        <span class="arithmatex">
+         \(\Gamma_t\)
+        </span>
+        .
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Exercise 1.8.
+         </strong>
+         Prove that
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{d}{dt} A(t) = - \int_{S^1} \kappa ds = -2 \pi.
+\]
+        </div>
+        <p class="exercise">
+        </p>
+       </blockquote>
+       <p>
+        This leads that
+        <span class="arithmatex">
+         \(A(t) = A(0) - 2\pi t\)
+        </span>
+        .
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Corollary 1.9.
+         </strong>
+         This is a corollary of Gage-Hamilton-Grayson theorem. We get that the maximal
+         <span class="arithmatex">
+          \(T\)
+         </span>
+         is
+        </p>
+        <div class="arithmatex">
+         \[
+    T = \frac{A(0)}{2\pi} &lt; \infty.
+\]
+        </div>
+        <p>
+         Suppose that we are given a simple closed curve
+         <span class="arithmatex">
+          \(\Gamma_0\)
+         </span>
+         . Our solution cannot exist after this time
+         <span class="arithmatex">
+          \(T = \frac{A(0)}{2\pi}\)
+         </span>
+         .
+        </p>
+        <p class="cor">
+        </p>
+       </blockquote>
+       <p>
+        Now we give another important theorem, which is the avoidance principle.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Theorem 1.10 (Avoidance principle).
+         </strong>
+         Suppose that we are given two curve shortening flows
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\overline{\Gamma}(t)\)
+         </span>
+         . Assume that one of them is simple and closed. If
+         <span class="arithmatex">
+          \(\Gamma_0\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\overline{\Gamma}(0)\)
+         </span>
+         are disjoint, then
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\overline{\Gamma}(t)\)
+         </span>
+         are disjoint for
+         <span class="arithmatex">
+          \(t \ge 0\)
+         </span>
+         as long as solutions exist.
+        </p>
+        <p>
+         Moreover, we can define the distance
+        </p>
+        <div class="arithmatex">
+         \[
+    d(t) = \operatorname{dist} (\Gamma_t , \overline{\Gamma}(t)) = \inf \left \{d(p,q) \mid p \in \Gamma_t , \; q \in \overline{\Gamma}(t) \right \}.
+\]
+        </div>
+        <p class="thm">
+         Then,
+         <span class="arithmatex">
+          \(d(t)\)
+         </span>
+         is non-decreasing in
+         <span class="arithmatex">
+          \(t\)
+         </span>
+         .
+        </p>
+        <p>
+         <em>
+          Proof.
+         </em>
+         Since at least one of the curves is simple and closed (which implies it is compact), the infimum of the distance between them is strictly achieved. Thus, for any time
+         <span class="arithmatex">
+          \(t\)
+         </span>
+         , there exist points
+         <span class="arithmatex">
+          \(p \in \Gamma_t\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(q \in \overline{\Gamma}(t)\)
+         </span>
+         such that
+         <span class="arithmatex">
+          \(d(t) = \operatorname{dist}(p, q)\)
+         </span>
+         .
+        </p>
+        <p>
+         Because
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(q\)
+         </span>
+         minimize the distance between the two curves, the line segment connecting them must be perpendicular to the tangent spaces of both curves. Therefore, the normal vectors at
+         <span class="arithmatex">
+          \(p\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(q\)
+         </span>
+         are collinear. Assuming they are oriented in the same direction, we have
+         <span class="arithmatex">
+          \(N(p) = \overline{N}(q) = N\)
+         </span>
+         .
+        </p>
+        <p>
+         Furthermore, looking at the local geometry at these closest points, the inner curve
+         <span class="arithmatex">
+          \(\overline{\Gamma}(t)\)
+         </span>
+         must be bounded by the outer curve
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         . By comparing their osculating circles, the inner curve must have a curvature greater than or equal to that of the outer curve to avoid intersection:
+        </p>
+        <div class="arithmatex">
+         \[
+    \overline{\kappa}(q) \ge \kappa(p).
+\]
+        </div>
+        <p>
+         Under the curve shortening flow, the points evolve with normal velocities
+         <span class="arithmatex">
+          \(\partial_t p = \kappa(p) N\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\partial_t q = \overline{\kappa}(q) N\)
+         </span>
+         . The rate of change of the distance
+         <span class="arithmatex">
+          \(d(t)\)
+         </span>
+         is determined entirely by the relative velocity of these points projected onto the unit vector connecting them:
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{d}{dt} d(t) = \langle \partial_t q - \partial_t p , N \rangle = \langle \overline{\kappa}(q) N - \kappa(p) N , N \rangle = \overline{\kappa}(q) - \kappa(p).
+\]
+        </div>
+        <p>
+         Since we established from the geometric containment that
+         <span class="arithmatex">
+          \(\overline{\kappa}(q) \ge \kappa(p)\)
+         </span>
+         , it directly follows that:
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{d}{dt} d(t) \ge 0.
+\]
+        </div>
+        <p>
+         Because the inner curve moves inward faster than the outer curve,
+         <span class="arithmatex">
+          \(d(t)\)
+         </span>
+         is a non-decreasing function of
+         <span class="arithmatex">
+          \(t\)
+         </span>
+         . Consequently, if the curves are initially disjoint (
+         <span class="arithmatex">
+          \(d(0) &gt; 0\)
+         </span>
+         ), they must remain disjoint (
+         <span class="arithmatex">
+          \(d(t) \ge d(0) &gt; 0\)
+         </span>
+         ) for as long as the flows exist.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+        <p class="proof">
+        </p>
+       </blockquote>
+       <p>
+        Now we give a corollary.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Corollary 1.11.
+         </strong>
+         Suppose that
+         <span class="arithmatex">
+          \(\Gamma_0\)
+         </span>
+         is included in the inner part of
+         <span class="arithmatex">
+          \(\partial B_R (0)\)
+         </span>
+         . Then, by Corollary 1.9 and Theorem 1.10 (Avoidance principle),
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         cannot exist beyond
+         <span class="arithmatex">
+          \(R^2 / 2\)
+         </span>
+         .
+        </p>
+        <p class="cor">
+        </p>
+       </blockquote>
+       <div class="footnote">
+        <hr/>
+        <ol>
+         <li id="fn:1">
+          <p>
+           Gage, M., &amp; Hamilton, R. S. (1986). The heat equation shrinking convex plane curves.
+           <em>
+            Journal of Differential Geometry
+           </em>
+           , 23(1), 69-96.
+           <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">
+            ↩
+           </a>
+           <a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+         <li id="fn:2">
+          <p>
+           Grayson, M. A. (1987). The heat equation shrinks embedded plane curves to round points.
+           <em>
+            Journal of Differential Geometry
+           </em>
+           , 26(2), 285-314.
+           <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">
+            ↩
+           </a>
+           <a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+         <li id="fn:3">
+          <p>
+           Haslhofer, R. (2026). Lectures on curve shortening flow.
+           <em>
+            arXiv preprint arXiv:2604.01981
+           </em>
+           .
+           <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+        </ol>
+       </div>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
+</html>

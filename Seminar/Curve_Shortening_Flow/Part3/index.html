@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href="../Part2/" rel="prev"/>
+  <link href="../Part4/" rel="next"/>
+  <link href="../../../assets/images/favicon.png" rel="icon"/>
+  <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+  <title>
+   Curve Shortening Flow: Part 3 - Singularity Analysis - Math &amp; Physics Blog
+  </title>
+  <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+  <link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Latin+Modern:n,i,b,bi" rel="stylesheet"/>
+  <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+  <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="deep-purple" data-md-color-primary="deep-purple" data-md-color-scheme="slate" dir="ltr">
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#3-more-on-singularity-analysis">
+    Skip to content
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Header" class="md-header__inner md-grid">
+    <a aria-label="Math &amp; Physics Blog" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+     <img alt="logo" src="../../../assets/logo.svg"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        Math &amp; Physics Blog
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Curve Shortening Flow: Part 3 - Singularity Analysis
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_0" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="라이트 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-purple" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_0" hidden="" title="다크 모드로 전환">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <script>
+     var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}
+    </script>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Search" class="md-search__options">
+        <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+       <div class="md-search__suggest" data-md-component="search-suggest">
+       </div>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Initializing search
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="Math &amp; Physics Blog" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Math &amp; Physics Blog">
+           <img alt="logo" src="../../../assets/logo.svg"/>
+          </a>
+          Math &amp; Physics Blog
+         </label>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../..">
+            <span class="md-ellipsis">
+             Home
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="../../../tags/">
+            <span class="md-ellipsis">
+             Tags
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            <span class="md-ellipsis">
+             General Relativity
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             General Relativity
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                1. Introduction
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                1. Introduction
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.1/1-1/">
+                  <span class="md-ellipsis">
+                   Introduction to GR
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                2. Manifolds and Tensor Fields
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                2. Manifolds and Tensor Fields
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-1/">
+                  <span class="md-ellipsis">
+                   Manifolds
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-2/">
+                  <span class="md-ellipsis">
+                   Vectors
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-3/">
+                  <span class="md-ellipsis">
+                   Tensors; the Metric Tensor
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.2/2-4/">
+                  <span class="md-ellipsis">
+                   The Abstract Index Notation
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+               <span class="md-ellipsis">
+                3. Curvature
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_3_3">
+                <span class="md-nav__icon md-icon">
+                </span>
+                3. Curvature
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-0/">
+                  <span class="md-ellipsis">
+                   Overview
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-1/">
+                  <span class="md-ellipsis">
+                   Derivative Operators and Parallel Transport
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-2/">
+                  <span class="md-ellipsis">
+                   Curvature
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../GR/Ch.3/3-3/">
+                  <span class="md-ellipsis">
+                   Geodesics
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            <span class="md-ellipsis">
+             Paper Review
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Paper Review
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Aspects of Chern-Simons theory
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Aspects of Chern-Simons theory
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part1/">
+                  <span class="md-ellipsis">
+                   Kinematics and Planar Symmetries
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part2/">
+                  <span class="md-ellipsis">
+                   Topologically massive gauge theory
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part3/">
+                  <span class="md-ellipsis">
+                   Non-abelian Gauge Transformations and Topology
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part4/">
+                  <span class="md-ellipsis">
+                   Canonical Structure and Coherent States
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part5/">
+                  <span class="md-ellipsis">
+                   Quantization on Nontrivial Topologies
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part6/">
+                  <span class="md-ellipsis">
+                   Bogomol'nyi Self-Duality
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Asp_CS_theory/Part7/">
+                  <span class="md-ellipsis">
+                   Quantum Corrections and Anomalies
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+             <li class="md-nav__item md-nav__item--nested">
+              <input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+               <span class="md-ellipsis">
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_4_2">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Transitions between the Quantum Hall States and Insulators Induced by Periodic Potentials
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../../../Paper_Review/Trans_btw_QH_States_and_Ins_by_Periodic_Pot/Part1/">
+                  <span class="md-ellipsis">
+                   Test
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+           <input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            <span class="md-ellipsis">
+             Seminar
+            </span>
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Seminar
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+              <input checked="" class="md-nav__toggle md-toggle" id="__nav_5_1" type="checkbox"/>
+              <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+               <span class="md-ellipsis">
+                Curve Shortening Flow
+               </span>
+               <span class="md-nav__icon md-icon">
+               </span>
+              </label>
+              <nav aria-expanded="true" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+               <label class="md-nav__title" for="__nav_5_1">
+                <span class="md-nav__icon md-icon">
+                </span>
+                Curve Shortening Flow
+               </label>
+               <ul class="md-nav__list" data-md-scrollfix="">
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part0/">
+                  <span class="md-ellipsis">
+                   Introduction
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part1/">
+                  <span class="md-ellipsis">
+                   CSF is Heat Equation for Curves
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part2/">
+                  <span class="md-ellipsis">
+                   Evolution Equations
+                  </span>
+                 </a>
+                </li>
+                <li class="md-nav__item md-nav__item--active">
+                 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+                 <label class="md-nav__link md-nav__link--active" for="__toc">
+                  <span class="md-ellipsis">
+                   More on Singularity Analysis
+                  </span>
+                  <span class="md-nav__icon md-icon">
+                  </span>
+                 </label>
+                 <a class="md-nav__link md-nav__link--active" href="./">
+                  <span class="md-ellipsis">
+                   More on Singularity Analysis
+                  </span>
+                 </a>
+                 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+                  <label class="md-nav__title" for="__toc">
+                   <span class="md-nav__icon md-icon">
+                   </span>
+                   Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#31-gaussian-density-and-local-regularity">
+                     <span class="md-ellipsis">
+                      3.1 Gaussian Density and Local Regularity
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#32-huiskens-distance-comparison-principle">
+                     <span class="md-ellipsis">
+                      3.2 Huisken's Distance Comparison Principle
+                     </span>
+                    </a>
+                   </li>
+                   <li class="md-nav__item">
+                    <a class="md-nav__link" href="#33-type-i-and-type-ii-singularities">
+                     <span class="md-ellipsis">
+                      3.3 Type I and Type II Singularities
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                 </nav>
+                </li>
+                <li class="md-nav__item">
+                 <a class="md-nav__link" href="../Part4/">
+                  <span class="md-ellipsis">
+                   Conclusion and Generalization
+                  </span>
+                 </a>
+                </li>
+               </ul>
+              </nav>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+         <label class="md-nav__title" for="__toc">
+          <span class="md-nav__icon md-icon">
+          </span>
+          Table of contents
+         </label>
+         <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#31-gaussian-density-and-local-regularity">
+            <span class="md-ellipsis">
+             3.1 Gaussian Density and Local Regularity
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#32-huiskens-distance-comparison-principle">
+            <span class="md-ellipsis">
+             3.2 Huisken's Distance Comparison Principle
+            </span>
+           </a>
+          </li>
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="#33-type-i-and-type-ii-singularities">
+            <span class="md-ellipsis">
+             3.3 Type I and Type II Singularities
+            </span>
+           </a>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <nav class="md-tags">
+        <a class="md-tag" href="../../../tags/#tag:gaussian-density">
+         Gaussian Density
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:huisken-distance-comparison">
+         Huisken Distance Comparison
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:singularity-analysis">
+         Singularity Analysis
+        </a>
+        <a class="md-tag" href="../../../tags/#tag:type-i-singularity">
+         Type I Singularity
+        </a>
+       </nav>
+       <h1 id="3-more-on-singularity-analysis">
+        3. More on Singularity Analysis
+       </h1>
+       <h2 id="31-gaussian-density-and-local-regularity">
+        3.1 Gaussian Density and Local Regularity
+       </h2>
+       <blockquote>
+        <p>
+         <strong>
+          Definition 3.1.1 (Gaussian density).
+         </strong>
+         The
+         <em>
+          Gaussian density
+         </em>
+         at
+         <span class="arithmatex">
+          \(X_0 = (x_0 , t_0)\)
+         </span>
+         with scale
+         <span class="arithmatex">
+          \(\gamma &gt; 0\)
+         </span>
+         is defined by
+        </p>
+        <div class="arithmatex">
+         \[
+    \Theta(\Gamma_t ,  X_0 , \gamma) = \int_{\Gamma_{t_0 - \gamma^2}}\rho_{X_0} (x , t_0 - \gamma^2 ) dx \; \left ( = \Phi_{X_0} (t_0 - \gamma^2) \right )
+\]
+        </div>
+        <p class="def">
+        </p>
+       </blockquote>
+       <p>
+        With this localized mass measure in hand, we can establish a crucial regularity condition that restricts the maximum curvature whenever the density is sufficiently close to that of a flat line.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Theorem 3.1.2 (Local regularity theorem)
+          <sup id="fnref:1">
+           <a class="footnote-ref" href="#fn:1">
+            1
+           </a>
+          </sup>
+          .
+         </strong>
+         There exist
+         <span class="arithmatex">
+          \(\varepsilon &gt; 0\)
+         </span>
+         ,
+         <span class="arithmatex">
+          \(C&lt; \infty\)
+         </span>
+         such that the following holds. Let
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         be the curve shortening flow for
+         <span class="arithmatex">
+          \(t \in (t_0 - 4 \gamma^2 , t_0)\)
+         </span>
+         . If
+         <span class="arithmatex">
+          \(\sup \Theta(\Gamma , Y , \gamma) \le 1+ \varepsilon\)
+         </span>
+         , for
+         <span class="arithmatex">
+          \(Y \in B_r (x_0) \times (t_0 - \gamma^2 ,t_0) := P_\gamma (x_0 , t_0)\)
+         </span>
+         , then
+        </p>
+        <div class="arithmatex">
+         \[
+    \sup_{P_{\gamma/2}(x_0 , t_0)} \kappa \le \frac{C}{\gamma}.
+\]
+        </div>
+        <p class="thm">
+        </p>
+        <p>
+         <em>
+          Proof.
+         </em>
+         Assume for the sake of contradiction that the theorem is false. Then, there exists a sequence of curve shortening flows,
+         <span class="arithmatex">
+          \(\Gamma_t^i\)
+         </span>
+         for
+         <span class="arithmatex">
+          \(t \in (-4, 0 )\)
+         </span>
+         , such that:
+        </p>
+        <ul>
+         <li>
+          <span class="arithmatex">
+           \(\Theta ( \Gamma_t^i , X , 1) &lt; 1 + \frac{1}{i}\)
+          </span>
+          for all
+          <span class="arithmatex">
+           \(X \in P_1 (0)\)
+          </span>
+          ,
+         </li>
+         <li>
+          and there exists
+          <span class="arithmatex">
+           \(X_i \in P_{1/2} (0)\)
+          </span>
+          such that
+          <span class="arithmatex">
+           \(\kappa (X_i) \ge i\)
+          </span>
+          .
+         </li>
+        </ul>
+        <p>
+         <strong>
+          Claim:
+         </strong>
+         There exists a spacetime point
+         <span class="arithmatex">
+          \(Y_i = (y_i, t_i) \in P_{3/4} (0)\)
+         </span>
+         with
+         <span class="arithmatex">
+          \(\kappa (Y_i) := \kappa_i \ge i\)
+         </span>
+         such that
+         <span class="arithmatex">
+          \(\kappa \le 2 \kappa_i\)
+         </span>
+         on the parabolic neighborhood
+         <span class="arithmatex">
+          \(P_{\frac{i}{10 \kappa_i}} (Y_i)\)
+         </span>
+         .
+        </p>
+        <p>
+         <em>
+          (The proof of this claim follows via the point selection argument, deferred below).
+         </em>
+        </p>
+        <p>
+         Assuming the claim holds, we define our parabolically rescaled flow centered at
+         <span class="arithmatex">
+          \(Y_i\)
+         </span>
+         as:
+        </p>
+        <div class="arithmatex">
+         \[
+    \tilde{\Gamma}_t^i = \kappa_i \left( \Gamma_{t_i + \frac{t}{\kappa_i^2}}^i - y_i \right).
+\]
+        </div>
+        <p>
+         Under this parabolic rescaling, the geometry and bounds transform such that:
+        </p>
+        <div class="arithmatex">
+         \[
+    \tilde{\kappa}^i (0,0) = 1 , \quad \text{and} \quad \tilde{\kappa}^i \le 2 \quad \text{on} \quad P_{\frac{i}{10}} (0).
+\]
+        </div>
+        <p>
+         Because the rescaled curvature is uniformly bounded by 2 on expanding domains (since
+         <span class="arithmatex">
+          \(i \to \infty\)
+         </span>
+         ), all higher-order derivatives are also uniformly bounded. Thus, we can extract a smoothly convergent limit sequence, denoted as
+         <span class="arithmatex">
+          \(\tilde{\Gamma}_t^\infty\)
+         </span>
+         , which is an eternal solution.
+        </p>
+        <p>
+         Moreover, by the density assumption of the theorem, taking the limit
+         <span class="arithmatex">
+          \(i \to \infty\)
+         </span>
+         forces the Gaussian density of the limit flow to be exactly 1 at all scales:
+        </p>
+        <div class="arithmatex">
+         \[
+    \Theta(\tilde{\Gamma}_t^\infty , X , r) = 1 \quad \forall X \in \mathbb{R}^2 \times (-\infty, 0], \,\, \forall r &gt; 0.
+\]
+        </div>
+        <p>
+         By Huisken's monotonicity formula, the constancy of the density implies that
+         <span class="arithmatex">
+          \(\tilde{\Gamma}^\infty\)
+         </span>
+         must be a self-shrinker. The only embedded self-shrinkers are the straight line and the shrinking circle.
+        </p>
+        <p>
+         However, the Gaussian density of a shrinking circle is strictly greater than 1, contradicting
+         <span class="arithmatex">
+          \(\Theta \equiv 1\)
+         </span>
+         . Therefore,
+         <span class="arithmatex">
+          \(\tilde{\Gamma}^\infty\)
+         </span>
+         must be a straight line. But a straight line has curvature identically zero, which directly contradicts our condition that
+         <span class="arithmatex">
+          \(\tilde{\kappa}^\infty(0,0) = 1\)
+         </span>
+         . This completes the contradiction.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+        <p class="proof">
+        </p>
+       </blockquote>
+       <p>
+        Consequently, this forces the realization that any sequence approaching a singularity under these density constraints cannot logically model anything other than a trivial flat line.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Remark.
+         </strong>
+         Alternatively, suppose that a rescaled solution
+         <span class="arithmatex">
+          \(\Lambda \Gamma_{t / \Lambda^2}\)
+         </span>
+         converges to a straight line. By the multiplicity one conjecture, if
+         <span class="arithmatex">
+          \(\Lambda \gg 1\)
+         </span>
+         , then
+         <span class="arithmatex">
+          \(\Theta (\Lambda \Gamma_{t/ \Lambda^2} , 0 , 1) \approx 1\)
+         </span>
+         . Consequently,
+         <span class="arithmatex">
+          \(\Lambda \Gamma_{t/\Lambda^2}\)
+         </span>
+         must have
+         <span class="arithmatex">
+          \(\kappa \le C\)
+         </span>
+         , which yields a similar contradiction if we assume unbounded curvature. Therefore, a straight line cannot manifest as the singularity model in this context.
+        </p>
+        <p class="remark">
+        </p>
+       </blockquote>
+       <p>
+        To rigorously justify the local curvature bounds that allowed us to extract the rescaled limit sequence above, we now detail the deferred point selection argument.
+       </p>
+       <blockquote>
+        <p>
+         <em>
+          Proof of claim.
+         </em>
+         This is an application of the
+         <em>
+          point selection argument
+         </em>
+         <sup id="fnref:2">
+          <a class="footnote-ref" href="#fn:2">
+           2
+          </a>
+         </sup>
+         .
+        </p>
+        <p>
+         We construct a sequence of points iteratively. Let
+         <span class="arithmatex">
+          \(Y_i^0 = X_i\)
+         </span>
+         . By our initial assumptions,
+         <span class="arithmatex">
+          \(Y_i^0 \in P_{1/2}(0)\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\kappa(Y_i^0) \ge i\)
+         </span>
+         .
+        </p>
+        <p>
+         If
+         <span class="arithmatex">
+          \(Y_i^0\)
+         </span>
+         satisfies the claim (i.e.,
+         <span class="arithmatex">
+          \(\kappa \le 2\kappa(Y_i^0)\)
+         </span>
+         on
+         <span class="arithmatex">
+          \(P_{\frac{i}{10\kappa(Y_i^0)}}(Y_i^0)\)
+         </span>
+         ), we set
+         <span class="arithmatex">
+          \(Y_i = Y_i^0\)
+         </span>
+         and terminate the sequence.
+        </p>
+        <p>
+         If not, there exists a point
+         <span class="arithmatex">
+          \(Y_i^1 \in P_{\frac{i}{10\kappa(Y_i^0)}}(Y_i^0)\)
+         </span>
+         such that
+         <span class="arithmatex">
+          \(\kappa(Y_i^1) &gt; 2\kappa(Y_i^0)\)
+         </span>
+         .
+        </p>
+        <p>
+         Iterating this process, if
+         <span class="arithmatex">
+          \(Y_i^k\)
+         </span>
+         does not satisfy the claim, we can find
+         <span class="arithmatex">
+          \(Y_i^{k+1} \in P_{\frac{i}{10\kappa(Y_i^k)}}(Y_i^k)\)
+         </span>
+         such that
+         <span class="arithmatex">
+          \(\kappa(Y_i^{k+1}) &gt; 2\kappa(Y_i^k)\)
+         </span>
+         .
+        </p>
+        <p>
+         Observe that
+         <span class="arithmatex">
+          \(\kappa(Y_i^k) &gt; 2^k \kappa(Y_i^0) \ge 2^k i\)
+         </span>
+         . Since the curve shortening flow is smooth on the given time interval, the curvature must be finite on compact subsets, meaning this sequence cannot continue indefinitely. It must terminate at some finite step
+         <span class="arithmatex">
+          \(m\)
+         </span>
+         . The terminal point
+         <span class="arithmatex">
+          \(Y_i^m\)
+         </span>
+         satisfies the local curvature bound, so we define our desired point as
+         <span class="arithmatex">
+          \(Y_i = Y_i^m\)
+         </span>
+         .
+        </p>
+        <p>
+         It remains to show that this terminal point
+         <span class="arithmatex">
+          \(Y_i\)
+         </span>
+         actually remains within
+         <span class="arithmatex">
+          \(P_{3/4}(0)\)
+         </span>
+         . By the triangle inequality for the parabolic distance, the distance from the initial point
+         <span class="arithmatex">
+          \(Y_i^0\)
+         </span>
+         to
+         <span class="arithmatex">
+          \(Y_i^k\)
+         </span>
+         is bounded by the sum of the radii of the nested neighborhoods:
+        </p>
+        <div class="arithmatex">
+         \[
+    |Y_i^k - Y_i^0| \le \sum_{j=0}^{k-1} \frac{i}{10\kappa(Y_i^j)}.
+\]
+        </div>
+        <p>
+         Since
+         <span class="arithmatex">
+          \(\kappa(Y_i^j) &gt; 2^j \kappa(Y_i^0)\)
+         </span>
+         , we can bound the series by a geometric progression:
+        </p>
+        <div class="arithmatex">
+         \[
+    |Y_i^k - Y_i^0| \le \frac{i}{10\kappa(Y_i^0)} \left( 1 + \frac{1}{2} + \frac{1}{4} + \cdots \right) = \frac{i}{10\kappa(Y_i^0)} (2) = \frac{i}{5\kappa(Y_i^0)}.
+\]
+        </div>
+        <p>
+         Because the initial curvature
+         <span class="arithmatex">
+          \(\kappa(Y_i^0) \ge i\)
+         </span>
+         , we have
+         <span class="arithmatex">
+          \(\frac{i}{\kappa(Y_i^0)} \le 1\)
+         </span>
+         . Thus:
+        </p>
+        <div class="arithmatex">
+         \[
+    |Y_i^k - Y_i^0| \le \frac{1}{5}.
+\]
+        </div>
+        <p>
+         Furthermore, since
+         <span class="arithmatex">
+          \(Y_i^0 = X_i \in P_{1/2}(0)\)
+         </span>
+         , its distance to the origin is
+         <span class="arithmatex">
+          \(|Y_i^0 - 0| \le \frac{1}{2}\)
+         </span>
+         . Therefore:
+        </p>
+        <div class="arithmatex">
+         \[
+    |Y_i^k| \le |Y_i^0 - 0| + |Y_i^k - Y_i^0| \le \frac{1}{2} + \frac{1}{5} = \frac{7}{10} &lt; \frac{3}{4}.
+\]
+        </div>
+        <p>
+         This confirms that
+         <span class="arithmatex">
+          \(Y_i \in P_{3/4}(0)\)
+         </span>
+         , completing the proof of the claim.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+        <p class="proof">
+        </p>
+       </blockquote>
+       <p>
+        Let
+        <span class="arithmatex">
+         \(\Gamma_t\)
+        </span>
+        be a curve shortening flow. Suppose that the rescaled solution
+        <span class="arithmatex">
+         \(\Lambda \Gamma_{t / \Lambda^2}\)
+        </span>
+        converges to a straight line. By multiplicity one conjecture, if
+        <span class="arithmatex">
+         \(\Lambda \gg 1\)
+        </span>
+        ,
+        <span class="arithmatex">
+         \(\Theta (\Lambda \Gamma_{t/ \Lambda^2} , 0 , 1) \approx 1\)
+        </span>
+        . Then,
+        <span class="arithmatex">
+         \(\Lambda \Gamma_{t/\Lambda^2}\)
+        </span>
+        has
+        <span class="arithmatex">
+         \(\kappa \le C\)
+        </span>
+        , which is a contradiction. Therefore, a straight line cannot be our solution.
+       </p>
+       <h2 id="32-huiskens-distance-comparison-principle">
+        3.2 Huisken's Distance Comparison Principle
+       </h2>
+       <blockquote>
+        <p>
+         <strong>
+          Theorem 3.2.1 (Huisken distance comparison)
+          <sup id="fnref:3">
+           <a class="footnote-ref" href="#fn:3">
+            3
+           </a>
+          </sup>
+          .
+         </strong>
+         For a curve shortening flow
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         ,
+         <span class="arithmatex">
+          \(t \ge 0\)
+         </span>
+         , define
+        </p>
+        <div class="arithmatex">
+         \[
+    l(x,y,t) = l_t (\gamma(x,t) , \gamma (y,t) ), \quad d(x,y,t) = |\gamma(x,t) - \gamma(y,t)|
+\]
+        </div>
+        <p>
+         where
+         <span class="arithmatex">
+          \(l_t\)
+         </span>
+         is the intrinsic distance. Also, define
+        </p>
+        <div class="arithmatex">
+         \[
+    R(t) = \sup_{\begin{smallmatrix} x \ne y\\ x,y\in S^1 \end{smallmatrix}} \frac{L(t)}{\pi d(x,y,t)} \cdot \sin \left (\frac{\pi l(x,y,t)}{L(t)} \right ).
+\]
+        </div>
+        <p>
+         Then,
+         <span class="arithmatex">
+          \(R(t)\)
+         </span>
+         is monotone decreasing.
+        </p>
+        <p class="thm">
+        </p>
+       </blockquote>
+       <p>
+        Because this functional
+        <span class="arithmatex">
+         \(R(t)\)
+        </span>
+        is bounded entirely by its initial geometry at
+        <span class="arithmatex">
+         \(t=0\)
+        </span>
+        , it immediately grants us a uniform upper bound on the ratio of intrinsic to extrinsic distance across the evolving curve.
+       </p>
+       <blockquote>
+        <p>
+         <strong>
+          Remark.
+         </strong>
+         Then, we can bound
+         <span class="arithmatex">
+          \(l/d\)
+         </span>
+         :
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{l}{d} = \underbrace{\frac{L}{\pi d} \sin \left ( \frac{\pi l}{L} \right )}_{\le R(0)} \cdot \frac{\frac{l \pi}{L}}{\sin \left ( \frac{\pi l}{L} \right )} \le C \cdot R(0).
+\]
+        </div>
+        <p>
+         Note that
+         <span class="arithmatex">
+          \(\frac{L}{\pi d} \sin \left ( \frac{\pi l}{L} \right )\)
+         </span>
+         is bounded by Theorem 3.2.1.
+        </p>
+        <p class="remark">
+        </p>
+       </blockquote>
+       <h2 id="33-type-i-and-type-ii-singularities">
+        3.3 Type I and Type II Singularities
+       </h2>
+       <blockquote>
+        <p>
+         <strong>
+          Lemma 3.3.1.
+         </strong>
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{d}{dt} \int_{\Gamma_t} |\kappa| \, ds = -2 \sum_{\{x \mid \kappa(x,t) = 0\}} |\kappa_s(x,t)|
+\]
+        </div>
+        <p>
+         where the set of zeroes is finite, or
+         <span class="arithmatex">
+          \(\kappa \equiv 0\)
+         </span>
+         . Consequently, the limit
+        </p>
+        <div class="arithmatex">
+         \[
+    \lim_{t \nearrow T (=t_0)} \int_{\Gamma_t} |\kappa| \, ds
+\]
+        </div>
+        <p>
+         exists.
+        </p>
+        <p class="lemma">
+        </p>
+       </blockquote>
+       <p>
+        The fact that this total absolute curvature integral remains definitively bounded as we approach the singular time provides the key analytical constraint needed to rule out rapidly forming singularities.
+       </p>
+       <blockquote>
+        <p>
+         <em>
+          Proof of Theorem that singularities are Type I.
+         </em>
+         Suppose not. That is, assume
+        </p>
+        <div class="arithmatex">
+         \[
+    \sup_{t &lt; T} \sqrt{T-t} \max_{\Gamma_t} |\kappa| = \infty.
+\]
+        </div>
+        <p>
+         For all
+         <span class="arithmatex">
+          \(k \in \mathbb{N}\)
+         </span>
+         , choose
+         <span class="arithmatex">
+          \((y_k, t_k)\)
+         </span>
+         such that it achieves the maximum for
+        </p>
+        <div class="arithmatex">
+         \[
+    \max_{t \in \left[0, T - \frac{1}{k}\right]} \max_{\Gamma_t} \left( T - \frac{1}{k} - t \right) \cdot \kappa^2.
+\]
+        </div>
+        <p>
+         Denote
+         <span class="arithmatex">
+          \(\kappa(y_k, t_k) := \lambda_k\)
+         </span>
+         . (This is an application of Hamilton's point-picking method
+         <sup id="fnref:4">
+          <a class="footnote-ref" href="#fn:4">
+           4
+          </a>
+         </sup>
+         ).
+        </p>
+        <p>
+         We then define the parabolically rescaled flow:
+        </p>
+        <div class="arithmatex">
+         \[
+    \tilde{\Gamma}_t^i = \lambda_i \left( \Gamma_{t_i + \frac{t}{\lambda_i^2}} - y_i \right).
+\]
+        </div>
+        <p>
+         Then, because of the bounds established by the point-picking method, we can extract a smoothly converging limit sequence as
+         <span class="arithmatex">
+          \(i \to \infty\)
+         </span>
+         :
+        </p>
+        <div class="arithmatex">
+         \[
+    \tilde{\Gamma}_t^i \longrightarrow \Gamma_t^\infty \quad \text{for} \quad -\infty &lt; t &lt; +\infty.
+\]
+        </div>
+        <p>
+         This limit flow
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         is an eternal solution, and it inherently satisfies the following curvature properties:
+        </p>
+        <div class="arithmatex">
+         \[
+    |\kappa^\infty| \le 1 \quad \text{everywhere, and} \quad |\kappa^\infty(0,0)| = 1.
+\]
+        </div>
+        <p>
+         <strong>
+          Claim:
+         </strong>
+         The limit flow
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         is convex, meaning
+         <span class="arithmatex">
+          \(\kappa^\infty &gt; 0\)
+         </span>
+         .
+        </p>
+        <p>
+         Assuming the claim that
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         is strictly convex (
+         <span class="arithmatex">
+          \(\kappa^\infty &gt; 0\)
+         </span>
+         ), we can now completely classify this limit flow. By our parabolic rescaling construction,
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         is an
+         <em>
+          eternal
+         </em>
+         solution (meaning it exists for
+         <span class="arithmatex">
+          \(t \in (-\infty, \infty)\)
+         </span>
+         ) that attains its global maximum curvature
+         <span class="arithmatex">
+          \(\kappa^\infty(0,0) = 1\)
+         </span>
+         .
+        </p>
+        <p>
+         The only completely convex, eternal solutions to the curve shortening flow in the plane are the shrinking circle and the translating Grim Reaper. However, a shrinking circle collapses to a point in finite time, meaning it cannot exist for all
+         <span class="arithmatex">
+          \(t \in \mathbb{R}\)
+         </span>
+         . Therefore, the limit
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         must be the Grim Reaper.
+        </p>
+        <p>
+         A Grim Reaper with a maximum curvature of
+         <span class="arithmatex">
+          \(1\)
+         </span>
+         translates along an axis and is asymptotically bounded by two parallel lines separated by an extrinsic distance of
+         <span class="arithmatex">
+          \(d = \pi\)
+         </span>
+         .
+        </p>
+        <p>
+         Suppose we pick two points on the opposite asymptotic branches of the Grim Reaper. Their extrinsic spatial distance in
+         <span class="arithmatex">
+          \(\mathbb{R}^2\)
+         </span>
+         , denoted as
+         <span class="arithmatex">
+          \(d\)
+         </span>
+         , is strictly bounded by
+         <span class="arithmatex">
+          \(\pi\)
+         </span>
+         . However, the intrinsic distance along the curve between these two points, denoted as
+         <span class="arithmatex">
+          \(l\)
+         </span>
+         , approaches
+         <span class="arithmatex">
+          \(\infty\)
+         </span>
+         . Thus, on the limit curve
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         , the chord-arc ratio is unbounded:
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{l}{d} \longrightarrow \infty.
+\]
+        </div>
+        <p>
+         This brings us to the fundamental contradiction. For the original simple closed curve
+         <span class="arithmatex">
+          \(\Gamma_t\)
+         </span>
+         , Theorem 3.2.1 guarantees that the chord-arc ratio (intrinsic distance over extrinsic distance) is uniformly bounded by some constant
+         <span class="arithmatex">
+          \(C\)
+         </span>
+         for all
+         <span class="arithmatex">
+          \(t &lt; T\)
+         </span>
+         :
+        </p>
+        <div class="arithmatex">
+         \[
+    \frac{l}{d} &lt; C.
+\]
+        </div>
+        <p>
+         Because this geometric ratio is perfectly invariant under parabolic rescaling, the rescaled sequence
+         <span class="arithmatex">
+          \(\tilde{\Gamma}_t^i\)
+         </span>
+         must also obey
+         <span class="arithmatex">
+          \(\frac{l}{d} &lt; C\)
+         </span>
+         . Since
+         <span class="arithmatex">
+          \(\tilde{\Gamma}_t^i\)
+         </span>
+         converges smoothly (with multiplicity 1) to the Grim Reaper, the limit Grim Reaper must also satisfy this bound, which we have shown is impossible.
+        </p>
+        <p>
+         Therefore, our initial assumption that the singularity is Type II is false. We conclude that all singularities for embedded curves under curve shortening flow must be Type I.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+        <p class="proof">
+        </p>
+       </blockquote>
+       <p>
+        To finalize the classification of this limit geometry, we must verify the claim that the eternal limit flow is indeed completely convex.
+       </p>
+       <blockquote>
+        <p>
+         <em>
+          Proof of claim.
+         </em>
+         We want to show that the eternal limit flow
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         is strictly convex (
+         <span class="arithmatex">
+          \(\kappa^\infty &gt; 0\)
+         </span>
+         ).
+        </p>
+        <p>
+         Fix an arbitrary time interval
+         <span class="arithmatex">
+          \([a, b]\)
+         </span>
+         with
+         <span class="arithmatex">
+          \(-\infty &lt; a &lt; b &lt; \infty\)
+         </span>
+         . Using the lemma we established earlier for the evolution of the total absolute curvature, we integrate this quantity over the given time interval for our rescaled sequence
+         <span class="arithmatex">
+          \(\tilde{\Gamma}_t^i\)
+         </span>
+         . Note that the time
+         <span class="arithmatex">
+          \(t\)
+         </span>
+         in the rescaled flow corresponds to
+         <span class="arithmatex">
+          \(t_i + \frac{t}{\lambda_i^2}\)
+         </span>
+         in the original flow. By the Fundamental Theorem of Calculus:
+        </p>
+        <div class="arithmatex">
+         \[
+    -2 \int_a^b \sum_{\{x \mid \tilde{\kappa}_i(x,t) = 0\}} |(\tilde{\kappa}_i)_s| \, dt = \left[ \int_{\Gamma_t} |\kappa| \, ds \right]_{t = t_i + \frac{b}{\lambda_i^2}} - \left[ \int_{\Gamma_t} |\kappa| \, ds \right]_{t = t_i + \frac{a}{\lambda_i^2}}.
+\]
+        </div>
+        <p>
+         As established in our lemma,
+         <span class="arithmatex">
+          \(\int_{\Gamma_t} |\kappa| \, ds\)
+         </span>
+         is monotonically decreasing and bounded strictly below, meaning its limit as
+         <span class="arithmatex">
+          \(t \nearrow T\)
+         </span>
+         absolutely exists. As
+         <span class="arithmatex">
+          \(i \to \infty\)
+         </span>
+         , we know that
+         <span class="arithmatex">
+          \(t_i \to T\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\lambda_i \to \infty\)
+         </span>
+         . Consequently, both time evaluations on the right-hand side converge to the singular time
+         <span class="arithmatex">
+          \(T\)
+         </span>
+         . Therefore, the difference between these integrals must vanish:
+        </p>
+        <div class="arithmatex">
+         \[
+    \lim_{i \to \infty} \left( \left[ \int_{\Gamma_t} |\kappa| \, ds \right]_{t = t_i + \frac{b}{\lambda_i^2}} - \left[ \int_{\Gamma_t} |\kappa| \, ds \right]_{t = t_i + \frac{a}{\lambda_i^2}} \right) = 0.
+\]
+        </div>
+        <p>
+         Taking
+         <span class="arithmatex">
+          \(i \to \infty\)
+         </span>
+         for the left-hand side yields the behavior of the limit flow
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         . Extending our arbitrary interval
+         <span class="arithmatex">
+          \([a, b]\)
+         </span>
+         to the entire real line
+         <span class="arithmatex">
+          \((-\infty, \infty)\)
+         </span>
+         , we obtain:
+        </p>
+        <div class="arithmatex">
+         \[
+    \int_{-\infty}^\infty \sum_{\{x \mid \kappa^\infty(x,t) = 0\}} |\kappa^\infty_s| \, dt = 0.
+\]
+        </div>
+        <p>
+         Because the integrand is strictly non-negative, this integral evaluating to zero implies a strong geometric constraint: at any spacetime point where the limit curvature vanishes (
+         <span class="arithmatex">
+          \(\kappa^\infty = 0\)
+         </span>
+         ), its spatial derivative must also vanish (
+         <span class="arithmatex">
+          \(\kappa^\infty_s = 0\)
+         </span>
+         ).
+        </p>
+        <p>
+         Graphically, if
+         <span class="arithmatex">
+          \(\kappa^\infty\)
+         </span>
+         were to change sign (crossing the
+         <span class="arithmatex">
+          \(s\)
+         </span>
+         -axis), it would exhibit a non-zero derivative at the root, which we have just proven is impossible. Thus, if the curvature graph ever touches
+         <span class="arithmatex">
+          \(0\)
+         </span>
+         , it must be perfectly tangent to the axis. By the strong maximum principle for the curvature evolution equation
+         <span class="arithmatex">
+          \(\kappa_t = \kappa_{ss} + \kappa^3\)
+         </span>
+         , if
+         <span class="arithmatex">
+          \(\kappa^\infty = 0\)
+         </span>
+         and
+         <span class="arithmatex">
+          \(\kappa^\infty_s = 0\)
+         </span>
+         at any point, then the curvature must be identically zero (
+         <span class="arithmatex">
+          \(\kappa^\infty \equiv 0\)
+         </span>
+         ) everywhere.
+        </p>
+        <p>
+         However, our blow-up sequence construction guarantees that the maximum curvature is preserved at the origin, specifically
+         <span class="arithmatex">
+          \(|\kappa^\infty(0,0)| = 1\)
+         </span>
+         . This means
+         <span class="arithmatex">
+          \(\kappa^\infty\)
+         </span>
+         cannot be identically zero. Since it cannot be identically zero and it cannot cross the axis, it must be strictly positive or strictly negative everywhere. By our standard inward-pointing orientation convention for closed curves, we conclude that
+         <span class="arithmatex">
+          \(\kappa^\infty &gt; 0\)
+         </span>
+         .
+        </p>
+        <p>
+         Hence, the limit flow
+         <span class="arithmatex">
+          \(\Gamma_t^\infty\)
+         </span>
+         is strictly convex.
+         <span style="float: right;">
+          <span class="arithmatex">
+           \(\blacksquare\)
+          </span>
+         </span>
+        </p>
+        <p class="proof">
+        </p>
+       </blockquote>
+       <div class="footnote">
+        <hr/>
+        <ol>
+         <li id="fn:1">
+          <p>
+           White, B. (2005). A local regularity theorem for mean curvature flow.
+           <em>
+            Annals of Mathematics
+           </em>
+           , 161, 1487-1519.
+           <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+         <li id="fn:2">
+          <p>
+           Perelman, G. (2002). The entropy formula for the Ricci flow and its geometric applications.
+           <em>
+            arXiv preprint math/0211159
+           </em>
+           .
+           <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+         <li id="fn:3">
+          <p>
+           Huisken, G. (1998). A distance comparison principle for evolving curves.
+           <em>
+            Asian Journal of Mathematics
+           </em>
+           , 2, 127-133.
+           <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+         <li id="fn:4">
+          <p>
+           Hamilton, R. S. (1995). The formation of singularities in the Ricci flow.
+           <em>
+            Surveys in Differential Geometry, Vol. II
+           </em>
+           , 7-136.
+           <a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">
+            ↩
+           </a>
+          </p>
+         </li>
+        </ol>
+       </div>
+      </article>
+     </div>
+     <script>
+      var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))
+     </script>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"annotate": null, "base": "../../..", "features": ["search.suggest", "search.highlight", "content.tags", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}
+  </script>
+  <script src="../../../assets/javascripts/bundle.79ae519e.min.js">
+  </script>
+  <script src="../../../javascripts/mathjax.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://tikzjax.com/v1/tikzjax.js">
+  </script>
+ </body>
+</html>
