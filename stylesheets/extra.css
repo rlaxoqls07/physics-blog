@@ -179,3 +179,14 @@
 [data-md-color-scheme="slate"] img[src$=".svg"] {
   filter: invert(1) hue-rotate(180deg);
 }
+
+/* example 박스의 아이콘 숨기기 */
+.md-typeset details.no-icon > summary::before {
+    display: none !important;
+}
+
+/* 아이콘이 빠진 공간만큼 제목의 좌측 여백을 확실히 당기고 정렬 강제 */
+.md-typeset details.no-icon > summary {
+    padding-left: 0.8rem !important; /* 값을 1.2rem에서 0.8rem으로 축소 */
+    text-align: left !important;     /* 텍스트가 가운데로 밀리는 현상 방지 */
+}
