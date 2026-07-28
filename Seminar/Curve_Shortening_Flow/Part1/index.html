@@ -994,68 +994,18 @@
        <p>
         Now we state the main theorem of this course. We first get an intuition from the figure below.
        </p>
-       <div class="highlight">
-        <pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[H]
-    <span class="k">\centering</span>
-    <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[
-        scale=1,
-        &gt;=<span class="nb">{</span>Stealth[length=2.5mm, width=1.5mm]<span class="nb">}</span>,
-        line join=round,
-        line cap=round
-    ]
-        <span class="c">% Grid and axes (optional, kept subtle)</span>
-        <span class="k">\draw</span><span class="na">[very thin, gray!20, step=1]</span> (-5,-4) grid (5,4);
-        <span class="k">\draw</span><span class="na">[-&gt;, gray!50]</span> (-5,0) -- (5,0) node[right] <span class="nb">{</span><span class="s">$</span><span class="nb">x</span><span class="s">$</span><span class="nb">}</span>;
-        <span class="k">\draw</span><span class="na">[-&gt;, gray!50]</span> (0,-4) -- (0,4) node[above] <span class="nb">{</span><span class="s">$</span><span class="nb">y</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% t = 0 (Initial non-convex "starfish" curve)</span>
-        <span class="c">% r(theta) = 3 + 1.2*cos(3*theta)</span>
-        <span class="k">\draw</span> [thick, draw=black!85] plot [domain=0:360, samples=200, smooth] 
-            (<span class="nb">{</span>(3 + 1.2*cos(3*<span class="k">\x</span>))*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>(3 + 1.2*cos(3*<span class="k">\x</span>))*sin(<span class="k">\x</span>)<span class="nb">}</span>);
-        <span class="k">\node</span><span class="na">[black!85]</span> at (4.6, 0.4) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_</span><span class="m">0</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% t = t_1 (Convex, slightly elongated curve)</span>
-        <span class="c">% r(theta) = 2.2 + 0.3*cos(3*theta)</span>
-        <span class="k">\draw</span> [thick, draw=blue!80] plot [domain=0:360, samples=200, smooth] 
-            (<span class="nb">{</span>(2.2 + 0.3*cos(3*<span class="k">\x</span>))*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>(2.2 + 0.3*cos(3*<span class="k">\x</span>))*sin(<span class="k">\x</span>)<span class="nb">}</span>);
-        <span class="k">\node</span><span class="na">[blue!80]</span> at (2.8, 0.8) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_{t_</span><span class="m">1</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% t = t_2 (More circular, smaller)</span>
-        <span class="k">\draw</span> [thick, draw=teal!90] plot [domain=0:360, samples=100, smooth] 
-            (<span class="nb">{</span>1.2*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>1.2*sin(<span class="k">\x</span>)<span class="nb">}</span>);
-        <span class="k">\node</span><span class="na">[teal!90]</span> at (1.4, 0.6) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_{t_</span><span class="m">2</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% t = t_3 (Shrinking to a round point)</span>
-        <span class="k">\draw</span> [thick, draw=magenta!90] plot [domain=0:360, samples=50, smooth] 
-            (<span class="nb">{</span>0.3*cos(<span class="k">\x</span>)<span class="nb">}</span>, <span class="nb">{</span>0.3*sin(<span class="k">\x</span>)<span class="nb">}</span>);
-        <span class="k">\node</span><span class="na">[magenta!90]</span> at (0.5, 0.3) <span class="nb">{</span><span class="s">$</span><span class="nv">\Gamma</span><span class="nb">_{t_</span><span class="m">3</span><span class="nb">}</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% Flow Vectors at t=0 (\partial_t X = \vec{K})</span>
-        <span class="c">% Highly convex points (flow inward rapidly)</span>
-        <span class="c">% theta = 0</span>
-        <span class="k">\draw</span><span class="na">[-&gt;, thick, red]</span> (4.2,0) -- (2.8,0) node[midway, below] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
-        <span class="c">% theta = 120</span>
-        <span class="k">\draw</span><span class="na">[-&gt;, thick, red]</span> (-2.1, 3.637) -- (-1.4, 2.425) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
-        <span class="c">% theta = 240</span>
-        <span class="k">\draw</span><span class="na">[-&gt;, thick, red]</span> (-2.1, -3.637) -- (-1.4, -2.425) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% Non-convex "dents" (flow outward to become convex)</span>
-        <span class="c">% theta = 60</span>
-        <span class="k">\draw</span><span class="na">[-&gt;, thick, orange]</span> (0.9, 1.558) -- (1.3, 2.25) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
-        <span class="c">% theta = 180</span>
-        <span class="k">\draw</span><span class="na">[-&gt;, thick, orange]</span> (-1.8, 0) -- (-2.6, 0) node[midway, below] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
-        <span class="c">% theta = 300</span>
-        <span class="k">\draw</span><span class="na">[-&gt;, thick, orange]</span> (0.9, -1.558) -- (1.3, -2.25) node[midway, right] <span class="nb">{</span><span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span><span class="nb">}</span>;
-
-        <span class="c">% Center point (singularity)</span>
-        <span class="k">\filldraw</span><span class="na">[black]</span> (0,0) circle (1pt);
-
-    <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
-    <span class="k">\caption</span><span class="nb">{</span>A geometric visualization of curve shortening flow acting on a non-convex curve. The flow velocity is governed by the local curvature vector <span class="s">$</span><span class="nv">\vec</span><span class="nb">{K}</span><span class="s">$</span>. Regions of high positive curvature (spikes) retract inward (red vectors), whereas regions of negative curvature (dents) are pushed outward (orange vectors). This mechanism guarantees that any simple closed curve will eventually resolve its self-intersections and become perfectly convex, ultimately shrinking to a circular singularity.<span class="nb">}</span>
-    <span class="k">\label</span><span class="nb">{</span>fig:Intuition of Gage-Hamilton-Grayson thm<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</code></pre>
-       </div>
+       <p>
+        <img alt="Example for Curve Shortening Flow" src="../Intuition_for_GHG_theorem.PNG" style="display: block; margin: 0 auto" width="500"/>
+       </p>
+       <p>
+        <em>
+         A geometric visualization of curve shortening flow acting on a non-convex curve. The flow velocity is governed by the local curvature vector
+         <span class="arithmatex">
+          \(\vec{K}\)
+         </span>
+         . Regions of high positive curvature (spikes) retract inward (red vectors), whereas regions of negative curvature (dents) are pushed outward (orange vectors). This mechanism guarantees that any simple closed curve will eventually resolve its self-intersections and become perfectly convex, ultimately shrinking to a circular singularity.
+        </em>
+       </p>
        <blockquote>
         <p>
          <strong>
