@@ -654,6 +654,13 @@
                </ul>
               </nav>
              </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../../../Seminar/A_Holographic_View_of_the_QCD_Axion/A_Holographic_View_of_the_QCD_Axion/">
+               <span class="md-ellipsis">
+                A Holographic View of the QCD Axion
+               </span>
+              </a>
+             </li>
             </ul>
            </nav>
           </li>
@@ -1525,7 +1532,7 @@
         expansion, we evaluate the Feynman diagrams for the gauge and boson self-energies, as well as the vertex correlations.
        </p>
        <p>
-        <img alt="Feynman Diagrams for Large-N Expansion" src="Screenshot 2026-08-02 at 2.47.03 PM.png" style="display: block; margin: 0 auto" width="500"/>
+        <img alt="Feynman Diagrams for Large-N Expansion" src="../Feynman_diagram_for_Large_N_expansion.PNG" style="display: block; margin: 0 auto" width="500"/>
        </p>
        <p>
         <strong>
@@ -1554,12 +1561,13 @@
         </li>
         <li>
          The exact one-loop integral is given by
-         <span class="arithmatex">
-          \(\Pi_{\mu\nu}(p) = N \int \frac{d^3k}{(2\pi)^3} \left[ \frac{(2k+p)_\mu (2k+p)_\nu}{(k^2+m^2)((k+p)^2+m^2)} - \frac{2\delta_{\mu\nu}}{k^2+m^2} \right]\)
-         </span>
-         .
         </li>
        </ul>
+       <div class="arithmatex">
+        \[
+\Pi_{\mu\nu}(p) = N \int \frac{d^3k}{(2\pi)^3} \left[ \frac{(2k+p)_\mu (2k+p)_\nu}{(k^2+m^2)((k+p)^2+m^2)} - \frac{2\delta_{\mu\nu}}{k^2+m^2} \right].
+\]
+       </div>
        <p>
         <strong>
          Boson Self-Energy (1b, 1c):
@@ -1611,19 +1619,23 @@
           \(O(2N)\)
          </span>
          spin model matter bubble, computed as
-         <span class="arithmatex">
-          \(\Pi_{\text{matter}}(p) = N \int \frac{d^3k}{(2\pi)^3} \frac{1}{(k^2+m^2)((k+p)^2+m^2)}\)
-         </span>
-         .
-        </li>
-        <li>
-         Diagram (1e) captures the two-loop vertex correction from gauge fluctuations, defined by the integral
-         <span class="arithmatex">
-          \(\Lambda(p) = N \int \frac{d^3k}{(2\pi)^3} \int \frac{d^3q}{(2\pi)^3} \frac{G_{a;\mu\nu}(q) (2k+p-q)_\mu (2k+p-q)_\nu}{((k-q)^2+m^2)((k+p-q)^2+m^2)(k^2+m^2)}\)
-         </span>
-         .
         </li>
        </ul>
+       <div class="arithmatex">
+        \[
+\Pi_{\text{matter}}(p) = N \int \frac{d^3k}{(2\pi)^3} \frac{1}{(k^2+m^2)((k+p)^2+m^2)}.
+\]
+       </div>
+       <ul>
+        <li>
+         Diagram (1e) captures the two-loop vertex correction from gauge fluctuations, defined by the integral
+        </li>
+       </ul>
+       <div class="arithmatex">
+        \[
+\Lambda(p) = N \int \frac{d^3k}{(2\pi)^3} \int \frac{d^3q}{(2\pi)^3} \frac{G_{a;\mu\nu}(q) (2k+p-q)_\mu (2k+p-q)_\nu}{((k-q)^2+m^2)((k+p-q)^2+m^2)(k^2+m^2)}
+\]
+       </div>
        <h3 id="62-exact-marginality-of-the-cs-coupling">
         6.2 Exact marginality of the CS coupling
        </h3>
@@ -1968,37 +1980,6 @@
         </span>
         -independent exponents.
        </p>
-       <hr/>
-       <blockquote>
-        <p>
-         <strong>
-          Remaining concern I could not silently "fix"
-         </strong>
-        </p>
-        <p>
-         The sign in the inverted polarization equation versus the response Lagrangian equation is a genuine physics choice, not a typo. The honest derivation gives
-         <span class="arithmatex">
-          \((\Pi^{-1}-\Pi_{\mathrm{cs}}^{-1})^{-1}\)
-         </span>
-         ; the "
-         <span class="arithmatex">
-          \(+\)
-         </span>
-         " form is only correct after using the antisymmetry
-         <span class="arithmatex">
-          \(-\Pi_{\mathrm{cs}}^{-1}(\theta)=\Pi_{\mathrm{cs}}^{-1}(-\theta)\)
-         </span>
-         .
-         <strong>
-          You should state your
-          <span class="arithmatex">
-           \(\theta\)
-          </span>
-          sign convention explicitly in the manuscript
-         </strong>
-         , otherwise the additive Hall offset in the resistivity relations could carry the wrong overall sign for one choice of orientation. I have flagged this inline rather than papering over it.
-        </p>
-       </blockquote>
       </article>
      </div>
      <script>
